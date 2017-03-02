@@ -29,7 +29,7 @@ namespace Projet_WinForm
         private void button1_Click(object sender, EventArgs e)
         {
             BDD newClub = new BDD();
-            Club nouveauClub = new Club(/*ajouter les textBox*/);
+            Club nouveauClub = new Club(/* poulet ajouter les textBox*/);
              newClub.InsertClub(nouveauClub);
 
         }
