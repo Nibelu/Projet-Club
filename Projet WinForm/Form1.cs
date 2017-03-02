@@ -20,11 +20,7 @@ namespace Projet_WinForm
             InitializeComponent();
         }
 
-
-
-
-
-        private void listClubs_VisibleChanged(object sender, EventArgs e)
+        public void AfficheList()
         {
             BDD liste1 = new BDD();
             List<Club> ListClub = liste1.SelectAllClub();
@@ -43,6 +39,14 @@ namespace Projet_WinForm
             {
                 listClubs.Rows.Add(list.id, list.nomClub, list.adresseClub, list.CPClub, list.villeClub, list.telephone, list.mail, list.siteClub, "Supprimer");
             }
+        }
+
+
+
+
+        private void listClubs_VisibleChanged(object sender, EventArgs e)
+        {
+            AfficheList();
         }
 
         private void listClubs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -66,8 +70,39 @@ namespace Projet_WinForm
         private void ajoutClub_Click(object sender, EventArgs e)
         {
             modalAjout = new Ajout("Ajouter un Club");
+            modalAjout.FormClosed += ModalAjout_FormClosed;
             modalAjout.ShowDialog();
+           
 
+        }
+
+        private void ModalAjout_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            listClubs.Rows.Clear();
+            AfficheList();
+        }
+
+        private void textBoxRecherche_TextChanged(object sender, EventArgs e)
+        {
+
+            listClubs.Rows.Clear();
+            BDD liste1 = new BDD();
+            List<Club> ListClub = liste1.SearchClub(textBoxRecherche.Text);
+            listClubs.ColumnCount = 9;
+            listClubs.Columns[0].Name = "Id";
+            listClubs.Columns[1].Name = "Nom du Club";
+            listClubs.Columns[2].Name = "Adresse";
+            listClubs.Columns[3].Name = "Code Postal";
+            listClubs.Columns[4].Name = "Ville";
+            listClubs.Columns[5].Name = "Telephone";
+            listClubs.Columns[6].Name = "Contact";
+            listClubs.Columns[7].Name = "Liens";
+            listClubs.Columns[8].Name = "Suppression";
+            Console.WriteLine(ListClub.Count);
+            foreach (Club list in ListClub)
+            {
+                listClubs.Rows.Add(list.id, list.nomClub, list.adresseClub, list.CPClub, list.villeClub, list.telephone, list.mail, list.siteClub, "Supprimer");
+            }
         }
     }
 }

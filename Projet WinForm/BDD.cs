@@ -148,8 +148,43 @@ namespace Projet_WinForm
                 cmd.Parameters.AddWithValue("@site", nouveauClub.siteClub);
                 cmd.ExecuteReader();
             }
+        }
 
+        public List<Club> SearchClub(string recherche)
+        {
+            Club leClub = null;
+            List<Club> ListClub = new List<Club>();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM club WHERE nomClub LIKE @recherche ORDER BY id ASC";
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@recherche", "%" + recherche + "%");
+                //Create a data reader and Execute the command
+                using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                {
 
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        leClub = new Club(
+                            (int)dataReader["id"],
+                            (string)dataReader["nomClub"],
+                            (string)dataReader["adresseClub"],
+                            (int)dataReader["CPClub"],
+                            (string)dataReader["villeClub"],
+                            (string)dataReader["telephone"],
+                            (string)dataReader["mail"],
+                            (string)dataReader["siteClub"]);
+                        ListClub.Add(leClub);
+                    }
+
+                }
+
+            }
+
+            return ListClub;
         }
 
         public List<Club> SelectAllClub()

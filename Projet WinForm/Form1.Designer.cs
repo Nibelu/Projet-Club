@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ajoutClub = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listClubs = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.idClub = new System.Windows.Forms.Label();
             this.labelId = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pageClub = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.textBoxRecherche = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listClubs)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,6 +58,7 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.textBoxRecherche);
             this.panel1.Controls.Add(this.ajoutClub);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.listClubs);
@@ -88,23 +90,23 @@
             // 
             this.listClubs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.listClubs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listClubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listClubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listClubs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listClubs.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listClubs.DefaultCellStyle = dataGridViewCellStyle2;
             this.listClubs.Location = new System.Drawing.Point(0, 85);
             this.listClubs.Name = "listClubs";
             this.listClubs.Size = new System.Drawing.Size(788, 359);
@@ -133,6 +135,15 @@
             this.panel2.Size = new System.Drawing.Size(791, 558);
             this.panel2.TabIndex = 1;
             this.panel2.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(0, 15);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(138, 27);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Retour à la liste des clubs";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -237,14 +248,13 @@
             this.pageClub.TabIndex = 0;
             this.pageClub.Text = "club selectionné";
             // 
-            // button5
+            // textBoxRecherche
             // 
-            this.button5.Location = new System.Drawing.Point(0, 15);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(138, 27);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Retour à la liste des clubs";
-            this.button5.UseVisualStyleBackColor = true;
+            this.textBoxRecherche.Location = new System.Drawing.Point(13, 55);
+            this.textBoxRecherche.Name = "textBoxRecherche";
+            this.textBoxRecherche.Size = new System.Drawing.Size(229, 20);
+            this.textBoxRecherche.TabIndex = 4;
+            this.textBoxRecherche.TextChanged += new System.EventHandler(this.textBoxRecherche_TextChanged);
             // 
             // Form1
             // 
@@ -287,6 +297,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button ajoutClub;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBoxRecherche;
     }
 }
 

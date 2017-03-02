@@ -28,65 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxNom = new System.Windows.Forms.TextBox();
+            this.textBoxVille = new System.Windows.Forms.TextBox();
+            this.textBoxSite = new System.Windows.Forms.TextBox();
+            this.textBoxMail = new System.Windows.Forms.TextBox();
+            this.textBoxtelephone = new System.Windows.Forms.TextBox();
+            this.textBoxCP = new System.Windows.Forms.TextBox();
+            this.textBoxAdresse = new System.Windows.Forms.TextBox();
             this.nomModal = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxNom
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBoxNom.Location = new System.Drawing.Point(44, 65);
+            this.textBoxNom.Name = "textBoxNom";
+            this.textBoxNom.Size = new System.Drawing.Size(201, 20);
+            this.textBoxNom.TabIndex = 0;
+            this.textBoxNom.Text = "Nom du club";
             // 
-            // textBox2
+            // textBoxVille
             // 
-            this.textBox2.Location = new System.Drawing.Point(44, 186);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(201, 20);
-            this.textBox2.TabIndex = 1;
+            this.textBoxVille.Location = new System.Drawing.Point(44, 186);
+            this.textBoxVille.Name = "textBoxVille";
+            this.textBoxVille.Size = new System.Drawing.Size(201, 20);
+            this.textBoxVille.TabIndex = 1;
+            this.textBoxVille.Text = "Ville ";
             // 
-            // textBox3
+            // textBoxSite
             // 
-            this.textBox3.Location = new System.Drawing.Point(416, 147);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(201, 20);
-            this.textBox3.TabIndex = 2;
+            this.textBoxSite.Location = new System.Drawing.Point(416, 147);
+            this.textBoxSite.Name = "textBoxSite";
+            this.textBoxSite.Size = new System.Drawing.Size(201, 20);
+            this.textBoxSite.TabIndex = 2;
+            this.textBoxSite.Text = "URL";
             // 
-            // textBox4
+            // textBoxMail
             // 
-            this.textBox4.Location = new System.Drawing.Point(416, 104);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(201, 20);
-            this.textBox4.TabIndex = 3;
+            this.textBoxMail.Location = new System.Drawing.Point(416, 104);
+            this.textBoxMail.Name = "textBoxMail";
+            this.textBoxMail.Size = new System.Drawing.Size(201, 20);
+            this.textBoxMail.TabIndex = 3;
+            this.textBoxMail.Text = "email";
             // 
-            // textBox5
+            // textBoxtelephone
             // 
-            this.textBox5.Location = new System.Drawing.Point(416, 65);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(201, 20);
-            this.textBox5.TabIndex = 4;
+            this.textBoxtelephone.Location = new System.Drawing.Point(416, 65);
+            this.textBoxtelephone.Name = "textBoxtelephone";
+            this.textBoxtelephone.Size = new System.Drawing.Size(201, 20);
+            this.textBoxtelephone.TabIndex = 4;
+            this.textBoxtelephone.Text = "N°";
             // 
-            // textBox6
+            // textBoxCP
             // 
-            this.textBox6.Location = new System.Drawing.Point(44, 147);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(201, 20);
-            this.textBox6.TabIndex = 5;
+            this.textBoxCP.Location = new System.Drawing.Point(44, 147);
+            this.textBoxCP.Name = "textBoxCP";
+            this.textBoxCP.Size = new System.Drawing.Size(201, 20);
+            this.textBoxCP.TabIndex = 5;
+            this.textBoxCP.Text = "Code Postal ";
             // 
-            // textBox7
+            // textBoxAdresse
             // 
-            this.textBox7.Location = new System.Drawing.Point(44, 104);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(201, 20);
-            this.textBox7.TabIndex = 6;
+            this.textBoxAdresse.Location = new System.Drawing.Point(44, 104);
+            this.textBoxAdresse.Name = "textBoxAdresse";
+            this.textBoxAdresse.Size = new System.Drawing.Size(201, 20);
+            this.textBoxAdresse.TabIndex = 6;
+            this.textBoxAdresse.Text = "Adresse du club";
             // 
             // nomModal
             // 
@@ -115,13 +122,13 @@
             this.ClientSize = new System.Drawing.Size(679, 262);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.nomModal);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxAdresse);
+            this.Controls.Add(this.textBoxCP);
+            this.Controls.Add(this.textBoxtelephone);
+            this.Controls.Add(this.textBoxMail);
+            this.Controls.Add(this.textBoxSite);
+            this.Controls.Add(this.textBoxVille);
+            this.Controls.Add(this.textBoxNom);
             this.Name = "Ajout";
             this.Text = "Ajout";
             this.Load += new System.EventHandler(this.Ajout_Load);
@@ -132,13 +139,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxNom;
+        private System.Windows.Forms.TextBox textBoxVille;
+        private System.Windows.Forms.TextBox textBoxSite;
+        private System.Windows.Forms.TextBox textBoxMail;
+        private System.Windows.Forms.TextBox textBoxtelephone;
+        private System.Windows.Forms.TextBox textBoxCP;
+        private System.Windows.Forms.TextBox textBoxAdresse;
         private System.Windows.Forms.Label nomModal;
         private System.Windows.Forms.Button button1;
     }

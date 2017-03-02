@@ -59,6 +59,12 @@
     </Compile>
     <Compile Include="BDD.cs" />
     <Compile Include="Club.cs" />
+    <Compile Include="ErrAjout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrAjout.Designer.cs">
+      <DependentUpon>ErrAjout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Evenement.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -70,6 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Ajout.resx">
       <DependentUpon>Ajout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrAjout.resx">
+      <DependentUpon>ErrAjout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
