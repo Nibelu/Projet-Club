@@ -65,6 +65,7 @@ namespace Projet_WinForm
             textBox5.Text = leClub.telephone;
             textBox6.Text = leClub.mail;
             textBox7.Text = leClub.siteClub;
+
         }
 
         private void ajoutClub_Click(object sender, EventArgs e)
@@ -103,6 +104,13 @@ namespace Projet_WinForm
             {
                 listClubs.Rows.Add(list.id, list.nomClub, list.adresseClub, list.CPClub, list.villeClub, list.telephone, list.mail, list.siteClub, "Supprimer");
             }
+        }
+
+        private void buttonModifClub_Click(object sender, EventArgs e)
+        {
+            BDD Modifclub1 = new BDD();           
+            Club leClub = new Club(int.Parse(idClub.Text), textBox1.Text, textBox2.Text, int.Parse(textBox3.Text), textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text);
+            Modifclub1.UpdateClub(leClub);
         }
     }
 }
