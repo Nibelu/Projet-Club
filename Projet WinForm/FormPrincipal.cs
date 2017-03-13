@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace Projet_WinForm
 {
-    public partial class Form1 : Form
+    public partial class FormPrincipal : Form
     {
 
         private Ajout modalAjout;
+        private ConfirmModif confModif;
 
-        public Form1()
+        public FormPrincipal()
         {
             InitializeComponent();
         }
@@ -58,13 +59,13 @@ namespace Projet_WinForm
             BDD club1 = new BDD();
             Club leClub = club1.ReadClub(int.Parse(nb));
             pageClub.Text = leClub.nomClub;
-            textBox1.Text = leClub.nomClub;
-            textBox2.Text = leClub.adresseClub;
-            textBox3.Text = leClub.CPClub.ToString();
-            textBox4.Text = leClub.villeClub;
-            textBox5.Text = leClub.telephone;
-            textBox6.Text = leClub.mail;
-            textBox7.Text = leClub.siteClub;
+            textBoxModifNameClub.Text = leClub.nomClub;
+            textBoxModifAdresseClub.Text = leClub.adresseClub;
+            textBoxModifCPClub.Text = leClub.CPClub.ToString();
+            textBoxModifVilleClub.Text = leClub.villeClub;
+            textBoxModifTelClub.Text = leClub.telephone;
+            textBoxModifMailClub.Text = leClub.mail;
+            textBoxModifURLClub.Text = leClub.siteClub;
 
         }
 
@@ -109,8 +110,10 @@ namespace Projet_WinForm
         private void buttonModifClub_Click(object sender, EventArgs e)
         {
             BDD Modifclub1 = new BDD();           
-            Club leClub = new Club(int.Parse(idClub.Text), textBox1.Text, textBox2.Text, int.Parse(textBox3.Text), textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text);
+            Club leClub = new Club(int.Parse(idClub.Text), textBoxModifNameClub.Text, textBoxModifAdresseClub.Text, int.Parse(textBoxModifCPClub.Text), textBoxModifVilleClub.Text, textBoxModifTelClub.Text, textBoxModifMailClub.Text, textBoxModifURLClub.Text);
             Modifclub1.UpdateClub(leClub);
+            confModif = new ConfirmModif();
+            confModif.ShowDialog();
         }
     }
 }

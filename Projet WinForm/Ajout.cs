@@ -32,7 +32,7 @@ namespace Projet_WinForm
             if (textBoxNom.Text != "Nom du club" && textBoxAdresse.Text != "Adresse du club" && textBoxCP.Text != "Code Postal" && textBoxVille.Text != "Ville" && textBoxtelephone.Text != "N°" && textBoxMail.Text != "email" && int.TryParse(textBoxCP.Text, out CP))
             {
                 
-                BDD newClub = new BDD();
+                    BDD newClub = new BDD();
                 Club nouveauClub = new Club(0, textBoxNom.Text, textBoxAdresse.Text, CP, textBoxVille.Text, textBoxtelephone.Text, textBoxMail.Text, textBoxSite.Text);
                 newClub.InsertClub(nouveauClub);
                 Close();

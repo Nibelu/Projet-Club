@@ -150,6 +150,29 @@ namespace Projet_WinForm
             }
         }
 
+        public void UpdateClub(Club nouveauClub)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE club SET nomClub = @nom, adresseClub = @adresse, CPClub = @cp, villeClub = @ville, telephone = @telephone, mail = @mail, siteClub = @site WHERE id = @id";
+
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", nouveauClub.id);
+                cmd.Parameters.AddWithValue("@nom", nouveauClub.nomClub);
+                cmd.Parameters.AddWithValue("@adresse", nouveauClub.adresseClub);
+                cmd.Parameters.AddWithValue("@cp", nouveauClub.CPClub);
+                cmd.Parameters.AddWithValue("@ville", nouveauClub.villeClub);
+                cmd.Parameters.AddWithValue("@telephone", nouveauClub.telephone);
+                cmd.Parameters.AddWithValue("@mail", nouveauClub.mail);
+                cmd.Parameters.AddWithValue("@site", nouveauClub.siteClub);
+                cmd.ExecuteReader();
+                //cmd.ExecuteNonQuery();
+            }
+        }
+
         public List<Club> SearchClub(string recherche)
         {
             Club leClub = null;

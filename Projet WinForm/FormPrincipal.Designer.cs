@@ -1,6 +1,6 @@
 ﻿namespace Projet_WinForm
 {
-    partial class Form1
+    partial class FormPrincipal
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -36,17 +36,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listClubs = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonRetour = new System.Windows.Forms.Button();
             this.buttonModifClub = new System.Windows.Forms.Button();
             this.idClub = new System.Windows.Forms.Label();
             this.labelId = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxModifURLClub = new System.Windows.Forms.TextBox();
+            this.textBoxModifMailClub = new System.Windows.Forms.TextBox();
+            this.textBoxModifTelClub = new System.Windows.Forms.TextBox();
+            this.textBoxModifVilleClub = new System.Windows.Forms.TextBox();
+            this.textBoxModifCPClub = new System.Windows.Forms.TextBox();
+            this.textBoxModifAdresseClub = new System.Windows.Forms.TextBox();
+            this.textBoxModifNameClub = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pageClub = new System.Windows.Forms.Label();
@@ -124,17 +124,17 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.buttonRetour);
             this.panel2.Controls.Add(this.buttonModifClub);
             this.panel2.Controls.Add(this.idClub);
             this.panel2.Controls.Add(this.labelId);
-            this.panel2.Controls.Add(this.textBox7);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.textBoxModifURLClub);
+            this.panel2.Controls.Add(this.textBoxModifMailClub);
+            this.panel2.Controls.Add(this.textBoxModifTelClub);
+            this.panel2.Controls.Add(this.textBoxModifVilleClub);
+            this.panel2.Controls.Add(this.textBoxModifCPClub);
+            this.panel2.Controls.Add(this.textBoxModifAdresseClub);
+            this.panel2.Controls.Add(this.textBoxModifNameClub);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.pageClub);
@@ -144,14 +144,14 @@
             this.panel2.TabIndex = 1;
             this.panel2.Visible = false;
             // 
-            // button5
+            // buttonRetour
             // 
-            this.button5.Location = new System.Drawing.Point(0, 15);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(138, 27);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Retour à la liste des clubs";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonRetour.Location = new System.Drawing.Point(0, 15);
+            this.buttonRetour.Name = "buttonRetour";
+            this.buttonRetour.Size = new System.Drawing.Size(138, 27);
+            this.buttonRetour.TabIndex = 13;
+            this.buttonRetour.Text = "Retour à la liste des clubs";
+            this.buttonRetour.UseVisualStyleBackColor = true;
             // 
             // buttonModifClub
             // 
@@ -181,54 +181,54 @@
             this.labelId.TabIndex = 10;
             this.labelId.Text = "Id : ";
             // 
-            // textBox7
+            // textBoxModifURLClub
             // 
-            this.textBox7.Location = new System.Drawing.Point(416, 398);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(242, 20);
-            this.textBox7.TabIndex = 9;
+            this.textBoxModifURLClub.Location = new System.Drawing.Point(416, 398);
+            this.textBoxModifURLClub.Name = "textBoxModifURLClub";
+            this.textBoxModifURLClub.Size = new System.Drawing.Size(242, 20);
+            this.textBoxModifURLClub.TabIndex = 9;
             // 
-            // textBox6
+            // textBoxModifMailClub
             // 
-            this.textBox6.Location = new System.Drawing.Point(416, 324);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(242, 20);
-            this.textBox6.TabIndex = 8;
+            this.textBoxModifMailClub.Location = new System.Drawing.Point(416, 324);
+            this.textBoxModifMailClub.Name = "textBoxModifMailClub";
+            this.textBoxModifMailClub.Size = new System.Drawing.Size(242, 20);
+            this.textBoxModifMailClub.TabIndex = 8;
             // 
-            // textBox5
+            // textBoxModifTelClub
             // 
-            this.textBox5.Location = new System.Drawing.Point(416, 249);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(242, 20);
-            this.textBox5.TabIndex = 7;
+            this.textBoxModifTelClub.Location = new System.Drawing.Point(416, 249);
+            this.textBoxModifTelClub.Name = "textBoxModifTelClub";
+            this.textBoxModifTelClub.Size = new System.Drawing.Size(242, 20);
+            this.textBoxModifTelClub.TabIndex = 7;
             // 
-            // textBox4
+            // textBoxModifVilleClub
             // 
-            this.textBox4.Location = new System.Drawing.Point(416, 175);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(242, 20);
-            this.textBox4.TabIndex = 6;
+            this.textBoxModifVilleClub.Location = new System.Drawing.Point(416, 175);
+            this.textBoxModifVilleClub.Name = "textBoxModifVilleClub";
+            this.textBoxModifVilleClub.Size = new System.Drawing.Size(242, 20);
+            this.textBoxModifVilleClub.TabIndex = 6;
             // 
-            // textBox3
+            // textBoxModifCPClub
             // 
-            this.textBox3.Location = new System.Drawing.Point(32, 398);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(242, 20);
-            this.textBox3.TabIndex = 5;
+            this.textBoxModifCPClub.Location = new System.Drawing.Point(32, 398);
+            this.textBoxModifCPClub.Name = "textBoxModifCPClub";
+            this.textBoxModifCPClub.Size = new System.Drawing.Size(242, 20);
+            this.textBoxModifCPClub.TabIndex = 5;
             // 
-            // textBox2
+            // textBoxModifAdresseClub
             // 
-            this.textBox2.Location = new System.Drawing.Point(32, 324);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(242, 20);
-            this.textBox2.TabIndex = 4;
+            this.textBoxModifAdresseClub.Location = new System.Drawing.Point(32, 324);
+            this.textBoxModifAdresseClub.Name = "textBoxModifAdresseClub";
+            this.textBoxModifAdresseClub.Size = new System.Drawing.Size(242, 20);
+            this.textBoxModifAdresseClub.TabIndex = 4;
             // 
-            // textBox1
+            // textBoxModifNameClub
             // 
-            this.textBox1.Location = new System.Drawing.Point(32, 249);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(242, 20);
-            this.textBox1.TabIndex = 3;
+            this.textBoxModifNameClub.Location = new System.Drawing.Point(32, 249);
+            this.textBoxModifNameClub.Name = "textBoxModifNameClub";
+            this.textBoxModifNameClub.Size = new System.Drawing.Size(242, 20);
+            this.textBoxModifNameClub.TabIndex = 3;
             // 
             // button2
             // 
@@ -257,7 +257,7 @@
             this.pageClub.TabIndex = 0;
             this.pageClub.Text = "club selectionné";
             // 
-            // Form1
+            // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -265,7 +265,7 @@
             this.ClientSize = new System.Drawing.Size(789, 555);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "FormPrincipal";
             this.Text = "Liste Clubs";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -286,18 +286,18 @@
         private System.Windows.Forms.Label pageClub;
         private System.Windows.Forms.Label idClub;
         private System.Windows.Forms.Label labelId;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxModifURLClub;
+        private System.Windows.Forms.TextBox textBoxModifMailClub;
+        private System.Windows.Forms.TextBox textBoxModifTelClub;
+        private System.Windows.Forms.TextBox textBoxModifVilleClub;
+        private System.Windows.Forms.TextBox textBoxModifCPClub;
+        private System.Windows.Forms.TextBox textBoxModifAdresseClub;
+        private System.Windows.Forms.TextBox textBoxModifNameClub;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonModifClub;
         private System.Windows.Forms.Button ajoutClub;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonRetour;
         private System.Windows.Forms.TextBox textBoxRecherche;
     }
 }
