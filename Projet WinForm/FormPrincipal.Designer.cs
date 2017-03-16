@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxRecherche = new System.Windows.Forms.TextBox();
             this.ajoutClub = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listClubs = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonRetour = new System.Windows.Forms.Button();
+            this.buttonRetourListeClub = new System.Windows.Forms.Button();
             this.buttonModifClub = new System.Windows.Forms.Button();
             this.idClub = new System.Windows.Forms.Label();
             this.labelId = new System.Windows.Forms.Label();
@@ -48,11 +48,19 @@
             this.textBoxModifAdresseClub = new System.Windows.Forms.TextBox();
             this.textBoxModifNameClub = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonConsultAdherent = new System.Windows.Forms.Button();
             this.pageClub = new System.Windows.Forms.Label();
+            this.panelListAdherents = new System.Windows.Forms.Panel();
+            this.textBoxRechercheAdherent = new System.Windows.Forms.TextBox();
+            this.labelNomDuClub = new System.Windows.Forms.Label();
+            this.buttonAjoutAdherent = new System.Windows.Forms.Button();
+            this.buttonRetourListClub = new System.Windows.Forms.Button();
+            this.dataGridViewListAdherents = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listClubs)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panelListAdherents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListAdherents)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -98,23 +106,23 @@
             // 
             this.listClubs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.listClubs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listClubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listClubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listClubs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listClubs.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listClubs.DefaultCellStyle = dataGridViewCellStyle2;
             this.listClubs.Location = new System.Drawing.Point(0, 85);
             this.listClubs.Name = "listClubs";
             this.listClubs.Size = new System.Drawing.Size(788, 359);
@@ -124,7 +132,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.buttonRetour);
+            this.panel2.Controls.Add(this.buttonRetourListeClub);
             this.panel2.Controls.Add(this.buttonModifClub);
             this.panel2.Controls.Add(this.idClub);
             this.panel2.Controls.Add(this.labelId);
@@ -136,7 +144,7 @@
             this.panel2.Controls.Add(this.textBoxModifAdresseClub);
             this.panel2.Controls.Add(this.textBoxModifNameClub);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.buttonConsultAdherent);
             this.panel2.Controls.Add(this.pageClub);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -144,14 +152,15 @@
             this.panel2.TabIndex = 1;
             this.panel2.Visible = false;
             // 
-            // buttonRetour
+            // buttonRetourListeClub
             // 
-            this.buttonRetour.Location = new System.Drawing.Point(0, 15);
-            this.buttonRetour.Name = "buttonRetour";
-            this.buttonRetour.Size = new System.Drawing.Size(138, 27);
-            this.buttonRetour.TabIndex = 13;
-            this.buttonRetour.Text = "Retour à la liste des clubs";
-            this.buttonRetour.UseVisualStyleBackColor = true;
+            this.buttonRetourListeClub.Location = new System.Drawing.Point(0, 15);
+            this.buttonRetourListeClub.Name = "buttonRetourListeClub";
+            this.buttonRetourListeClub.Size = new System.Drawing.Size(138, 27);
+            this.buttonRetourListeClub.TabIndex = 13;
+            this.buttonRetourListeClub.Text = "Retour à la liste des clubs";
+            this.buttonRetourListeClub.UseVisualStyleBackColor = true;
+            this.buttonRetourListeClub.Click += new System.EventHandler(this.buttonRetourListeClub_Click);
             // 
             // buttonModifClub
             // 
@@ -239,14 +248,15 @@
             this.button2.Text = "Consulter Evenements";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonConsultAdherent
             // 
-            this.button1.Location = new System.Drawing.Point(87, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 24);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Consulter Adhérents";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonConsultAdherent.Location = new System.Drawing.Point(87, 83);
+            this.buttonConsultAdherent.Name = "buttonConsultAdherent";
+            this.buttonConsultAdherent.Size = new System.Drawing.Size(187, 24);
+            this.buttonConsultAdherent.TabIndex = 1;
+            this.buttonConsultAdherent.Text = "Consulter Adhérents";
+            this.buttonConsultAdherent.UseVisualStyleBackColor = true;
+            this.buttonConsultAdherent.Click += new System.EventHandler(this.buttonConsultAdherent_Click);
             // 
             // pageClub
             // 
@@ -257,12 +267,67 @@
             this.pageClub.TabIndex = 0;
             this.pageClub.Text = "club selectionné";
             // 
+            // panelListAdherents
+            // 
+            this.panelListAdherents.Controls.Add(this.textBoxRechercheAdherent);
+            this.panelListAdherents.Controls.Add(this.labelNomDuClub);
+            this.panelListAdherents.Controls.Add(this.buttonAjoutAdherent);
+            this.panelListAdherents.Controls.Add(this.buttonRetourListClub);
+            this.panelListAdherents.Controls.Add(this.dataGridViewListAdherents);
+            this.panelListAdherents.Location = new System.Drawing.Point(0, 0);
+            this.panelListAdherents.Name = "panelListAdherents";
+            this.panelListAdherents.Size = new System.Drawing.Size(790, 558);
+            this.panelListAdherents.TabIndex = 2;
+            // 
+            // textBoxRechercheAdherent
+            // 
+            this.textBoxRechercheAdherent.Location = new System.Drawing.Point(13, 57);
+            this.textBoxRechercheAdherent.Name = "textBoxRechercheAdherent";
+            this.textBoxRechercheAdherent.Size = new System.Drawing.Size(202, 20);
+            this.textBoxRechercheAdherent.TabIndex = 4;
+            // 
+            // labelNomDuClub
+            // 
+            this.labelNomDuClub.AutoSize = true;
+            this.labelNomDuClub.Location = new System.Drawing.Point(340, 15);
+            this.labelNomDuClub.Name = "labelNomDuClub";
+            this.labelNomDuClub.Size = new System.Drawing.Size(35, 13);
+            this.labelNomDuClub.TabIndex = 3;
+            this.labelNomDuClub.Text = "label2";
+            // 
+            // buttonAjoutAdherent
+            // 
+            this.buttonAjoutAdherent.Location = new System.Drawing.Point(281, 472);
+            this.buttonAjoutAdherent.Name = "buttonAjoutAdherent";
+            this.buttonAjoutAdherent.Size = new System.Drawing.Size(184, 33);
+            this.buttonAjoutAdherent.TabIndex = 2;
+            this.buttonAjoutAdherent.Text = "Ajouter un Adhérent";
+            this.buttonAjoutAdherent.UseVisualStyleBackColor = true;
+            // 
+            // buttonRetourListClub
+            // 
+            this.buttonRetourListClub.Location = new System.Drawing.Point(12, 12);
+            this.buttonRetourListClub.Name = "buttonRetourListClub";
+            this.buttonRetourListClub.Size = new System.Drawing.Size(167, 31);
+            this.buttonRetourListClub.TabIndex = 1;
+            this.buttonRetourListClub.Text = "Retouner à la liste des Clubs";
+            this.buttonRetourListClub.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewListAdherents
+            // 
+            this.dataGridViewListAdherents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListAdherents.Location = new System.Drawing.Point(0, 91);
+            this.dataGridViewListAdherents.Name = "dataGridViewListAdherents";
+            this.dataGridViewListAdherents.Size = new System.Drawing.Size(790, 352);
+            this.dataGridViewListAdherents.TabIndex = 0;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(789, 555);
+            this.Controls.Add(this.panelListAdherents);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormPrincipal";
@@ -272,6 +337,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.listClubs)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panelListAdherents.ResumeLayout(false);
+            this.panelListAdherents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListAdherents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,11 +362,17 @@
         private System.Windows.Forms.TextBox textBoxModifAdresseClub;
         private System.Windows.Forms.TextBox textBoxModifNameClub;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonConsultAdherent;
         private System.Windows.Forms.Button buttonModifClub;
         private System.Windows.Forms.Button ajoutClub;
-        private System.Windows.Forms.Button buttonRetour;
+        private System.Windows.Forms.Button buttonRetourListeClub;
         private System.Windows.Forms.TextBox textBoxRecherche;
+        private System.Windows.Forms.Panel panelListAdherents;
+        private System.Windows.Forms.TextBox textBoxRechercheAdherent;
+        private System.Windows.Forms.Label labelNomDuClub;
+        private System.Windows.Forms.Button buttonAjoutAdherent;
+        private System.Windows.Forms.Button buttonRetourListClub;
+        private System.Windows.Forms.DataGridView dataGridViewListAdherents;
     }
 }
 

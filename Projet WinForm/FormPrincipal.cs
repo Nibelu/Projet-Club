@@ -35,25 +35,49 @@ namespace Projet_WinForm
             listClubs.Columns[6].Name = "Contact";
             listClubs.Columns[7].Name = "Liens";
             listClubs.Columns[8].Name = "Suppression";
-            Console.WriteLine(ListClub.Count);
+            
             foreach (Club list in ListClub)
             {
                 listClubs.Rows.Add(list.id, list.nomClub, list.adresseClub, list.CPClub, list.villeClub, list.telephone, list.mail, list.siteClub, "Supprimer");
             }
         }
 
-
+        public void AfficheListAdherent(int leClub)
+        {
+            BDD listeAdherents = new BDD();
+            List<Adherent> ListeAdherent = listeAdherents.SelectAllAdherent(leClub);
+            dataGridViewListAdherents.ColumnCount = 11;
+            dataGridViewListAdherents.Columns[0].Name = "Id";
+            dataGridViewListAdherents.Columns[1].Name = "Nom Adhérent";
+            dataGridViewListAdherents.Columns[2].Name = "Prénom Adhérent";
+            dataGridViewListAdherents.Columns[3].Name = "Naissance";
+            dataGridViewListAdherents.Columns[4].Name = "Sexe";
+            dataGridViewListAdherents.Columns[5].Name = "Licence";
+            dataGridViewListAdherents.Columns[6].Name = "Adresse";
+            dataGridViewListAdherents.Columns[7].Name = "Code postal";
+            dataGridViewListAdherents.Columns[8].Name = "ville";
+            dataGridViewListAdherents.Columns[9].Name = "Cotisation";
+            dataGridViewListAdherents.Columns[10].Name = "Suppression";
+           
+            foreach (Adherent adherent in ListeAdherent)
+            {
+                dataGridViewListAdherents.Rows.Add(adherent.id, adherent.nomAdh, adherent.prenomAdh, adherent.naissance, adherent.sexe, adherent.numLicence, adherent.adresseAdh, adherent.CPAdh, adherent.villeAdh, adherent.cotisation, "Supprimer");
+            }
+        }
 
 
         private void listClubs_VisibleChanged(object sender, EventArgs e)
         {
+            panelListAdherents.Visible = false;
             AfficheList();
+           
         }
 
         private void listClubs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var nb = listClubs.Rows[e.RowIndex].Cells[0].Value.ToString();
             panel1.Visible = false;
+            panelListAdherents.Visible = false;
             panel2.Visible = true;
             idClub.Text = nb;
             BDD club1 = new BDD();
@@ -99,8 +123,7 @@ namespace Projet_WinForm
             listClubs.Columns[5].Name = "Telephone";
             listClubs.Columns[6].Name = "Contact";
             listClubs.Columns[7].Name = "Liens";
-            listClubs.Columns[8].Name = "Suppression";
-            Console.WriteLine(ListClub.Count);
+            listClubs.Columns[8].Name = "Suppression";            
             foreach (Club list in ListClub)
             {
                 listClubs.Rows.Add(list.id, list.nomClub, list.adresseClub, list.CPClub, list.villeClub, list.telephone, list.mail, list.siteClub, "Supprimer");
@@ -114,6 +137,22 @@ namespace Projet_WinForm
             Modifclub1.UpdateClub(leClub);
             confModif = new ConfirmModif();
             confModif.ShowDialog();
+        }
+
+        private void buttonRetourListeClub_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            panel2.Visible = false;
+            panelListAdherents.Visible = false;
+        }
+        
+
+        private void buttonConsultAdherent_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            panelListAdherents.Visible = true;
+            Console.WriteLine(idClub.Text);
+            AfficheListAdherent(int.Parse(idClub.Text));
         }
     }
 }

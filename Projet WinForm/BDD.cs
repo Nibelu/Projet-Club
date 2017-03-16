@@ -250,5 +250,47 @@ namespace Projet_WinForm
             return ListClub;
 
         }
+
+        public List<Adherent> SelectAllAdherent(int leClub)
+        {
+            Adherent LeAdherent = null;
+            List<Adherent> ListAdherent = new List<Adherent>();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM adherent Where id_club = @club ORDER BY id ASC";
+
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@club", leClub);
+                //Create a data reader and Execute the command
+                using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                {
+
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        LeAdherent = new Adherent(
+                            (int)dataReader["id"],
+                            (string)dataReader["nomAdh"],
+                            (string)dataReader["prenomAdh"],
+                            (DateTime)dataReader["naissance"],
+                            (string)dataReader["sexe"],
+                            (string)dataReader["numLicence"],
+                            (string)dataReader["adresseAdh"],
+                            (int)dataReader["CPAdh"],
+                            (string)dataReader["villeAdh"],
+                            (int)dataReader["cotisation"],
+                            (int)dataReader["id_club"]);
+                        ListAdherent.Add(LeAdherent);
+                    }
+                }
+            }
+
+            return ListAdherent;
+
+        }
     }
 }
