@@ -23,6 +23,7 @@ namespace Projet_WinForm
 
         public void AfficheList()
         {
+            listClubs.Rows.Clear();
             BDD liste1 = new BDD();
             List<Club> ListClub = liste1.SelectAllClub();
             listClubs.ColumnCount = 9;
@@ -44,6 +45,7 @@ namespace Projet_WinForm
 
         public void AfficheListAdherent(int leClub)
         {
+            dataGridViewListAdherents.Rows.Clear();
             BDD listeAdherents = new BDD();
             List<Adherent> ListeAdherent = listeAdherents.SelectAllAdherent(leClub);
             dataGridViewListAdherents.ColumnCount = 11;
@@ -95,7 +97,7 @@ namespace Projet_WinForm
 
         private void ajoutClub_Click(object sender, EventArgs e)
         {
-            modalAjout = new Ajout("Ajouter un Club");
+            modalAjout = new Ajout("Ajouter un Club", "", 0);
             modalAjout.FormClosed += ModalAjout_FormClosed;
             modalAjout.ShowDialog();
            
@@ -151,8 +153,48 @@ namespace Projet_WinForm
         {
             panel2.Visible = false;
             panelListAdherents.Visible = true;
-            Console.WriteLine(idClub.Text);
+            labelNomDuClub.Text = textBoxModifNameClub.Text;            
             AfficheListAdherent(int.Parse(idClub.Text));
+        }
+
+        
+
+        private void buttonRetourClub_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            panel2.Visible = true;
+            panelListAdherents.Visible = false;
+        }
+
+        private void textBoxRechercheAdherent_TextChanged(object sender, EventArgs e)
+        {
+            dataGridViewListAdherents.Rows.Clear();
+            BDD listeAdherents = new BDD();
+            List<Adherent> ListeAdherent = listeAdherents.SearchAdherent(textBoxRechercheAdherent.Text);
+            dataGridViewListAdherents.ColumnCount = 11;
+            dataGridViewListAdherents.Columns[0].Name = "Id";
+            dataGridViewListAdherents.Columns[1].Name = "Nom Adhérent";
+            dataGridViewListAdherents.Columns[2].Name = "Prénom Adhérent";
+            dataGridViewListAdherents.Columns[3].Name = "Naissance";
+            dataGridViewListAdherents.Columns[4].Name = "Sexe";
+            dataGridViewListAdherents.Columns[5].Name = "Licence";
+            dataGridViewListAdherents.Columns[6].Name = "Adresse";
+            dataGridViewListAdherents.Columns[7].Name = "Code postal";
+            dataGridViewListAdherents.Columns[8].Name = "ville";
+            dataGridViewListAdherents.Columns[9].Name = "Cotisation";
+            dataGridViewListAdherents.Columns[10].Name = "Suppression";
+
+            foreach (Adherent adherent in ListeAdherent)
+            {
+                dataGridViewListAdherents.Rows.Add(adherent.id, adherent.nomAdh, adherent.prenomAdh, adherent.naissance, adherent.sexe, adherent.numLicence, adherent.adresseAdh, adherent.CPAdh, adherent.villeAdh, adherent.cotisation, "Supprimer");
+            }
+        }
+
+        private void buttonAjoutAdherent_Click(object sender, EventArgs e)
+        {
+            modalAjout = new Ajout("Ajouter un adhérent", textBoxModifNameClub.Text, int.Parse(idClub.Text));
+           // modalAjout.FormClosed += ModalAjout_FormClosed;
+            modalAjout.ShowDialog();
         }
     }
 }

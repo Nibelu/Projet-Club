@@ -13,37 +13,60 @@ namespace Projet_WinForm
     public partial class Ajout : Form
     {
         private string leTypeAjout;
+        private string nomClub;
+        private int idClub;
         private ErrAjout erreur;
 
-        public Ajout(string typeAjout)
+        public Ajout(string typeAjout, string nomClub, int idClub)
         {
+            this.idClub = idClub;
+            this.nomClub = nomClub;
             this.leTypeAjout = typeAjout;
             InitializeComponent();
         }
 
         private void Ajout_Load(object sender, EventArgs e)
-        {
-            nomModal.Text = leTypeAjout;
+        {            
+            if (leTypeAjout.Contains("Club"))
+            {
+                panelAjoutClub.Visible = true;
+                panelCreerAdherent.Visible = false;
+                nomModal.Text = leTypeAjout;
+                labelNewAdherentNomClub.Text = nomClub;
+
+            }
+            else if (leTypeAjout.Contains("adhérent"))
+            {
+                panelAjoutClub.Visible = false;
+                panelCreerAdherent.Visible = true;
+                labelNomClubNewAdherent.Text = leTypeAjout;
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonCreerClub_Click(object sender, EventArgs e)
         {
             int CP;
             if (textBoxNom.Text != "Nom du club" && textBoxAdresse.Text != "Adresse du club" && textBoxCP.Text != "Code Postal" && textBoxVille.Text != "Ville" && textBoxtelephone.Text != "N°" && textBoxMail.Text != "email" && int.TryParse(textBoxCP.Text, out CP))
             {
-                
-                    BDD newClub = new BDD();
+
+                BDD newClub = new BDD();
                 Club nouveauClub = new Club(0, textBoxNom.Text, textBoxAdresse.Text, CP, textBoxVille.Text, textBoxtelephone.Text, textBoxMail.Text, textBoxSite.Text);
                 newClub.InsertClub(nouveauClub);
                 Close();
-                
+
             }
             else
-            { 
+            {
                 erreur = new ErrAjout();
                 erreur.ShowDialog();
             }
+        }
 
+        private void buttonCreerAdherent_Click(object sender, EventArgs e)
+        {
+            BDD newAdherent = new BDD();
+            //Adherent nouvelAdherent = new Adherent();
+            Close();
         }
     }
 }

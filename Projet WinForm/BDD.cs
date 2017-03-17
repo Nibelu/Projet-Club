@@ -251,6 +251,46 @@ namespace Projet_WinForm
 
         }
 
+        public List<Adherent> SearchAdherent(string recherche)
+        {
+            Adherent lesAdherents = null;
+            List<Adherent> ListAdherent = new List<Adherent>();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM Adherent WHERE nomAdh LIKE @recherche ORDER BY id ASC";
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@recherche", "%" + recherche + "%");
+                //Create a data reader and Execute the command
+                using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                {
+
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        lesAdherents = new Adherent(
+                            (int)dataReader["id"],
+                            (string)dataReader["nomAdh"],
+                            (string)dataReader["prenomAdh"],
+                            (DateTime)dataReader["naissance"],
+                            (string)dataReader["sexe"],
+                            (string)dataReader["numLicence"],
+                            (string)dataReader["adresseAdh"],
+                            (int)dataReader["CPAdh"],
+                            (string)dataReader["villeAdh"],
+                            (int)dataReader["cotisation"],
+                            (int)dataReader["id_club"]);
+                        ListAdherent.Add(lesAdherents);
+                    }
+
+                }
+
+            }
+
+            return ListAdherent;
+        }
+
         public List<Adherent> SelectAllAdherent(int leClub)
         {
             Adherent LeAdherent = null;
@@ -291,6 +331,31 @@ namespace Projet_WinForm
 
             return ListAdherent;
 
+        }
+
+        public void InsertAdherent(Adherent nouvelAdherent)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "INSERT INTO adherent (nomAdh, prenomAdh, naissance, sexe, numLicence, adresseAdh, CPAdh, villeAdh, cotisation, id_club) VALUES (@nom, @prenom, @naissance, @sexe, @licence, @adresse, @CP, @ville, @cotisation, @idClub)";
+
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@nom", nouvelAdherent.nomAdh);
+                cmd.Parameters.AddWithValue("@prenom", nouvelAdherent.prenomAdh);
+                cmd.Parameters.AddWithValue("@naissance", nouvelAdherent.naissance);
+                cmd.Parameters.AddWithValue("@sexe", nouvelAdherent.sexe);
+                cmd.Parameters.AddWithValue("@licence", nouvelAdherent.numLicence);
+                cmd.Parameters.AddWithValue("@adresse", nouvelAdherent.adresseAdh);
+                cmd.Parameters.AddWithValue("@CP", nouvelAdherent.CPAdh);
+                cmd.Parameters.AddWithValue("@ville", nouvelAdherent.villeAdh);
+                cmd.Parameters.AddWithValue("@cotisation", nouvelAdherent.cotisation);
+                cmd.Parameters.AddWithValue("@idClub", nouvelAdherent.id_club);
+                cmd.ExecuteReader();
+            }
         }
     }
 }
