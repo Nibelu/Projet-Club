@@ -39,18 +39,18 @@
             this.textBoxVille = new System.Windows.Forms.TextBox();
             this.textBoxNom = new System.Windows.Forms.TextBox();
             this.panelCreerAdherent = new System.Windows.Forms.Panel();
-            this.labelNomClubNewAdherent = new System.Windows.Forms.Label();
-            this.buttonCreerAdherent = new System.Windows.Forms.Button();
-            this.textBoxNewNomAdherent = new System.Windows.Forms.TextBox();
-            this.textBoxNewPrenomAdherent = new System.Windows.Forms.TextBox();
-            this.textBoxNewSexAdherent = new System.Windows.Forms.TextBox();
-            this.textBoxNewAdressAdherent = new System.Windows.Forms.TextBox();
-            this.textBoxNewCPAdherent = new System.Windows.Forms.TextBox();
-            this.textBoxNewVilleAdherent = new System.Windows.Forms.TextBox();
-            this.textBoxNewCotisationAdherent = new System.Windows.Forms.TextBox();
-            this.textBoxNewLicenceAdherent = new System.Windows.Forms.TextBox();
-            this.dateTimePickerNewNaissanceAdherent = new System.Windows.Forms.DateTimePicker();
             this.labelNewAdherentNomClub = new System.Windows.Forms.Label();
+            this.dateTimePickerNewNaissanceAdherent = new System.Windows.Forms.DateTimePicker();
+            this.textBoxNewLicenceAdherent = new System.Windows.Forms.TextBox();
+            this.textBoxNewCotisationAdherent = new System.Windows.Forms.TextBox();
+            this.textBoxNewVilleAdherent = new System.Windows.Forms.TextBox();
+            this.textBoxNewCPAdherent = new System.Windows.Forms.TextBox();
+            this.textBoxNewAdressAdherent = new System.Windows.Forms.TextBox();
+            this.textBoxNewSexAdherent = new System.Windows.Forms.TextBox();
+            this.textBoxNewPrenomAdherent = new System.Windows.Forms.TextBox();
+            this.textBoxNewNomAdherent = new System.Windows.Forms.TextBox();
+            this.buttonCreerAdherent = new System.Windows.Forms.Button();
+            this.labelNomClubNewAdherent = new System.Windows.Forms.Label();
             this.panelAjoutClub.SuspendLayout();
             this.panelCreerAdherent.SuspendLayout();
             this.SuspendLayout();
@@ -166,15 +166,86 @@
             this.panelCreerAdherent.Size = new System.Drawing.Size(674, 260);
             this.panelCreerAdherent.TabIndex = 20;
             // 
-            // labelNomClubNewAdherent
+            // labelNewAdherentNomClub
             // 
-            this.labelNomClubNewAdherent.AutoSize = true;
-            this.labelNomClubNewAdherent.Location = new System.Drawing.Point(18, 18);
-            this.labelNomClubNewAdherent.Name = "labelNomClubNewAdherent";
-            this.labelNomClubNewAdherent.Size = new System.Drawing.Size(35, 13);
-            this.labelNomClubNewAdherent.TabIndex = 17;
-            this.labelNomClubNewAdherent.Text = "label1";
-            this.labelNomClubNewAdherent.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelNewAdherentNomClub.AutoSize = true;
+            this.labelNewAdherentNomClub.Location = new System.Drawing.Point(241, 21);
+            this.labelNewAdherentNomClub.Name = "labelNewAdherentNomClub";
+            this.labelNewAdherentNomClub.Size = new System.Drawing.Size(35, 13);
+            this.labelNewAdherentNomClub.TabIndex = 29;
+            this.labelNewAdherentNomClub.Text = "label1";
+            this.labelNewAdherentNomClub.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // dateTimePickerNewNaissanceAdherent
+            // 
+            this.dateTimePickerNewNaissanceAdherent.Location = new System.Drawing.Point(21, 145);
+            this.dateTimePickerNewNaissanceAdherent.Name = "dateTimePickerNewNaissanceAdherent";
+            this.dateTimePickerNewNaissanceAdherent.Size = new System.Drawing.Size(217, 20);
+            this.dateTimePickerNewNaissanceAdherent.TabIndex = 28;
+            // 
+            // textBoxNewLicenceAdherent
+            // 
+            this.textBoxNewLicenceAdherent.Location = new System.Drawing.Point(421, 18);
+            this.textBoxNewLicenceAdherent.Name = "textBoxNewLicenceAdherent";
+            this.textBoxNewLicenceAdherent.Size = new System.Drawing.Size(217, 20);
+            this.textBoxNewLicenceAdherent.TabIndex = 27;
+            this.textBoxNewLicenceAdherent.Text = "N° de licence";
+            // 
+            // textBoxNewCotisationAdherent
+            // 
+            this.textBoxNewCotisationAdherent.Location = new System.Drawing.Point(421, 188);
+            this.textBoxNewCotisationAdherent.Name = "textBoxNewCotisationAdherent";
+            this.textBoxNewCotisationAdherent.Size = new System.Drawing.Size(217, 20);
+            this.textBoxNewCotisationAdherent.TabIndex = 26;
+            this.textBoxNewCotisationAdherent.Text = "Montant de la cotisation";
+            // 
+            // textBoxNewVilleAdherent
+            // 
+            this.textBoxNewVilleAdherent.Location = new System.Drawing.Point(421, 145);
+            this.textBoxNewVilleAdherent.Name = "textBoxNewVilleAdherent";
+            this.textBoxNewVilleAdherent.Size = new System.Drawing.Size(217, 20);
+            this.textBoxNewVilleAdherent.TabIndex = 25;
+            this.textBoxNewVilleAdherent.Text = "Ville";
+            // 
+            // textBoxNewCPAdherent
+            // 
+            this.textBoxNewCPAdherent.Location = new System.Drawing.Point(421, 106);
+            this.textBoxNewCPAdherent.Name = "textBoxNewCPAdherent";
+            this.textBoxNewCPAdherent.Size = new System.Drawing.Size(217, 20);
+            this.textBoxNewCPAdherent.TabIndex = 24;
+            this.textBoxNewCPAdherent.Text = "Code Postal";
+            // 
+            // textBoxNewAdressAdherent
+            // 
+            this.textBoxNewAdressAdherent.Location = new System.Drawing.Point(421, 74);
+            this.textBoxNewAdressAdherent.Name = "textBoxNewAdressAdherent";
+            this.textBoxNewAdressAdherent.Size = new System.Drawing.Size(217, 20);
+            this.textBoxNewAdressAdherent.TabIndex = 23;
+            this.textBoxNewAdressAdherent.Text = "Adresse de l\'adhérent";
+            // 
+            // textBoxNewSexAdherent
+            // 
+            this.textBoxNewSexAdherent.Location = new System.Drawing.Point(21, 188);
+            this.textBoxNewSexAdherent.Name = "textBoxNewSexAdherent";
+            this.textBoxNewSexAdherent.Size = new System.Drawing.Size(217, 20);
+            this.textBoxNewSexAdherent.TabIndex = 22;
+            this.textBoxNewSexAdherent.Text = "Sexe";
+            // 
+            // textBoxNewPrenomAdherent
+            // 
+            this.textBoxNewPrenomAdherent.Location = new System.Drawing.Point(21, 106);
+            this.textBoxNewPrenomAdherent.Name = "textBoxNewPrenomAdherent";
+            this.textBoxNewPrenomAdherent.Size = new System.Drawing.Size(217, 20);
+            this.textBoxNewPrenomAdherent.TabIndex = 20;
+            this.textBoxNewPrenomAdherent.Text = "Prénom de l\'adhérent";
+            // 
+            // textBoxNewNomAdherent
+            // 
+            this.textBoxNewNomAdherent.Location = new System.Drawing.Point(21, 74);
+            this.textBoxNewNomAdherent.Name = "textBoxNewNomAdherent";
+            this.textBoxNewNomAdherent.Size = new System.Drawing.Size(217, 20);
+            this.textBoxNewNomAdherent.TabIndex = 19;
+            this.textBoxNewNomAdherent.Text = "Nom de l\'adhérent";
             // 
             // buttonCreerAdherent
             // 
@@ -186,86 +257,15 @@
             this.buttonCreerAdherent.UseVisualStyleBackColor = true;
             this.buttonCreerAdherent.Click += new System.EventHandler(this.buttonCreerAdherent_Click);
             // 
-            // textBoxNewNomAdherent
+            // labelNomClubNewAdherent
             // 
-            this.textBoxNewNomAdherent.Location = new System.Drawing.Point(21, 74);
-            this.textBoxNewNomAdherent.Name = "textBoxNewNomAdherent";
-            this.textBoxNewNomAdherent.Size = new System.Drawing.Size(217, 20);
-            this.textBoxNewNomAdherent.TabIndex = 19;
-            this.textBoxNewNomAdherent.Text = "Nom de l\'adhérent";
-            // 
-            // textBoxNewPrenomAdherent
-            // 
-            this.textBoxNewPrenomAdherent.Location = new System.Drawing.Point(21, 106);
-            this.textBoxNewPrenomAdherent.Name = "textBoxNewPrenomAdherent";
-            this.textBoxNewPrenomAdherent.Size = new System.Drawing.Size(217, 20);
-            this.textBoxNewPrenomAdherent.TabIndex = 20;
-            this.textBoxNewPrenomAdherent.Text = "Prénom de l\'adhérent";
-            // 
-            // textBoxNewSexAdherent
-            // 
-            this.textBoxNewSexAdherent.Location = new System.Drawing.Point(21, 188);
-            this.textBoxNewSexAdherent.Name = "textBoxNewSexAdherent";
-            this.textBoxNewSexAdherent.Size = new System.Drawing.Size(217, 20);
-            this.textBoxNewSexAdherent.TabIndex = 22;
-            this.textBoxNewSexAdherent.Text = "Sexe";
-            // 
-            // textBoxNewAdressAdherent
-            // 
-            this.textBoxNewAdressAdherent.Location = new System.Drawing.Point(421, 74);
-            this.textBoxNewAdressAdherent.Name = "textBoxNewAdressAdherent";
-            this.textBoxNewAdressAdherent.Size = new System.Drawing.Size(217, 20);
-            this.textBoxNewAdressAdherent.TabIndex = 23;
-            this.textBoxNewAdressAdherent.Text = "Adresse de l\'adhérent";
-            // 
-            // textBoxNewCPAdherent
-            // 
-            this.textBoxNewCPAdherent.Location = new System.Drawing.Point(421, 106);
-            this.textBoxNewCPAdherent.Name = "textBoxNewCPAdherent";
-            this.textBoxNewCPAdherent.Size = new System.Drawing.Size(217, 20);
-            this.textBoxNewCPAdherent.TabIndex = 24;
-            this.textBoxNewCPAdherent.Text = "Code Postal";
-            // 
-            // textBoxNewVilleAdherent
-            // 
-            this.textBoxNewVilleAdherent.Location = new System.Drawing.Point(421, 145);
-            this.textBoxNewVilleAdherent.Name = "textBoxNewVilleAdherent";
-            this.textBoxNewVilleAdherent.Size = new System.Drawing.Size(217, 20);
-            this.textBoxNewVilleAdherent.TabIndex = 25;
-            this.textBoxNewVilleAdherent.Text = "Ville";
-            // 
-            // textBoxNewCotisationAdherent
-            // 
-            this.textBoxNewCotisationAdherent.Location = new System.Drawing.Point(421, 188);
-            this.textBoxNewCotisationAdherent.Name = "textBoxNewCotisationAdherent";
-            this.textBoxNewCotisationAdherent.Size = new System.Drawing.Size(217, 20);
-            this.textBoxNewCotisationAdherent.TabIndex = 26;
-            this.textBoxNewCotisationAdherent.Text = "Montant de la cotisation";
-            // 
-            // textBoxNewLicenceAdherent
-            // 
-            this.textBoxNewLicenceAdherent.Location = new System.Drawing.Point(421, 18);
-            this.textBoxNewLicenceAdherent.Name = "textBoxNewLicenceAdherent";
-            this.textBoxNewLicenceAdherent.Size = new System.Drawing.Size(217, 20);
-            this.textBoxNewLicenceAdherent.TabIndex = 27;
-            this.textBoxNewLicenceAdherent.Text = "N° de licence";
-            // 
-            // dateTimePickerNewNaissanceAdherent
-            // 
-            this.dateTimePickerNewNaissanceAdherent.Location = new System.Drawing.Point(21, 145);
-            this.dateTimePickerNewNaissanceAdherent.Name = "dateTimePickerNewNaissanceAdherent";
-            this.dateTimePickerNewNaissanceAdherent.Size = new System.Drawing.Size(217, 20);
-            this.dateTimePickerNewNaissanceAdherent.TabIndex = 28;
-            // 
-            // labelNewAdherentNomClub
-            // 
-            this.labelNewAdherentNomClub.AutoSize = true;
-            this.labelNewAdherentNomClub.Location = new System.Drawing.Point(241, 21);
-            this.labelNewAdherentNomClub.Name = "labelNewAdherentNomClub";
-            this.labelNewAdherentNomClub.Size = new System.Drawing.Size(35, 13);
-            this.labelNewAdherentNomClub.TabIndex = 29;
-            this.labelNewAdherentNomClub.Text = "label1";
-            this.labelNewAdherentNomClub.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelNomClubNewAdherent.AutoSize = true;
+            this.labelNomClubNewAdherent.Location = new System.Drawing.Point(18, 18);
+            this.labelNomClubNewAdherent.Name = "labelNomClubNewAdherent";
+            this.labelNomClubNewAdherent.Size = new System.Drawing.Size(35, 13);
+            this.labelNomClubNewAdherent.TabIndex = 17;
+            this.labelNomClubNewAdherent.Text = "label1";
+            this.labelNomClubNewAdherent.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Ajout
             // 

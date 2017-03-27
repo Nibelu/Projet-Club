@@ -107,7 +107,9 @@ namespace Projet_WinForm
         private void ModalAjout_FormClosed(object sender, FormClosedEventArgs e)
         {
             listClubs.Rows.Clear();
+            dataGridViewListAdherents.Rows.Clear();
             AfficheList();
+            AfficheListAdherent(int.Parse(idClub.Text));
         }
 
         private void textBoxRecherche_TextChanged(object sender, EventArgs e)
@@ -192,8 +194,8 @@ namespace Projet_WinForm
 
         private void buttonAjoutAdherent_Click(object sender, EventArgs e)
         {
-            modalAjout = new Ajout("Ajouter un adhérent", textBoxModifNameClub.Text, int.Parse(idClub.Text));
-           // modalAjout.FormClosed += ModalAjout_FormClosed;
+            modalAjout = new Ajout("Ajouter un adhérent", labelNomDuClub.Text, int.Parse(idClub.Text));
+            modalAjout.FormClosed += ModalAjout_FormClosed;
             modalAjout.ShowDialog();
         }
     }

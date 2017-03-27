@@ -32,7 +32,7 @@ namespace Projet_WinForm
                 panelAjoutClub.Visible = true;
                 panelCreerAdherent.Visible = false;
                 nomModal.Text = leTypeAjout;
-                labelNewAdherentNomClub.Text = nomClub;
+                
 
             }
             else if (leTypeAjout.Contains("adhérent"))
@@ -40,6 +40,7 @@ namespace Projet_WinForm
                 panelAjoutClub.Visible = false;
                 panelCreerAdherent.Visible = true;
                 labelNomClubNewAdherent.Text = leTypeAjout;
+                labelNewAdherentNomClub.Text = nomClub;
             }
         }
 
@@ -48,12 +49,10 @@ namespace Projet_WinForm
             int CP;
             if (textBoxNom.Text != "Nom du club" && textBoxAdresse.Text != "Adresse du club" && textBoxCP.Text != "Code Postal" && textBoxVille.Text != "Ville" && textBoxtelephone.Text != "N°" && textBoxMail.Text != "email" && int.TryParse(textBoxCP.Text, out CP))
             {
-
                 BDD newClub = new BDD();
                 Club nouveauClub = new Club(0, textBoxNom.Text, textBoxAdresse.Text, CP, textBoxVille.Text, textBoxtelephone.Text, textBoxMail.Text, textBoxSite.Text);
                 newClub.InsertClub(nouveauClub);
                 Close();
-
             }
             else
             {
@@ -64,9 +63,23 @@ namespace Projet_WinForm
 
         private void buttonCreerAdherent_Click(object sender, EventArgs e)
         {
-            BDD newAdherent = new BDD();
-            //Adherent nouvelAdherent = new Adherent();
-            Close();
+             int CP;
+            int cot;
+             DateTime thisDay = DateTime.Today;
+             if (dateTimePickerNewNaissanceAdherent.Value != thisDay && textBoxNewNomAdherent.Text != "Nom de l'adhérent" && textBoxNewPrenomAdherent.Text != "Prénom de l'adhérent" && textBoxNewSexAdherent.Text != "Sexe" && textBoxNewLicenceAdherent.Text != "N° de licence" && textBoxNewAdressAdherent.Text != "Adresse de l'adhérent" && textBoxNewCPAdherent.Text != "Code Postal" && textBoxNewVilleAdherent.Text != "Ville" && textBoxNewCotisationAdherent.Text != "Montant de la cotisation" && int.TryParse(textBoxNewCPAdherent.Text, out CP) && int.TryParse(textBoxNewCotisationAdherent.Text, out cot))
+             {
+                 BDD newAdherent = new BDD();
+                 Adherent nouvelAdherent = new Adherent(0, textBoxNewNomAdherent.Text, textBoxNewPrenomAdherent.Text, dateTimePickerNewNaissanceAdherent.Value, textBoxNewSexAdherent.Text, textBoxNewLicenceAdherent.Text, textBoxNewAdressAdherent.Text, CP, textBoxNewVilleAdherent.Text, cot, idClub);
+                 newAdherent.InsertAdherent(nouvelAdherent);
+                 Close();
+             }
+             else
+             {
+                 erreur = new ErrAjout();
+                 erreur.ShowDialog();
+             }  
         }
+
+
     }
 }

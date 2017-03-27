@@ -355,6 +355,8 @@ namespace Projet_WinForm
                 cmd.Parameters.AddWithValue("@cotisation", nouvelAdherent.cotisation);
                 cmd.Parameters.AddWithValue("@idClub", nouvelAdherent.id_club);
                 cmd.ExecuteReader();
+
+
             }
         }
     }
