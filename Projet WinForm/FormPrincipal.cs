@@ -67,10 +67,38 @@ namespace Projet_WinForm
             }
         }
 
+        public void AfficheListEvent(int leClub)
+        {
+            dataGridViewListEvent.Rows.Clear();
+            BDD listeEvents = new BDD();
+            List<Evenement> listeEvenement = listeEvents.SelectAllEvent(leClub);
+            dataGridViewListEvent.ColumnCount = 11;
+            dataGridViewListEvent.Columns[0].Name = "Id";
+            dataGridViewListEvent.Columns[1].Name = "Type d'évènement";
+            dataGridViewListEvent.Columns[2].Name = "Nom évènement";
+            dataGridViewListEvent.Columns[3].Name = "Adresse évènement";
+            dataGridViewListEvent.Columns[4].Name = "Code Postal";
+            dataGridViewListEvent.Columns[5].Name = "Ville évènement";
+            dataGridViewListEvent.Columns[6].Name = "Liens";
+            dataGridViewListEvent.Columns[7].Name = "Début";
+            dataGridViewListEvent.Columns[8].Name = "Fin";
+            dataGridViewListEvent.Columns[9].Name = "Participants";
+            dataGridViewListEvent.Columns[10].Name = "Suppression";
+            
+            foreach (Evenement Event in listeEvenement)
+            {
+                dataGridViewListEvent.Rows.Add(Event.id, Event.typeEvent, Event.nomEvent, Event.adresseEvent, Event.CPEvent, Event.villeEvent, Event.siteEvent, Event.dateDebutEvent, Event.dateFinEvent, Event.nbParticipants, "Supprimer");
+            }
+
+        }
+
 
         private void listClubs_VisibleChanged(object sender, EventArgs e)
         {
+            panel1.Visible = true;
+            panelConsultEvent.Visible = false;
             panelListAdherents.Visible = false;
+            PanelModifAdherent.Visible = false;
             AfficheList();
            
         }
@@ -172,7 +200,7 @@ namespace Projet_WinForm
         {
             dataGridViewListAdherents.Rows.Clear();
             BDD listeAdherents = new BDD();
-            List<Adherent> ListeAdherent = listeAdherents.SearchAdherent(textBoxRechercheAdherent.Text);
+            List<Adherent> ListeAdherent = listeAdherents.SearchAdherent(textBoxRechercheAdherent.Text, int.Parse(idClub.Text));
             dataGridViewListAdherents.ColumnCount = 11;
             dataGridViewListAdherents.Columns[0].Name = "Id";
             dataGridViewListAdherents.Columns[1].Name = "Nom Adhérent";
@@ -198,5 +226,117 @@ namespace Projet_WinForm
             modalAjout.FormClosed += ModalAjout_FormClosed;
             modalAjout.ShowDialog();
         }
+
+        private void dataGridViewListAdherents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+             var LaCellule = dataGridViewListAdherents.Rows[e.RowIndex].Cells[0].Value.ToString();            
+             panelListAdherents.Visible = false;
+             PanelModifAdherent.Visible = true;
+             labelIdAdhModif.Text = LaCellule;
+             BDD UnAdherent = new BDD();             
+             Adherent ThisAdherent = UnAdherent.ReadAdherent(int.Parse(LaCellule));    
+             Club clubDeLAdh = UnAdherent.ReadClub(ThisAdherent.id_club);
+             labelNomClubAdhModif.Text = clubDeLAdh.nomClub;
+             labelIdAdhModif.Text = ThisAdherent.id.ToString();             
+             textBoxNomAdhModif.Text = ThisAdherent.nomAdh;
+             textBoxPrenomAdhModif.Text = ThisAdherent.prenomAdh;
+             textBoxSexeAdhModif.Text = ThisAdherent.sexe;
+             dateTimePickerNaissanceAdhModif.Value = ThisAdherent.naissance;
+             textBoxLicenceAdhModif.Text = ThisAdherent.numLicence;
+             textBoxAdresseAdhModif.Text = ThisAdherent.adresseAdh;
+             textBoxCPAdhModif.Text = ThisAdherent.CPAdh.ToString();
+             textBoxVilleAdhModif.Text = ThisAdherent.villeAdh;
+             textBoxCotisationAdhModif.Text = ThisAdherent.cotisation.ToString();
+
+             labelIdClubAdh.Text = ThisAdherent.id_club.ToString();
+        }
+
+        private void buttonModifierAdherent_Click(object sender, EventArgs e)
+        {
+            BDD ModifAdh1 = new BDD();
+            Adherent LAdherent = new Adherent(int.Parse(labelIdAdhModif.Text), textBoxNomAdhModif.Text, textBoxPrenomAdhModif.Text, dateTimePickerNaissanceAdhModif.Value, textBoxSexeAdhModif.Text, textBoxLicenceAdhModif.Text, textBoxAdresseAdhModif.Text, int.Parse(textBoxCPAdhModif.Text), textBoxVilleAdhModif.Text, int.Parse(textBoxCotisationAdhModif.Text), int.Parse(labelIdClubAdh.Text));
+            ModifAdh1.UpdateAdherent(LAdherent);
+            confModif = new ConfirmModif();
+            confModif.ShowDialog();
+        }
+
+        private void buttonBackToListAdherent_Click(object sender, EventArgs e)
+        {
+            panelListAdherents.Visible = true;
+            PanelModifAdherent.Visible = false;
+        }
+
+        private void buttonConsultEvent_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            panelConsultEvent.Visible = true;
+            labelNomClubOnEvent.Text = textBoxModifNameClub.Text;
+            AfficheListEvent(int.Parse(idClub.Text));
+        }
+
+        private void buttonBackToClubFromEvent_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+            panelConsultEvent.Visible = false;
+        }
+
+        private void textBoxSearchEvent_TextChanged(object sender, EventArgs e)
+        {
+            dataGridViewListEvent.Rows.Clear();
+            BDD listeEvents = new BDD();
+            List<Evenement> listeEvenement = listeEvents.SearchEvent(textBoxSearchEvent.Text, int.Parse(idClub.Text));
+            dataGridViewListEvent.ColumnCount = 11;
+            dataGridViewListEvent.Columns[0].Name = "Id";
+            dataGridViewListEvent.Columns[1].Name = "Type d'évènement";
+            dataGridViewListEvent.Columns[2].Name = "Nom évènement";
+            dataGridViewListEvent.Columns[3].Name = "Adresse évènement";
+            dataGridViewListEvent.Columns[4].Name = "Code Postal";
+            dataGridViewListEvent.Columns[5].Name = "Ville évènement";
+            dataGridViewListEvent.Columns[6].Name = "Liens";
+            dataGridViewListEvent.Columns[7].Name = "Début";
+            dataGridViewListEvent.Columns[8].Name = "Fin";
+            dataGridViewListEvent.Columns[9].Name = "Participants";
+            dataGridViewListEvent.Columns[10].Name = "Suppression";
+
+            foreach (Evenement Event in listeEvenement)
+            {
+                dataGridViewListEvent.Rows.Add(Event.id, Event.typeEvent, Event.nomEvent, Event.adresseEvent, Event.CPEvent, Event.villeEvent, Event.siteEvent, Event.dateDebutEvent, Event.dateFinEvent, Event.nbParticipants, "Supprimer");
+            }
+        }
+
+        /* modifEvent
+        private void dataGridViewListAdherents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+             var LaCellule = dataGridViewListEvent.Rows[e.RowIndex].Cells[0].Value.ToString();            
+             panelListAdherents.Visible = false;
+             PanelModifAdherent.Visible = true;
+             labelIdAdhModif.Text = LaCellule;
+             BDD UnAdherent = new BDD();             
+             Adherent ThisAdherent = UnAdherent.ReadAdherent(int.Parse(LaCellule));    
+             Club clubDeLAdh = UnAdherent.ReadClub(ThisAdherent.id_club);
+             labelNomClubAdhModif.Text = clubDeLAdh.nomClub;
+             labelIdAdhModif.Text = ThisAdherent.id.ToString();             
+             textBoxNomAdhModif.Text = ThisAdherent.nomAdh;
+             textBoxPrenomAdhModif.Text = ThisAdherent.prenomAdh;
+             textBoxSexeAdhModif.Text = ThisAdherent.sexe;
+             dateTimePickerNaissanceAdhModif.Value = ThisAdherent.naissance;
+             textBoxLicenceAdhModif.Text = ThisAdherent.numLicence;
+             textBoxAdresseAdhModif.Text = ThisAdherent.adresseAdh;
+             textBoxCPAdhModif.Text = ThisAdherent.CPAdh.ToString();
+             textBoxVilleAdhModif.Text = ThisAdherent.villeAdh;
+             textBoxCotisationAdhModif.Text = ThisAdherent.cotisation.ToString();
+
+             labelIdClubAdh.Text = ThisAdherent.id_club.ToString();
+        }
+
+        private void buttonModifierAdherent_Click(object sender, EventArgs e)
+        {
+            BDD ModifAdh1 = new BDD();
+            Adherent LAdherent = new Adherent(int.Parse(labelIdAdhModif.Text), textBoxNomAdhModif.Text, textBoxPrenomAdhModif.Text, dateTimePickerNaissanceAdhModif.Value, textBoxSexeAdhModif.Text, textBoxLicenceAdhModif.Text, textBoxAdresseAdhModif.Text, int.Parse(textBoxCPAdhModif.Text), textBoxVilleAdhModif.Text, int.Parse(textBoxCotisationAdhModif.Text), int.Parse(labelIdClubAdh.Text));
+            ModifAdh1.UpdateAdherent(LAdherent);
+            confModif = new ConfirmModif();
+            confModif.ShowDialog();
+        }
+        */
     }
 }

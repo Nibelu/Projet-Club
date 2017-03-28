@@ -8,25 +8,33 @@ namespace Projet_WinForm
 {
     class Evenement
     {
-        //ici tous les champs d'evenement
-       /* public string nomClub { set; get; }
-        public string adresseClub { set; get; }
-        public int CPClub { set; get; }
-        public string villeClub { set; get; }
-        public string telephone { set; get; }
-        public string mail { set; get; }
-        public string siteClub { set; get; }*/
+        public int id { set; get; }
+        public string typeEvent { set; get; }
+        public string nomEvent { set; get; }
+        public string adresseEvent { set; get; }
+        public int CPEvent { set; get; }
+        public string villeEvent { set; get; }
+        public string siteEvent { set; get; }
+        public DateTime dateDebutEvent { set; get; } 
+        public DateTime dateFinEvent { set; get; }
+        public int nbParticipants { set; get; }
+        public int id_club { set; get; }
 
         //ici le contructeur evenement
-        public Evenement (/*string nomClub, string adresseClub, int CPClub, string villeClub, string telephone, string mail, string siteClub*/)
+        public Evenement (int id, string typeEvent, string nomEvent, string adresseEvent, int CPEvent, string villeEvent, string siteEvent, DateTime dateDebutEvent, DateTime dateFinEvent, int nbParticipants, int id_club)
         {
-            /*this.nomClub = nomClub;
-            this.adresseClub = adresseClub;
-            this.CPClub = CPClub;
-            this.villeClub = villeClub;
-            this.telephone = telephone;
-            this.mail = mail;
-            this.siteClub = siteClub;*/
+            this.id = id;
+            this.typeEvent = typeEvent;
+            this.nomEvent = nomEvent;
+            this.adresseEvent = adresseEvent;
+            this.CPEvent = CPEvent;
+            this.villeEvent = villeEvent;
+            this.siteEvent = siteEvent;
+            this.dateDebutEvent = dateDebutEvent;
+            this.dateFinEvent = dateFinEvent;
+            this.nbParticipants = nbParticipants;
+            this.id_club = id_club;
+            
 
         }
     }
