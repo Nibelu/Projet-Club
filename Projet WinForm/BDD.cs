@@ -444,5 +444,91 @@ namespace Projet_WinForm
              }
              return ListEvent;
          }
+
+        public void InsertEvent(Evenement nouvelEvent)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "INSERT INTO evenement (typeEvent, nomEvent, adresseEvent, CPEvent, villeEvent, siteEvent, dateDebutEvent, dateFinEvent, nbParticipants, id_club) VALUES (@type, @nom, @adresse, @CP, @ville, @site, @dateDebut, @dateFin, @nbPart, @idClub)";
+
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@type", nouvelEvent.typeEvent);
+                cmd.Parameters.AddWithValue("@nom", nouvelEvent.nomEvent);
+                cmd.Parameters.AddWithValue("@adresse", nouvelEvent.adresseEvent);
+                cmd.Parameters.AddWithValue("@CP", nouvelEvent.CPEvent);
+                cmd.Parameters.AddWithValue("@ville", nouvelEvent.villeEvent);
+                cmd.Parameters.AddWithValue("@site", nouvelEvent.siteEvent);
+                cmd.Parameters.AddWithValue("@dateDebut", nouvelEvent.dateDebutEvent);
+                cmd.Parameters.AddWithValue("@dateFin", nouvelEvent.dateFinEvent);
+                cmd.Parameters.AddWithValue("@nbPart", nouvelEvent.nbParticipants);
+                cmd.Parameters.AddWithValue("@idClub", nouvelEvent.id_club);
+                cmd.ExecuteReader();
+
+
+            }
+        }
+
+        public Evenement ReadEvent(int id)
+        {
+            Evenement ThisEvent = null;
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM evenement where id=@id";
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", id);
+                //Create a data reader and Execute the command
+                using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                {
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        ThisEvent = new Evenement(
+                            (int)dataReader["id"],
+                            (string)dataReader["typeEvent"],
+                            (string)dataReader["nomEvent"],
+                            (string)dataReader["adresseEvent"],
+                            (int)dataReader["CPEvent"],
+                            (string)dataReader["villeEvent"],
+                            (string)dataReader["siteEvent"],
+                            (DateTime)dataReader["dateDebutEvent"],
+                            (DateTime)dataReader["dateFinEvent"],
+                            (int)dataReader["nbParticipants"],
+                            (int)dataReader["id_club"]);                        
+                    }
+                }
+            }
+            return ThisEvent;
+        }
+
+        public void UpdateEvent(Evenement ModifEvent)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE evenement SET typeEvent = @type, nomEvent = @nom, adresseEvent = @adresse, CPEvent = @CP, villeEvent = @ville, siteEvent = @site, dateDebutEvent = @dateDebut, dateFinEvent = @dateFin WHERE id = @id";
+
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", ModifEvent.id);
+                cmd.Parameters.AddWithValue("@nom", ModifEvent.nomEvent);
+                cmd.Parameters.AddWithValue("@type", ModifEvent.typeEvent);
+                cmd.Parameters.AddWithValue("@adresse", ModifEvent.adresseEvent);
+                cmd.Parameters.AddWithValue("@CP", ModifEvent.CPEvent);
+                cmd.Parameters.AddWithValue("@ville", ModifEvent.villeEvent);
+                cmd.Parameters.AddWithValue("@site", ModifEvent.siteEvent);
+                cmd.Parameters.AddWithValue("@dateDebut", ModifEvent.dateDebutEvent);
+                cmd.Parameters.AddWithValue("@dateFin", ModifEvent.dateFinEvent);
+                cmd.ExecuteReader();
+                //cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

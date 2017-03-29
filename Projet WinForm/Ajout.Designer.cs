@@ -51,8 +51,29 @@
             this.textBoxNewNomAdherent = new System.Windows.Forms.TextBox();
             this.buttonCreerAdherent = new System.Windows.Forms.Button();
             this.labelNomClubNewAdherent = new System.Windows.Forms.Label();
+            this.panelAjoutEvent = new System.Windows.Forms.Panel();
+            this.labelTypeAjoutEvent = new System.Windows.Forms.Label();
+            this.labelNomClubAjoutEvent = new System.Windows.Forms.Label();
+            this.textBoxNewNomEvent = new System.Windows.Forms.TextBox();
+            this.textBoxNewAdresseEvent = new System.Windows.Forms.TextBox();
+            this.textBoxNewCPEvent = new System.Windows.Forms.TextBox();
+            this.textBoxNewVilleEvent = new System.Windows.Forms.TextBox();
+            this.textBoxNewTypeEvent = new System.Windows.Forms.TextBox();
+            this.textBoxNewStieEvent = new System.Windows.Forms.TextBox();
+            this.labelAjoutNomEvent = new System.Windows.Forms.Label();
+            this.labelAjoutLieuEvent = new System.Windows.Forms.Label();
+            this.labelAjoutCPEvent = new System.Windows.Forms.Label();
+            this.labelAjoutVilleEvent = new System.Windows.Forms.Label();
+            this.labelAjoutTypeEvent = new System.Windows.Forms.Label();
+            this.labelAjoutDateDebutEvent = new System.Windows.Forms.Label();
+            this.labelAjoutDateFinEvent = new System.Windows.Forms.Label();
+            this.labelAjoutSiteEvent = new System.Windows.Forms.Label();
+            this.buttonCreateEvent = new System.Windows.Forms.Button();
+            this.dateTimePickerNewDebutEvent = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerNewFinEvent = new System.Windows.Forms.DateTimePicker();
             this.panelAjoutClub.SuspendLayout();
             this.panelCreerAdherent.SuspendLayout();
+            this.panelAjoutEvent.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAjoutClub
@@ -267,13 +288,196 @@
             this.labelNomClubNewAdherent.Text = "label1";
             this.labelNomClubNewAdherent.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // panelAjoutEvent
+            // 
+            this.panelAjoutEvent.Controls.Add(this.dateTimePickerNewFinEvent);
+            this.panelAjoutEvent.Controls.Add(this.dateTimePickerNewDebutEvent);
+            this.panelAjoutEvent.Controls.Add(this.buttonCreateEvent);
+            this.panelAjoutEvent.Controls.Add(this.labelAjoutSiteEvent);
+            this.panelAjoutEvent.Controls.Add(this.labelAjoutDateFinEvent);
+            this.panelAjoutEvent.Controls.Add(this.labelAjoutDateDebutEvent);
+            this.panelAjoutEvent.Controls.Add(this.labelAjoutTypeEvent);
+            this.panelAjoutEvent.Controls.Add(this.labelAjoutVilleEvent);
+            this.panelAjoutEvent.Controls.Add(this.labelAjoutCPEvent);
+            this.panelAjoutEvent.Controls.Add(this.labelAjoutLieuEvent);
+            this.panelAjoutEvent.Controls.Add(this.labelAjoutNomEvent);
+            this.panelAjoutEvent.Controls.Add(this.textBoxNewStieEvent);
+            this.panelAjoutEvent.Controls.Add(this.textBoxNewTypeEvent);
+            this.panelAjoutEvent.Controls.Add(this.textBoxNewVilleEvent);
+            this.panelAjoutEvent.Controls.Add(this.textBoxNewCPEvent);
+            this.panelAjoutEvent.Controls.Add(this.textBoxNewAdresseEvent);
+            this.panelAjoutEvent.Controls.Add(this.textBoxNewNomEvent);
+            this.panelAjoutEvent.Controls.Add(this.labelNomClubAjoutEvent);
+            this.panelAjoutEvent.Controls.Add(this.labelTypeAjoutEvent);
+            this.panelAjoutEvent.Location = new System.Drawing.Point(3, 1);
+            this.panelAjoutEvent.Name = "panelAjoutEvent";
+            this.panelAjoutEvent.Size = new System.Drawing.Size(673, 261);
+            this.panelAjoutEvent.TabIndex = 21;
+            // 
+            // labelTypeAjoutEvent
+            // 
+            this.labelTypeAjoutEvent.AutoSize = true;
+            this.labelTypeAjoutEvent.Location = new System.Drawing.Point(26, 28);
+            this.labelTypeAjoutEvent.Name = "labelTypeAjoutEvent";
+            this.labelTypeAjoutEvent.Size = new System.Drawing.Size(35, 13);
+            this.labelTypeAjoutEvent.TabIndex = 0;
+            this.labelTypeAjoutEvent.Text = "label1";
+            // 
+            // labelNomClubAjoutEvent
+            // 
+            this.labelNomClubAjoutEvent.AutoSize = true;
+            this.labelNomClubAjoutEvent.Location = new System.Drawing.Point(340, 28);
+            this.labelNomClubAjoutEvent.Name = "labelNomClubAjoutEvent";
+            this.labelNomClubAjoutEvent.Size = new System.Drawing.Size(35, 13);
+            this.labelNomClubAjoutEvent.TabIndex = 1;
+            this.labelNomClubAjoutEvent.Text = "label1";
+            // 
+            // textBoxNewNomEvent
+            // 
+            this.textBoxNewNomEvent.Location = new System.Drawing.Point(104, 65);
+            this.textBoxNewNomEvent.Name = "textBoxNewNomEvent";
+            this.textBoxNewNomEvent.Size = new System.Drawing.Size(183, 20);
+            this.textBoxNewNomEvent.TabIndex = 2;
+            // 
+            // textBoxNewAdresseEvent
+            // 
+            this.textBoxNewAdresseEvent.Location = new System.Drawing.Point(104, 106);
+            this.textBoxNewAdresseEvent.Name = "textBoxNewAdresseEvent";
+            this.textBoxNewAdresseEvent.Size = new System.Drawing.Size(183, 20);
+            this.textBoxNewAdresseEvent.TabIndex = 3;
+            // 
+            // textBoxNewCPEvent
+            // 
+            this.textBoxNewCPEvent.Location = new System.Drawing.Point(104, 148);
+            this.textBoxNewCPEvent.Name = "textBoxNewCPEvent";
+            this.textBoxNewCPEvent.Size = new System.Drawing.Size(183, 20);
+            this.textBoxNewCPEvent.TabIndex = 4;
+            // 
+            // textBoxNewVilleEvent
+            // 
+            this.textBoxNewVilleEvent.Location = new System.Drawing.Point(104, 188);
+            this.textBoxNewVilleEvent.Name = "textBoxNewVilleEvent";
+            this.textBoxNewVilleEvent.Size = new System.Drawing.Size(183, 20);
+            this.textBoxNewVilleEvent.TabIndex = 5;
+            // 
+            // textBoxNewTypeEvent
+            // 
+            this.textBoxNewTypeEvent.Location = new System.Drawing.Point(464, 65);
+            this.textBoxNewTypeEvent.Name = "textBoxNewTypeEvent";
+            this.textBoxNewTypeEvent.Size = new System.Drawing.Size(183, 20);
+            this.textBoxNewTypeEvent.TabIndex = 6;
+            // 
+            // textBoxNewStieEvent
+            // 
+            this.textBoxNewStieEvent.Location = new System.Drawing.Point(464, 188);
+            this.textBoxNewStieEvent.Name = "textBoxNewStieEvent";
+            this.textBoxNewStieEvent.Size = new System.Drawing.Size(183, 20);
+            this.textBoxNewStieEvent.TabIndex = 9;
+            // 
+            // labelAjoutNomEvent
+            // 
+            this.labelAjoutNomEvent.AutoSize = true;
+            this.labelAjoutNomEvent.Location = new System.Drawing.Point(26, 72);
+            this.labelAjoutNomEvent.Name = "labelAjoutNomEvent";
+            this.labelAjoutNomEvent.Size = new System.Drawing.Size(35, 13);
+            this.labelAjoutNomEvent.TabIndex = 11;
+            this.labelAjoutNomEvent.Text = "Nom :";
+            // 
+            // labelAjoutLieuEvent
+            // 
+            this.labelAjoutLieuEvent.AutoSize = true;
+            this.labelAjoutLieuEvent.Location = new System.Drawing.Point(26, 113);
+            this.labelAjoutLieuEvent.Name = "labelAjoutLieuEvent";
+            this.labelAjoutLieuEvent.Size = new System.Drawing.Size(33, 13);
+            this.labelAjoutLieuEvent.TabIndex = 12;
+            this.labelAjoutLieuEvent.Text = "Lieu :";
+            // 
+            // labelAjoutCPEvent
+            // 
+            this.labelAjoutCPEvent.AutoSize = true;
+            this.labelAjoutCPEvent.Location = new System.Drawing.Point(26, 155);
+            this.labelAjoutCPEvent.Name = "labelAjoutCPEvent";
+            this.labelAjoutCPEvent.Size = new System.Drawing.Size(70, 13);
+            this.labelAjoutCPEvent.TabIndex = 13;
+            this.labelAjoutCPEvent.Text = "Code Postal :";
+            // 
+            // labelAjoutVilleEvent
+            // 
+            this.labelAjoutVilleEvent.AutoSize = true;
+            this.labelAjoutVilleEvent.Location = new System.Drawing.Point(26, 195);
+            this.labelAjoutVilleEvent.Name = "labelAjoutVilleEvent";
+            this.labelAjoutVilleEvent.Size = new System.Drawing.Size(32, 13);
+            this.labelAjoutVilleEvent.TabIndex = 14;
+            this.labelAjoutVilleEvent.Text = "Ville :";
+            // 
+            // labelAjoutTypeEvent
+            // 
+            this.labelAjoutTypeEvent.AutoSize = true;
+            this.labelAjoutTypeEvent.Location = new System.Drawing.Point(357, 68);
+            this.labelAjoutTypeEvent.Name = "labelAjoutTypeEvent";
+            this.labelAjoutTypeEvent.Size = new System.Drawing.Size(101, 13);
+            this.labelAjoutTypeEvent.TabIndex = 15;
+            this.labelAjoutTypeEvent.Text = "Type d\'évènement :";
+            // 
+            // labelAjoutDateDebutEvent
+            // 
+            this.labelAjoutDateDebutEvent.AutoSize = true;
+            this.labelAjoutDateDebutEvent.Location = new System.Drawing.Point(357, 106);
+            this.labelAjoutDateDebutEvent.Name = "labelAjoutDateDebutEvent";
+            this.labelAjoutDateDebutEvent.Size = new System.Drawing.Size(42, 13);
+            this.labelAjoutDateDebutEvent.TabIndex = 16;
+            this.labelAjoutDateDebutEvent.Text = "Début :";
+            // 
+            // labelAjoutDateFinEvent
+            // 
+            this.labelAjoutDateFinEvent.AutoSize = true;
+            this.labelAjoutDateFinEvent.Location = new System.Drawing.Point(357, 152);
+            this.labelAjoutDateFinEvent.Name = "labelAjoutDateFinEvent";
+            this.labelAjoutDateFinEvent.Size = new System.Drawing.Size(27, 13);
+            this.labelAjoutDateFinEvent.TabIndex = 17;
+            this.labelAjoutDateFinEvent.Text = "Fin :";
+            // 
+            // labelAjoutSiteEvent
+            // 
+            this.labelAjoutSiteEvent.AutoSize = true;
+            this.labelAjoutSiteEvent.Location = new System.Drawing.Point(357, 195);
+            this.labelAjoutSiteEvent.Name = "labelAjoutSiteEvent";
+            this.labelAjoutSiteEvent.Size = new System.Drawing.Size(35, 13);
+            this.labelAjoutSiteEvent.TabIndex = 18;
+            this.labelAjoutSiteEvent.Text = "URL :";
+            // 
+            // buttonCreateEvent
+            // 
+            this.buttonCreateEvent.Location = new System.Drawing.Point(291, 220);
+            this.buttonCreateEvent.Name = "buttonCreateEvent";
+            this.buttonCreateEvent.Size = new System.Drawing.Size(149, 29);
+            this.buttonCreateEvent.TabIndex = 19;
+            this.buttonCreateEvent.Text = "Créer";
+            this.buttonCreateEvent.UseVisualStyleBackColor = true;
+            this.buttonCreateEvent.Click += new System.EventHandler(this.buttonCreateEvent_Click);
+            // 
+            // dateTimePickerNewDebutEvent
+            // 
+            this.dateTimePickerNewDebutEvent.Location = new System.Drawing.Point(464, 99);
+            this.dateTimePickerNewDebutEvent.Name = "dateTimePickerNewDebutEvent";
+            this.dateTimePickerNewDebutEvent.Size = new System.Drawing.Size(183, 20);
+            this.dateTimePickerNewDebutEvent.TabIndex = 20;
+            // 
+            // dateTimePickerNewFinEvent
+            // 
+            this.dateTimePickerNewFinEvent.Location = new System.Drawing.Point(464, 145);
+            this.dateTimePickerNewFinEvent.Name = "dateTimePickerNewFinEvent";
+            this.dateTimePickerNewFinEvent.Size = new System.Drawing.Size(183, 20);
+            this.dateTimePickerNewFinEvent.TabIndex = 21;
+            // 
             // Ajout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 262);
-            this.Controls.Add(this.panelCreerAdherent);
+            this.Controls.Add(this.panelAjoutEvent);
             this.Controls.Add(this.panelAjoutClub);
+            this.Controls.Add(this.panelCreerAdherent);
             this.Name = "Ajout";
             this.Text = "Ajout";
             this.Load += new System.EventHandler(this.Ajout_Load);
@@ -281,6 +485,8 @@
             this.panelAjoutClub.PerformLayout();
             this.panelCreerAdherent.ResumeLayout(false);
             this.panelCreerAdherent.PerformLayout();
+            this.panelAjoutEvent.ResumeLayout(false);
+            this.panelAjoutEvent.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -310,5 +516,25 @@
         private System.Windows.Forms.TextBox textBoxNewPrenomAdherent;
         private System.Windows.Forms.DateTimePicker dateTimePickerNewNaissanceAdherent;
         private System.Windows.Forms.Label labelNewAdherentNomClub;
+        private System.Windows.Forms.Panel panelAjoutEvent;
+        private System.Windows.Forms.Label labelTypeAjoutEvent;
+        private System.Windows.Forms.Button buttonCreateEvent;
+        private System.Windows.Forms.Label labelAjoutSiteEvent;
+        private System.Windows.Forms.Label labelAjoutDateFinEvent;
+        private System.Windows.Forms.Label labelAjoutDateDebutEvent;
+        private System.Windows.Forms.Label labelAjoutTypeEvent;
+        private System.Windows.Forms.Label labelAjoutVilleEvent;
+        private System.Windows.Forms.Label labelAjoutCPEvent;
+        private System.Windows.Forms.Label labelAjoutLieuEvent;
+        private System.Windows.Forms.Label labelAjoutNomEvent;
+        private System.Windows.Forms.TextBox textBoxNewStieEvent;
+        private System.Windows.Forms.TextBox textBoxNewTypeEvent;
+        private System.Windows.Forms.TextBox textBoxNewVilleEvent;
+        private System.Windows.Forms.TextBox textBoxNewCPEvent;
+        private System.Windows.Forms.TextBox textBoxNewAdresseEvent;
+        private System.Windows.Forms.TextBox textBoxNewNomEvent;
+        private System.Windows.Forms.Label labelNomClubAjoutEvent;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNewFinEvent;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNewDebutEvent;
     }
 }

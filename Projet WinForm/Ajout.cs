@@ -31,16 +31,29 @@ namespace Projet_WinForm
             {
                 panelAjoutClub.Visible = true;
                 panelCreerAdherent.Visible = false;
+                panelAjoutEvent.Visible = false;
                 nomModal.Text = leTypeAjout;
                 
 
             }
             else if (leTypeAjout.Contains("adhérent"))
             {
-                panelAjoutClub.Visible = false;
+
                 panelCreerAdherent.Visible = true;
+                panelAjoutClub.Visible = false;
+                panelAjoutEvent.Visible = false;
                 labelNomClubNewAdherent.Text = leTypeAjout;
                 labelNewAdherentNomClub.Text = nomClub;
+            }
+
+            else if (leTypeAjout.Contains("évènement"))
+            {
+
+                panelAjoutEvent.Visible = true;
+                panelAjoutClub.Visible = false;
+                panelCreerAdherent.Visible = false;
+                labelTypeAjoutEvent.Text = leTypeAjout;
+                labelNomClubAjoutEvent.Text = nomClub;
             }
         }
 
@@ -80,6 +93,26 @@ namespace Projet_WinForm
              }  
         }
 
-
+        private void buttonCreateEvent_Click(object sender, EventArgs e)
+        {
+            int CP;
+            DateTime thisDay = DateTime.Today;
+            if (dateTimePickerNewDebutEvent.Value >= thisDay && dateTimePickerNewFinEvent.Value > dateTimePickerNewDebutEvent.Value
+                && !string.IsNullOrEmpty(textBoxNewNomEvent.Text) && !string.IsNullOrEmpty(textBoxNewAdresseEvent.Text) 
+                && !string.IsNullOrEmpty(textBoxNewCPEvent.Text) && !string.IsNullOrEmpty(textBoxNewVilleEvent.Text)
+                && !string.IsNullOrEmpty(textBoxNewTypeEvent.Text) && !string.IsNullOrEmpty(textBoxNewStieEvent.Text) 
+                && int.TryParse(textBoxNewCPEvent.Text, out CP))
+            {
+                BDD newEvent = new BDD();
+                Evenement nouvelEvenement = new Evenement(0, textBoxNewTypeEvent.Text, textBoxNewNomEvent.Text, textBoxNewAdresseEvent.Text, CP, textBoxNewVilleEvent.Text, textBoxNewStieEvent.Text, dateTimePickerNewDebutEvent.Value, dateTimePickerNewFinEvent.Value, 0, idClub);
+                newEvent.InsertEvent(nouvelEvenement);
+                Close();
+            }
+            else
+            {
+                erreur = new ErrAjout();
+                erreur.ShowDialog();
+            }
+        }
     }
 }

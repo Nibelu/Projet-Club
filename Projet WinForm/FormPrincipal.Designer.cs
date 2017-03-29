@@ -28,14 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxRecherche = new System.Windows.Forms.TextBox();
             this.ajoutClub = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listClubs = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelURLClub = new System.Windows.Forms.Label();
+            this.labelMailClub = new System.Windows.Forms.Label();
+            this.labelTelClub = new System.Windows.Forms.Label();
+            this.labelVilleClub = new System.Windows.Forms.Label();
+            this.labelCPClub = new System.Windows.Forms.Label();
+            this.labelAdresseClub = new System.Windows.Forms.Label();
+            this.labelNomClub = new System.Windows.Forms.Label();
             this.buttonRetourListeClub = new System.Windows.Forms.Button();
             this.buttonModifClub = new System.Windows.Forms.Button();
             this.idClub = new System.Windows.Forms.Label();
@@ -57,6 +64,18 @@
             this.buttonRetourClub = new System.Windows.Forms.Button();
             this.dataGridViewListAdherents = new System.Windows.Forms.DataGridView();
             this.PanelModifAdherent = new System.Windows.Forms.Panel();
+            this.labelLicenceAdh = new System.Windows.Forms.Label();
+            this.labelCotisAdh = new System.Windows.Forms.Label();
+            this.labelVilleAdh = new System.Windows.Forms.Label();
+            this.labelCPAdh = new System.Windows.Forms.Label();
+            this.labelAdresseAdh = new System.Windows.Forms.Label();
+            this.labelNaissanceAdh = new System.Windows.Forms.Label();
+            this.labelSexeAdh = new System.Windows.Forms.Label();
+            this.labelPrenomAdh = new System.Windows.Forms.Label();
+            this.labelNomAdh = new System.Windows.Forms.Label();
+            this.labelIdClubAdh = new System.Windows.Forms.Label();
+            this.labelIdAdhModif = new System.Windows.Forms.Label();
+            this.labelTextIdDeLAdh = new System.Windows.Forms.Label();
             this.buttonAdhToEvent = new System.Windows.Forms.Button();
             this.labelNomClubAdhModif = new System.Windows.Forms.Label();
             this.dateTimePickerNaissanceAdhModif = new System.Windows.Forms.DateTimePicker();
@@ -70,31 +89,38 @@
             this.textBoxNomAdhModif = new System.Windows.Forms.TextBox();
             this.buttonModifierAdherent = new System.Windows.Forms.Button();
             this.buttonBackToListAdherent = new System.Windows.Forms.Button();
-            this.labelTextIdDeLAdh = new System.Windows.Forms.Label();
-            this.labelIdAdhModif = new System.Windows.Forms.Label();
-            this.labelIdClubAdh = new System.Windows.Forms.Label();
-            this.labelNomAdh = new System.Windows.Forms.Label();
-            this.labelPrenomAdh = new System.Windows.Forms.Label();
-            this.labelSexeAdh = new System.Windows.Forms.Label();
-            this.labelNaissanceAdh = new System.Windows.Forms.Label();
-            this.labelAdresseAdh = new System.Windows.Forms.Label();
-            this.labelCPAdh = new System.Windows.Forms.Label();
-            this.labelVilleAdh = new System.Windows.Forms.Label();
-            this.labelCotisAdh = new System.Windows.Forms.Label();
-            this.labelLicenceAdh = new System.Windows.Forms.Label();
-            this.labelNomClub = new System.Windows.Forms.Label();
-            this.labelAdresseClub = new System.Windows.Forms.Label();
-            this.labelCPClub = new System.Windows.Forms.Label();
-            this.labelVilleClub = new System.Windows.Forms.Label();
-            this.labelTelClub = new System.Windows.Forms.Label();
-            this.labelMailClub = new System.Windows.Forms.Label();
-            this.labelURLClub = new System.Windows.Forms.Label();
             this.panelConsultEvent = new System.Windows.Forms.Panel();
-            this.buttonBackToClubFromEvent = new System.Windows.Forms.Button();
-            this.dataGridViewListEvent = new System.Windows.Forms.DataGridView();
-            this.buttonNewEvent = new System.Windows.Forms.Button();
-            this.labelNomClubOnEvent = new System.Windows.Forms.Label();
             this.textBoxSearchEvent = new System.Windows.Forms.TextBox();
+            this.labelNomClubOnEvent = new System.Windows.Forms.Label();
+            this.buttonNewEvent = new System.Windows.Forms.Button();
+            this.dataGridViewListEvent = new System.Windows.Forms.DataGridView();
+            this.buttonBackToClubFromEvent = new System.Windows.Forms.Button();
+            this.panelModifEvent = new System.Windows.Forms.Panel();
+            this.labelNomDuClubModifEvent = new System.Windows.Forms.Label();
+            this.labelNbParticpant = new System.Windows.Forms.Label();
+            this.labelShownbParticipant = new System.Windows.Forms.Label();
+            this.labelModifDateFinEvent = new System.Windows.Forms.Label();
+            this.labelModifDateDebutEvent = new System.Windows.Forms.Label();
+            this.labelModifSiteEvent = new System.Windows.Forms.Label();
+            this.labelEventModifTypeEvent = new System.Windows.Forms.Label();
+            this.labelModifVilleEvent = new System.Windows.Forms.Label();
+            this.labelModifCPEvent = new System.Windows.Forms.Label();
+            this.labelModifAdresseEvent = new System.Windows.Forms.Label();
+            this.labelModifTypeEvent = new System.Windows.Forms.Label();
+            this.textBoxModifSiteEvent = new System.Windows.Forms.TextBox();
+            this.textBoxModifTypeEvent = new System.Windows.Forms.TextBox();
+            this.textBoxModifVilleEvent = new System.Windows.Forms.TextBox();
+            this.textBoxModifCPEvent = new System.Windows.Forms.TextBox();
+            this.textBoxModifAdresseEvent = new System.Windows.Forms.TextBox();
+            this.textBoxModifNomEvent = new System.Windows.Forms.TextBox();
+            this.buttonAddParticipantToEvent = new System.Windows.Forms.Button();
+            this.buttonModifEvent = new System.Windows.Forms.Button();
+            this.buttonBackToListEvent = new System.Windows.Forms.Button();
+            this.dateTimePickerModifDateDebutEvent = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerModifDateFinEvent = new System.Windows.Forms.DateTimePicker();
+            this.labelIdEvent = new System.Windows.Forms.Label();
+            this.labelShowIdEvent = new System.Windows.Forms.Label();
+            this.labelIdClubEvent = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listClubs)).BeginInit();
             this.panel2.SuspendLayout();
@@ -103,6 +129,7 @@
             this.PanelModifAdherent.SuspendLayout();
             this.panelConsultEvent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListEvent)).BeginInit();
+            this.panelModifEvent.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -148,23 +175,23 @@
             // 
             this.listClubs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.listClubs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listClubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listClubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.listClubs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listClubs.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listClubs.DefaultCellStyle = dataGridViewCellStyle2;
             this.listClubs.Location = new System.Drawing.Point(0, 85);
             this.listClubs.Name = "listClubs";
             this.listClubs.Size = new System.Drawing.Size(788, 359);
@@ -200,6 +227,69 @@
             this.panel2.Size = new System.Drawing.Size(791, 558);
             this.panel2.TabIndex = 1;
             this.panel2.Visible = false;
+            // 
+            // labelURLClub
+            // 
+            this.labelURLClub.AutoSize = true;
+            this.labelURLClub.Location = new System.Drawing.Point(373, 398);
+            this.labelURLClub.Name = "labelURLClub";
+            this.labelURLClub.Size = new System.Drawing.Size(35, 13);
+            this.labelURLClub.TabIndex = 20;
+            this.labelURLClub.Text = "URL :";
+            // 
+            // labelMailClub
+            // 
+            this.labelMailClub.AutoSize = true;
+            this.labelMailClub.Location = new System.Drawing.Point(373, 327);
+            this.labelMailClub.Name = "labelMailClub";
+            this.labelMailClub.Size = new System.Drawing.Size(32, 13);
+            this.labelMailClub.TabIndex = 19;
+            this.labelMailClub.Text = "Mail :";
+            // 
+            // labelTelClub
+            // 
+            this.labelTelClub.AutoSize = true;
+            this.labelTelClub.Location = new System.Drawing.Point(373, 256);
+            this.labelTelClub.Name = "labelTelClub";
+            this.labelTelClub.Size = new System.Drawing.Size(64, 13);
+            this.labelTelClub.TabIndex = 18;
+            this.labelTelClub.Text = "Telephone :";
+            // 
+            // labelVilleClub
+            // 
+            this.labelVilleClub.AutoSize = true;
+            this.labelVilleClub.Location = new System.Drawing.Point(373, 185);
+            this.labelVilleClub.Name = "labelVilleClub";
+            this.labelVilleClub.Size = new System.Drawing.Size(32, 13);
+            this.labelVilleClub.TabIndex = 17;
+            this.labelVilleClub.Text = "Ville :";
+            // 
+            // labelCPClub
+            // 
+            this.labelCPClub.AutoSize = true;
+            this.labelCPClub.Location = new System.Drawing.Point(24, 405);
+            this.labelCPClub.Name = "labelCPClub";
+            this.labelCPClub.Size = new System.Drawing.Size(70, 13);
+            this.labelCPClub.TabIndex = 16;
+            this.labelCPClub.Text = "Code Postal :";
+            // 
+            // labelAdresseClub
+            // 
+            this.labelAdresseClub.AutoSize = true;
+            this.labelAdresseClub.Location = new System.Drawing.Point(24, 331);
+            this.labelAdresseClub.Name = "labelAdresseClub";
+            this.labelAdresseClub.Size = new System.Drawing.Size(51, 13);
+            this.labelAdresseClub.TabIndex = 15;
+            this.labelAdresseClub.Text = "Adresse :";
+            // 
+            // labelNomClub
+            // 
+            this.labelNomClub.AutoSize = true;
+            this.labelNomClub.Location = new System.Drawing.Point(24, 252);
+            this.labelNomClub.Name = "labelNomClub";
+            this.labelNomClub.Size = new System.Drawing.Size(35, 13);
+            this.labelNomClub.TabIndex = 14;
+            this.labelNomClub.Text = "Nom :";
             // 
             // buttonRetourListeClub
             // 
@@ -407,6 +497,115 @@
             this.PanelModifAdherent.Size = new System.Drawing.Size(789, 557);
             this.PanelModifAdherent.TabIndex = 3;
             // 
+            // labelLicenceAdh
+            // 
+            this.labelLicenceAdh.AutoSize = true;
+            this.labelLicenceAdh.Location = new System.Drawing.Point(471, 33);
+            this.labelLicenceAdh.Name = "labelLicenceAdh";
+            this.labelLicenceAdh.Size = new System.Drawing.Size(69, 13);
+            this.labelLicenceAdh.TabIndex = 24;
+            this.labelLicenceAdh.Text = "N° Licence : ";
+            // 
+            // labelCotisAdh
+            // 
+            this.labelCotisAdh.AutoSize = true;
+            this.labelCotisAdh.Location = new System.Drawing.Point(385, 269);
+            this.labelCotisAdh.Name = "labelCotisAdh";
+            this.labelCotisAdh.Size = new System.Drawing.Size(62, 13);
+            this.labelCotisAdh.TabIndex = 23;
+            this.labelCotisAdh.Text = "Cotisation : ";
+            // 
+            // labelVilleAdh
+            // 
+            this.labelVilleAdh.AutoSize = true;
+            this.labelVilleAdh.Location = new System.Drawing.Point(385, 226);
+            this.labelVilleAdh.Name = "labelVilleAdh";
+            this.labelVilleAdh.Size = new System.Drawing.Size(35, 13);
+            this.labelVilleAdh.TabIndex = 22;
+            this.labelVilleAdh.Text = "Ville : ";
+            // 
+            // labelCPAdh
+            // 
+            this.labelCPAdh.AutoSize = true;
+            this.labelCPAdh.Location = new System.Drawing.Point(385, 185);
+            this.labelCPAdh.Name = "labelCPAdh";
+            this.labelCPAdh.Size = new System.Drawing.Size(73, 13);
+            this.labelCPAdh.TabIndex = 21;
+            this.labelCPAdh.Text = "Code Postal : ";
+            // 
+            // labelAdresseAdh
+            // 
+            this.labelAdresseAdh.AutoSize = true;
+            this.labelAdresseAdh.Location = new System.Drawing.Point(385, 132);
+            this.labelAdresseAdh.Name = "labelAdresseAdh";
+            this.labelAdresseAdh.Size = new System.Drawing.Size(54, 13);
+            this.labelAdresseAdh.TabIndex = 20;
+            this.labelAdresseAdh.Text = "Adresse : ";
+            // 
+            // labelNaissanceAdh
+            // 
+            this.labelNaissanceAdh.AutoSize = true;
+            this.labelNaissanceAdh.Location = new System.Drawing.Point(19, 273);
+            this.labelNaissanceAdh.Name = "labelNaissanceAdh";
+            this.labelNaissanceAdh.Size = new System.Drawing.Size(66, 13);
+            this.labelNaissanceAdh.TabIndex = 19;
+            this.labelNaissanceAdh.Text = "Naissance : ";
+            // 
+            // labelSexeAdh
+            // 
+            this.labelSexeAdh.AutoSize = true;
+            this.labelSexeAdh.Location = new System.Drawing.Point(19, 230);
+            this.labelSexeAdh.Name = "labelSexeAdh";
+            this.labelSexeAdh.Size = new System.Drawing.Size(40, 13);
+            this.labelSexeAdh.TabIndex = 18;
+            this.labelSexeAdh.Text = "Sexe : ";
+            // 
+            // labelPrenomAdh
+            // 
+            this.labelPrenomAdh.AutoSize = true;
+            this.labelPrenomAdh.Location = new System.Drawing.Point(19, 189);
+            this.labelPrenomAdh.Name = "labelPrenomAdh";
+            this.labelPrenomAdh.Size = new System.Drawing.Size(52, 13);
+            this.labelPrenomAdh.TabIndex = 17;
+            this.labelPrenomAdh.Text = "Prenom : ";
+            // 
+            // labelNomAdh
+            // 
+            this.labelNomAdh.AutoSize = true;
+            this.labelNomAdh.Location = new System.Drawing.Point(19, 136);
+            this.labelNomAdh.Name = "labelNomAdh";
+            this.labelNomAdh.Size = new System.Drawing.Size(38, 13);
+            this.labelNomAdh.TabIndex = 16;
+            this.labelNomAdh.Text = "Nom : ";
+            // 
+            // labelIdClubAdh
+            // 
+            this.labelIdClubAdh.AutoSize = true;
+            this.labelIdClubAdh.Location = new System.Drawing.Point(266, 44);
+            this.labelIdClubAdh.Name = "labelIdClubAdh";
+            this.labelIdClubAdh.Size = new System.Drawing.Size(35, 13);
+            this.labelIdClubAdh.TabIndex = 15;
+            this.labelIdClubAdh.Text = "label2";
+            this.labelIdClubAdh.Visible = false;
+            // 
+            // labelIdAdhModif
+            // 
+            this.labelIdAdhModif.AutoSize = true;
+            this.labelIdAdhModif.Location = new System.Drawing.Point(385, 75);
+            this.labelIdAdhModif.Name = "labelIdAdhModif";
+            this.labelIdAdhModif.Size = new System.Drawing.Size(35, 13);
+            this.labelIdAdhModif.TabIndex = 14;
+            this.labelIdAdhModif.Text = "label2";
+            // 
+            // labelTextIdDeLAdh
+            // 
+            this.labelTextIdDeLAdh.AutoSize = true;
+            this.labelTextIdDeLAdh.Location = new System.Drawing.Point(283, 75);
+            this.labelTextIdDeLAdh.Name = "labelTextIdDeLAdh";
+            this.labelTextIdDeLAdh.Size = new System.Drawing.Size(86, 13);
+            this.labelTextIdDeLAdh.TabIndex = 13;
+            this.labelTextIdDeLAdh.Text = "Id de l\'adhérent :";
+            // 
             // buttonAdhToEvent
             // 
             this.buttonAdhToEvent.Location = new System.Drawing.Point(593, 455);
@@ -508,178 +707,6 @@
             this.buttonBackToListAdherent.UseVisualStyleBackColor = true;
             this.buttonBackToListAdherent.Click += new System.EventHandler(this.buttonBackToListAdherent_Click);
             // 
-            // labelTextIdDeLAdh
-            // 
-            this.labelTextIdDeLAdh.AutoSize = true;
-            this.labelTextIdDeLAdh.Location = new System.Drawing.Point(283, 75);
-            this.labelTextIdDeLAdh.Name = "labelTextIdDeLAdh";
-            this.labelTextIdDeLAdh.Size = new System.Drawing.Size(86, 13);
-            this.labelTextIdDeLAdh.TabIndex = 13;
-            this.labelTextIdDeLAdh.Text = "Id de l\'adhérent :";
-            // 
-            // labelIdAdhModif
-            // 
-            this.labelIdAdhModif.AutoSize = true;
-            this.labelIdAdhModif.Location = new System.Drawing.Point(385, 75);
-            this.labelIdAdhModif.Name = "labelIdAdhModif";
-            this.labelIdAdhModif.Size = new System.Drawing.Size(35, 13);
-            this.labelIdAdhModif.TabIndex = 14;
-            this.labelIdAdhModif.Text = "label2";
-            // 
-            // labelIdClubAdh
-            // 
-            this.labelIdClubAdh.AutoSize = true;
-            this.labelIdClubAdh.Location = new System.Drawing.Point(266, 44);
-            this.labelIdClubAdh.Name = "labelIdClubAdh";
-            this.labelIdClubAdh.Size = new System.Drawing.Size(35, 13);
-            this.labelIdClubAdh.TabIndex = 15;
-            this.labelIdClubAdh.Text = "label2";
-            this.labelIdClubAdh.Visible = false;
-            // 
-            // labelNomAdh
-            // 
-            this.labelNomAdh.AutoSize = true;
-            this.labelNomAdh.Location = new System.Drawing.Point(19, 136);
-            this.labelNomAdh.Name = "labelNomAdh";
-            this.labelNomAdh.Size = new System.Drawing.Size(38, 13);
-            this.labelNomAdh.TabIndex = 16;
-            this.labelNomAdh.Text = "Nom : ";
-            // 
-            // labelPrenomAdh
-            // 
-            this.labelPrenomAdh.AutoSize = true;
-            this.labelPrenomAdh.Location = new System.Drawing.Point(19, 189);
-            this.labelPrenomAdh.Name = "labelPrenomAdh";
-            this.labelPrenomAdh.Size = new System.Drawing.Size(52, 13);
-            this.labelPrenomAdh.TabIndex = 17;
-            this.labelPrenomAdh.Text = "Prenom : ";
-            // 
-            // labelSexeAdh
-            // 
-            this.labelSexeAdh.AutoSize = true;
-            this.labelSexeAdh.Location = new System.Drawing.Point(19, 230);
-            this.labelSexeAdh.Name = "labelSexeAdh";
-            this.labelSexeAdh.Size = new System.Drawing.Size(40, 13);
-            this.labelSexeAdh.TabIndex = 18;
-            this.labelSexeAdh.Text = "Sexe : ";
-            // 
-            // labelNaissanceAdh
-            // 
-            this.labelNaissanceAdh.AutoSize = true;
-            this.labelNaissanceAdh.Location = new System.Drawing.Point(19, 273);
-            this.labelNaissanceAdh.Name = "labelNaissanceAdh";
-            this.labelNaissanceAdh.Size = new System.Drawing.Size(66, 13);
-            this.labelNaissanceAdh.TabIndex = 19;
-            this.labelNaissanceAdh.Text = "Naissance : ";
-            // 
-            // labelAdresseAdh
-            // 
-            this.labelAdresseAdh.AutoSize = true;
-            this.labelAdresseAdh.Location = new System.Drawing.Point(385, 132);
-            this.labelAdresseAdh.Name = "labelAdresseAdh";
-            this.labelAdresseAdh.Size = new System.Drawing.Size(54, 13);
-            this.labelAdresseAdh.TabIndex = 20;
-            this.labelAdresseAdh.Text = "Adresse : ";
-            // 
-            // labelCPAdh
-            // 
-            this.labelCPAdh.AutoSize = true;
-            this.labelCPAdh.Location = new System.Drawing.Point(385, 185);
-            this.labelCPAdh.Name = "labelCPAdh";
-            this.labelCPAdh.Size = new System.Drawing.Size(73, 13);
-            this.labelCPAdh.TabIndex = 21;
-            this.labelCPAdh.Text = "Code Postal : ";
-            // 
-            // labelVilleAdh
-            // 
-            this.labelVilleAdh.AutoSize = true;
-            this.labelVilleAdh.Location = new System.Drawing.Point(385, 226);
-            this.labelVilleAdh.Name = "labelVilleAdh";
-            this.labelVilleAdh.Size = new System.Drawing.Size(35, 13);
-            this.labelVilleAdh.TabIndex = 22;
-            this.labelVilleAdh.Text = "Ville : ";
-            // 
-            // labelCotisAdh
-            // 
-            this.labelCotisAdh.AutoSize = true;
-            this.labelCotisAdh.Location = new System.Drawing.Point(385, 269);
-            this.labelCotisAdh.Name = "labelCotisAdh";
-            this.labelCotisAdh.Size = new System.Drawing.Size(62, 13);
-            this.labelCotisAdh.TabIndex = 23;
-            this.labelCotisAdh.Text = "Cotisation : ";
-            // 
-            // labelLicenceAdh
-            // 
-            this.labelLicenceAdh.AutoSize = true;
-            this.labelLicenceAdh.Location = new System.Drawing.Point(471, 33);
-            this.labelLicenceAdh.Name = "labelLicenceAdh";
-            this.labelLicenceAdh.Size = new System.Drawing.Size(69, 13);
-            this.labelLicenceAdh.TabIndex = 24;
-            this.labelLicenceAdh.Text = "N° Licence : ";
-            // 
-            // labelNomClub
-            // 
-            this.labelNomClub.AutoSize = true;
-            this.labelNomClub.Location = new System.Drawing.Point(24, 252);
-            this.labelNomClub.Name = "labelNomClub";
-            this.labelNomClub.Size = new System.Drawing.Size(35, 13);
-            this.labelNomClub.TabIndex = 14;
-            this.labelNomClub.Text = "Nom :";
-            // 
-            // labelAdresseClub
-            // 
-            this.labelAdresseClub.AutoSize = true;
-            this.labelAdresseClub.Location = new System.Drawing.Point(24, 331);
-            this.labelAdresseClub.Name = "labelAdresseClub";
-            this.labelAdresseClub.Size = new System.Drawing.Size(51, 13);
-            this.labelAdresseClub.TabIndex = 15;
-            this.labelAdresseClub.Text = "Adresse :";
-            // 
-            // labelCPClub
-            // 
-            this.labelCPClub.AutoSize = true;
-            this.labelCPClub.Location = new System.Drawing.Point(24, 405);
-            this.labelCPClub.Name = "labelCPClub";
-            this.labelCPClub.Size = new System.Drawing.Size(70, 13);
-            this.labelCPClub.TabIndex = 16;
-            this.labelCPClub.Text = "Code Postal :";
-            // 
-            // labelVilleClub
-            // 
-            this.labelVilleClub.AutoSize = true;
-            this.labelVilleClub.Location = new System.Drawing.Point(373, 185);
-            this.labelVilleClub.Name = "labelVilleClub";
-            this.labelVilleClub.Size = new System.Drawing.Size(32, 13);
-            this.labelVilleClub.TabIndex = 17;
-            this.labelVilleClub.Text = "Ville :";
-            // 
-            // labelTelClub
-            // 
-            this.labelTelClub.AutoSize = true;
-            this.labelTelClub.Location = new System.Drawing.Point(373, 256);
-            this.labelTelClub.Name = "labelTelClub";
-            this.labelTelClub.Size = new System.Drawing.Size(64, 13);
-            this.labelTelClub.TabIndex = 18;
-            this.labelTelClub.Text = "Telephone :";
-            // 
-            // labelMailClub
-            // 
-            this.labelMailClub.AutoSize = true;
-            this.labelMailClub.Location = new System.Drawing.Point(373, 327);
-            this.labelMailClub.Name = "labelMailClub";
-            this.labelMailClub.Size = new System.Drawing.Size(32, 13);
-            this.labelMailClub.TabIndex = 19;
-            this.labelMailClub.Text = "Mail :";
-            // 
-            // labelURLClub
-            // 
-            this.labelURLClub.AutoSize = true;
-            this.labelURLClub.Location = new System.Drawing.Point(373, 398);
-            this.labelURLClub.Name = "labelURLClub";
-            this.labelURLClub.Size = new System.Drawing.Size(35, 13);
-            this.labelURLClub.TabIndex = 20;
-            this.labelURLClub.Text = "URL :";
-            // 
             // panelConsultEvent
             // 
             this.panelConsultEvent.Controls.Add(this.textBoxSearchEvent);
@@ -692,32 +719,13 @@
             this.panelConsultEvent.Size = new System.Drawing.Size(789, 556);
             this.panelConsultEvent.TabIndex = 4;
             // 
-            // buttonBackToClubFromEvent
+            // textBoxSearchEvent
             // 
-            this.buttonBackToClubFromEvent.Location = new System.Drawing.Point(18, 23);
-            this.buttonBackToClubFromEvent.Name = "buttonBackToClubFromEvent";
-            this.buttonBackToClubFromEvent.Size = new System.Drawing.Size(196, 32);
-            this.buttonBackToClubFromEvent.TabIndex = 0;
-            this.buttonBackToClubFromEvent.Text = "Retour";
-            this.buttonBackToClubFromEvent.UseVisualStyleBackColor = true;
-            this.buttonBackToClubFromEvent.Click += new System.EventHandler(this.buttonBackToClubFromEvent_Click);
-            // 
-            // dataGridViewListEvent
-            // 
-            this.dataGridViewListEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListEvent.Location = new System.Drawing.Point(2, 81);
-            this.dataGridViewListEvent.Name = "dataGridViewListEvent";
-            this.dataGridViewListEvent.Size = new System.Drawing.Size(785, 374);
-            this.dataGridViewListEvent.TabIndex = 1;
-            // 
-            // buttonNewEvent
-            // 
-            this.buttonNewEvent.Location = new System.Drawing.Point(286, 483);
-            this.buttonNewEvent.Name = "buttonNewEvent";
-            this.buttonNewEvent.Size = new System.Drawing.Size(177, 34);
-            this.buttonNewEvent.TabIndex = 2;
-            this.buttonNewEvent.Text = "Créer un évènement";
-            this.buttonNewEvent.UseVisualStyleBackColor = true;
+            this.textBoxSearchEvent.Location = new System.Drawing.Point(11, 461);
+            this.textBoxSearchEvent.Name = "textBoxSearchEvent";
+            this.textBoxSearchEvent.Size = new System.Drawing.Size(230, 20);
+            this.textBoxSearchEvent.TabIndex = 4;
+            this.textBoxSearchEvent.TextChanged += new System.EventHandler(this.textBoxSearchEvent_TextChanged);
             // 
             // labelNomClubOnEvent
             // 
@@ -728,13 +736,277 @@
             this.labelNomClubOnEvent.TabIndex = 3;
             this.labelNomClubOnEvent.Text = "NomClub";
             // 
-            // textBoxSearchEvent
+            // buttonNewEvent
             // 
-            this.textBoxSearchEvent.Location = new System.Drawing.Point(11, 461);
-            this.textBoxSearchEvent.Name = "textBoxSearchEvent";
-            this.textBoxSearchEvent.Size = new System.Drawing.Size(230, 20);
-            this.textBoxSearchEvent.TabIndex = 4;
-            this.textBoxSearchEvent.TextChanged += new System.EventHandler(this.textBoxSearchEvent_TextChanged);
+            this.buttonNewEvent.Location = new System.Drawing.Point(286, 483);
+            this.buttonNewEvent.Name = "buttonNewEvent";
+            this.buttonNewEvent.Size = new System.Drawing.Size(177, 34);
+            this.buttonNewEvent.TabIndex = 2;
+            this.buttonNewEvent.Text = "Créer un évènement";
+            this.buttonNewEvent.UseVisualStyleBackColor = true;
+            this.buttonNewEvent.Click += new System.EventHandler(this.buttonNewEvent_Click);
+            // 
+            // dataGridViewListEvent
+            // 
+            this.dataGridViewListEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListEvent.Location = new System.Drawing.Point(2, 81);
+            this.dataGridViewListEvent.Name = "dataGridViewListEvent";
+            this.dataGridViewListEvent.Size = new System.Drawing.Size(785, 374);
+            this.dataGridViewListEvent.TabIndex = 1;
+            this.dataGridViewListEvent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListEvent_CellDoubleClick);
+            // 
+            // buttonBackToClubFromEvent
+            // 
+            this.buttonBackToClubFromEvent.Location = new System.Drawing.Point(18, 23);
+            this.buttonBackToClubFromEvent.Name = "buttonBackToClubFromEvent";
+            this.buttonBackToClubFromEvent.Size = new System.Drawing.Size(196, 32);
+            this.buttonBackToClubFromEvent.TabIndex = 0;
+            this.buttonBackToClubFromEvent.Text = "Retour";
+            this.buttonBackToClubFromEvent.UseVisualStyleBackColor = true;
+            this.buttonBackToClubFromEvent.Click += new System.EventHandler(this.buttonBackToClubFromEvent_Click);
+            // 
+            // panelModifEvent
+            // 
+            this.panelModifEvent.Controls.Add(this.labelIdClubEvent);
+            this.panelModifEvent.Controls.Add(this.labelShowIdEvent);
+            this.panelModifEvent.Controls.Add(this.labelIdEvent);
+            this.panelModifEvent.Controls.Add(this.dateTimePickerModifDateFinEvent);
+            this.panelModifEvent.Controls.Add(this.dateTimePickerModifDateDebutEvent);
+            this.panelModifEvent.Controls.Add(this.labelNomDuClubModifEvent);
+            this.panelModifEvent.Controls.Add(this.labelNbParticpant);
+            this.panelModifEvent.Controls.Add(this.labelShownbParticipant);
+            this.panelModifEvent.Controls.Add(this.labelModifDateFinEvent);
+            this.panelModifEvent.Controls.Add(this.labelModifDateDebutEvent);
+            this.panelModifEvent.Controls.Add(this.labelModifSiteEvent);
+            this.panelModifEvent.Controls.Add(this.labelEventModifTypeEvent);
+            this.panelModifEvent.Controls.Add(this.labelModifVilleEvent);
+            this.panelModifEvent.Controls.Add(this.labelModifCPEvent);
+            this.panelModifEvent.Controls.Add(this.labelModifAdresseEvent);
+            this.panelModifEvent.Controls.Add(this.labelModifTypeEvent);
+            this.panelModifEvent.Controls.Add(this.textBoxModifSiteEvent);
+            this.panelModifEvent.Controls.Add(this.textBoxModifTypeEvent);
+            this.panelModifEvent.Controls.Add(this.textBoxModifVilleEvent);
+            this.panelModifEvent.Controls.Add(this.textBoxModifCPEvent);
+            this.panelModifEvent.Controls.Add(this.textBoxModifAdresseEvent);
+            this.panelModifEvent.Controls.Add(this.textBoxModifNomEvent);
+            this.panelModifEvent.Controls.Add(this.buttonAddParticipantToEvent);
+            this.panelModifEvent.Controls.Add(this.buttonModifEvent);
+            this.panelModifEvent.Controls.Add(this.buttonBackToListEvent);
+            this.panelModifEvent.Location = new System.Drawing.Point(0, 0);
+            this.panelModifEvent.Name = "panelModifEvent";
+            this.panelModifEvent.Size = new System.Drawing.Size(791, 556);
+            this.panelModifEvent.TabIndex = 5;
+            // 
+            // labelNomDuClubModifEvent
+            // 
+            this.labelNomDuClubModifEvent.AutoSize = true;
+            this.labelNomDuClubModifEvent.Location = new System.Drawing.Point(360, 28);
+            this.labelNomDuClubModifEvent.Name = "labelNomDuClubModifEvent";
+            this.labelNomDuClubModifEvent.Size = new System.Drawing.Size(67, 13);
+            this.labelNomDuClubModifEvent.TabIndex = 21;
+            this.labelNomDuClubModifEvent.Text = "Nom du club";
+            // 
+            // labelNbParticpant
+            // 
+            this.labelNbParticpant.AutoSize = true;
+            this.labelNbParticpant.Location = new System.Drawing.Point(724, 83);
+            this.labelNbParticpant.Name = "labelNbParticpant";
+            this.labelNbParticpant.Size = new System.Drawing.Size(13, 13);
+            this.labelNbParticpant.TabIndex = 20;
+            this.labelNbParticpant.Text = "0";
+            // 
+            // labelShownbParticipant
+            // 
+            this.labelShownbParticipant.AutoSize = true;
+            this.labelShownbParticipant.Location = new System.Drawing.Point(551, 83);
+            this.labelShownbParticipant.Name = "labelShownbParticipant";
+            this.labelShownbParticipant.Size = new System.Drawing.Size(117, 13);
+            this.labelShownbParticipant.TabIndex = 19;
+            this.labelShownbParticipant.Text = "Nombre de participant :";
+            // 
+            // labelModifDateFinEvent
+            // 
+            this.labelModifDateFinEvent.AutoSize = true;
+            this.labelModifDateFinEvent.Location = new System.Drawing.Point(443, 299);
+            this.labelModifDateFinEvent.Name = "labelModifDateFinEvent";
+            this.labelModifDateFinEvent.Size = new System.Drawing.Size(65, 13);
+            this.labelModifDateFinEvent.TabIndex = 18;
+            this.labelModifDateFinEvent.Text = "Date de fin :";
+            // 
+            // labelModifDateDebutEvent
+            // 
+            this.labelModifDateDebutEvent.AutoSize = true;
+            this.labelModifDateDebutEvent.Location = new System.Drawing.Point(443, 247);
+            this.labelModifDateDebutEvent.Name = "labelModifDateDebutEvent";
+            this.labelModifDateDebutEvent.Size = new System.Drawing.Size(81, 13);
+            this.labelModifDateDebutEvent.TabIndex = 17;
+            this.labelModifDateDebutEvent.Text = "Date de début :";
+            // 
+            // labelModifSiteEvent
+            // 
+            this.labelModifSiteEvent.AutoSize = true;
+            this.labelModifSiteEvent.Location = new System.Drawing.Point(439, 193);
+            this.labelModifSiteEvent.Name = "labelModifSiteEvent";
+            this.labelModifSiteEvent.Size = new System.Drawing.Size(35, 13);
+            this.labelModifSiteEvent.TabIndex = 16;
+            this.labelModifSiteEvent.Text = "URL :";
+            // 
+            // labelEventModifTypeEvent
+            // 
+            this.labelEventModifTypeEvent.AutoSize = true;
+            this.labelEventModifTypeEvent.Location = new System.Drawing.Point(439, 140);
+            this.labelEventModifTypeEvent.Name = "labelEventModifTypeEvent";
+            this.labelEventModifTypeEvent.Size = new System.Drawing.Size(101, 13);
+            this.labelEventModifTypeEvent.TabIndex = 15;
+            this.labelEventModifTypeEvent.Text = "Type d\'évènement :";
+            // 
+            // labelModifVilleEvent
+            // 
+            this.labelModifVilleEvent.AutoSize = true;
+            this.labelModifVilleEvent.Location = new System.Drawing.Point(10, 299);
+            this.labelModifVilleEvent.Name = "labelModifVilleEvent";
+            this.labelModifVilleEvent.Size = new System.Drawing.Size(32, 13);
+            this.labelModifVilleEvent.TabIndex = 14;
+            this.labelModifVilleEvent.Text = "Ville :";
+            // 
+            // labelModifCPEvent
+            // 
+            this.labelModifCPEvent.AutoSize = true;
+            this.labelModifCPEvent.Location = new System.Drawing.Point(9, 243);
+            this.labelModifCPEvent.Name = "labelModifCPEvent";
+            this.labelModifCPEvent.Size = new System.Drawing.Size(70, 13);
+            this.labelModifCPEvent.TabIndex = 13;
+            this.labelModifCPEvent.Text = "Code Postal :";
+            // 
+            // labelModifAdresseEvent
+            // 
+            this.labelModifAdresseEvent.AutoSize = true;
+            this.labelModifAdresseEvent.Location = new System.Drawing.Point(10, 193);
+            this.labelModifAdresseEvent.Name = "labelModifAdresseEvent";
+            this.labelModifAdresseEvent.Size = new System.Drawing.Size(51, 13);
+            this.labelModifAdresseEvent.TabIndex = 12;
+            this.labelModifAdresseEvent.Text = "Adresse :";
+            // 
+            // labelModifTypeEvent
+            // 
+            this.labelModifTypeEvent.AutoSize = true;
+            this.labelModifTypeEvent.Location = new System.Drawing.Point(9, 139);
+            this.labelModifTypeEvent.Name = "labelModifTypeEvent";
+            this.labelModifTypeEvent.Size = new System.Drawing.Size(110, 13);
+            this.labelModifTypeEvent.TabIndex = 11;
+            this.labelModifTypeEvent.Text = "Nom de l\'évènement :";
+            // 
+            // textBoxModifSiteEvent
+            // 
+            this.textBoxModifSiteEvent.Location = new System.Drawing.Point(560, 186);
+            this.textBoxModifSiteEvent.Name = "textBoxModifSiteEvent";
+            this.textBoxModifSiteEvent.Size = new System.Drawing.Size(180, 20);
+            this.textBoxModifSiteEvent.TabIndex = 8;
+            // 
+            // textBoxModifTypeEvent
+            // 
+            this.textBoxModifTypeEvent.Location = new System.Drawing.Point(560, 133);
+            this.textBoxModifTypeEvent.Name = "textBoxModifTypeEvent";
+            this.textBoxModifTypeEvent.Size = new System.Drawing.Size(180, 20);
+            this.textBoxModifTypeEvent.TabIndex = 7;
+            // 
+            // textBoxModifVilleEvent
+            // 
+            this.textBoxModifVilleEvent.Location = new System.Drawing.Point(136, 292);
+            this.textBoxModifVilleEvent.Name = "textBoxModifVilleEvent";
+            this.textBoxModifVilleEvent.Size = new System.Drawing.Size(180, 20);
+            this.textBoxModifVilleEvent.TabIndex = 6;
+            // 
+            // textBoxModifCPEvent
+            // 
+            this.textBoxModifCPEvent.Location = new System.Drawing.Point(136, 240);
+            this.textBoxModifCPEvent.Name = "textBoxModifCPEvent";
+            this.textBoxModifCPEvent.Size = new System.Drawing.Size(180, 20);
+            this.textBoxModifCPEvent.TabIndex = 5;
+            // 
+            // textBoxModifAdresseEvent
+            // 
+            this.textBoxModifAdresseEvent.Location = new System.Drawing.Point(136, 186);
+            this.textBoxModifAdresseEvent.Name = "textBoxModifAdresseEvent";
+            this.textBoxModifAdresseEvent.Size = new System.Drawing.Size(180, 20);
+            this.textBoxModifAdresseEvent.TabIndex = 4;
+            // 
+            // textBoxModifNomEvent
+            // 
+            this.textBoxModifNomEvent.Location = new System.Drawing.Point(136, 136);
+            this.textBoxModifNomEvent.Name = "textBoxModifNomEvent";
+            this.textBoxModifNomEvent.Size = new System.Drawing.Size(180, 20);
+            this.textBoxModifNomEvent.TabIndex = 3;
+            // 
+            // buttonAddParticipantToEvent
+            // 
+            this.buttonAddParticipantToEvent.Location = new System.Drawing.Point(574, 21);
+            this.buttonAddParticipantToEvent.Name = "buttonAddParticipantToEvent";
+            this.buttonAddParticipantToEvent.Size = new System.Drawing.Size(185, 33);
+            this.buttonAddParticipantToEvent.TabIndex = 2;
+            this.buttonAddParticipantToEvent.Text = "Ajouter Participant";
+            this.buttonAddParticipantToEvent.UseVisualStyleBackColor = true;
+            // 
+            // buttonModifEvent
+            // 
+            this.buttonModifEvent.Location = new System.Drawing.Point(315, 494);
+            this.buttonModifEvent.Name = "buttonModifEvent";
+            this.buttonModifEvent.Size = new System.Drawing.Size(159, 32);
+            this.buttonModifEvent.TabIndex = 1;
+            this.buttonModifEvent.Text = "Modifier l\'évènement";
+            this.buttonModifEvent.UseVisualStyleBackColor = true;
+            this.buttonModifEvent.Click += new System.EventHandler(this.buttonModifEvent_Click);
+            // 
+            // buttonBackToListEvent
+            // 
+            this.buttonBackToListEvent.Location = new System.Drawing.Point(13, 21);
+            this.buttonBackToListEvent.Name = "buttonBackToListEvent";
+            this.buttonBackToListEvent.Size = new System.Drawing.Size(165, 33);
+            this.buttonBackToListEvent.TabIndex = 0;
+            this.buttonBackToListEvent.Text = "Retour";
+            this.buttonBackToListEvent.UseVisualStyleBackColor = true;
+            this.buttonBackToListEvent.Click += new System.EventHandler(this.buttonBackToListEvent_Click);
+            // 
+            // dateTimePickerModifDateDebutEvent
+            // 
+            this.dateTimePickerModifDateDebutEvent.Location = new System.Drawing.Point(560, 240);
+            this.dateTimePickerModifDateDebutEvent.Name = "dateTimePickerModifDateDebutEvent";
+            this.dateTimePickerModifDateDebutEvent.Size = new System.Drawing.Size(180, 20);
+            this.dateTimePickerModifDateDebutEvent.TabIndex = 22;
+            // 
+            // dateTimePickerModifDateFinEvent
+            // 
+            this.dateTimePickerModifDateFinEvent.Location = new System.Drawing.Point(560, 292);
+            this.dateTimePickerModifDateFinEvent.Name = "dateTimePickerModifDateFinEvent";
+            this.dateTimePickerModifDateFinEvent.Size = new System.Drawing.Size(180, 20);
+            this.dateTimePickerModifDateFinEvent.TabIndex = 23;
+            // 
+            // labelIdEvent
+            // 
+            this.labelIdEvent.AutoSize = true;
+            this.labelIdEvent.Location = new System.Drawing.Point(15, 85);
+            this.labelIdEvent.Name = "labelIdEvent";
+            this.labelIdEvent.Size = new System.Drawing.Size(97, 13);
+            this.labelIdEvent.TabIndex = 24;
+            this.labelIdEvent.Text = "Id de l\'évènement :";
+            // 
+            // labelShowIdEvent
+            // 
+            this.labelShowIdEvent.AutoSize = true;
+            this.labelShowIdEvent.Location = new System.Drawing.Point(133, 88);
+            this.labelShowIdEvent.Name = "labelShowIdEvent";
+            this.labelShowIdEvent.Size = new System.Drawing.Size(19, 13);
+            this.labelShowIdEvent.TabIndex = 25;
+            this.labelShowIdEvent.Text = "Id ";
+            // 
+            // labelIdClubEvent
+            // 
+            this.labelIdClubEvent.AutoSize = true;
+            this.labelIdClubEvent.Location = new System.Drawing.Point(281, 28);
+            this.labelIdClubEvent.Name = "labelIdClubEvent";
+            this.labelIdClubEvent.Size = new System.Drawing.Size(35, 13);
+            this.labelIdClubEvent.TabIndex = 26;
+            this.labelIdClubEvent.Text = "label2";
             // 
             // FormPrincipal
             // 
@@ -742,11 +1014,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(789, 555);
+            this.Controls.Add(this.panelModifEvent);
             this.Controls.Add(this.panelConsultEvent);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelModifAdherent);
             this.Controls.Add(this.panelListAdherents);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormPrincipal";
             this.Text = "Liste Clubs";
             this.panel1.ResumeLayout(false);
@@ -762,6 +1036,8 @@
             this.panelConsultEvent.ResumeLayout(false);
             this.panelConsultEvent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListEvent)).EndInit();
+            this.panelModifEvent.ResumeLayout(false);
+            this.panelModifEvent.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -834,6 +1110,32 @@
         private System.Windows.Forms.Button buttonBackToClubFromEvent;
         private System.Windows.Forms.Label labelNomClubOnEvent;
         private System.Windows.Forms.TextBox textBoxSearchEvent;
+        private System.Windows.Forms.Panel panelModifEvent;
+        private System.Windows.Forms.Button buttonModifEvent;
+        private System.Windows.Forms.Button buttonBackToListEvent;
+        private System.Windows.Forms.Button buttonAddParticipantToEvent;
+        private System.Windows.Forms.Label labelNomDuClubModifEvent;
+        private System.Windows.Forms.Label labelNbParticpant;
+        private System.Windows.Forms.Label labelShownbParticipant;
+        private System.Windows.Forms.Label labelModifDateFinEvent;
+        private System.Windows.Forms.Label labelModifDateDebutEvent;
+        private System.Windows.Forms.Label labelModifSiteEvent;
+        private System.Windows.Forms.Label labelEventModifTypeEvent;
+        private System.Windows.Forms.Label labelModifVilleEvent;
+        private System.Windows.Forms.Label labelModifCPEvent;
+        private System.Windows.Forms.Label labelModifAdresseEvent;
+        private System.Windows.Forms.Label labelModifTypeEvent;
+        private System.Windows.Forms.TextBox textBoxModifSiteEvent;
+        private System.Windows.Forms.TextBox textBoxModifTypeEvent;
+        private System.Windows.Forms.TextBox textBoxModifVilleEvent;
+        private System.Windows.Forms.TextBox textBoxModifCPEvent;
+        private System.Windows.Forms.TextBox textBoxModifAdresseEvent;
+        private System.Windows.Forms.TextBox textBoxModifNomEvent;
+        private System.Windows.Forms.DateTimePicker dateTimePickerModifDateFinEvent;
+        private System.Windows.Forms.DateTimePicker dateTimePickerModifDateDebutEvent;
+        private System.Windows.Forms.Label labelShowIdEvent;
+        private System.Windows.Forms.Label labelIdEvent;
+        private System.Windows.Forms.Label labelIdClubEvent;
     }
 }
 
