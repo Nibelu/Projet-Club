@@ -96,6 +96,11 @@
             this.dataGridViewListEvent = new System.Windows.Forms.DataGridView();
             this.buttonBackToClubFromEvent = new System.Windows.Forms.Button();
             this.panelModifEvent = new System.Windows.Forms.Panel();
+            this.labelIdClubEvent = new System.Windows.Forms.Label();
+            this.labelShowIdEvent = new System.Windows.Forms.Label();
+            this.labelIdEvent = new System.Windows.Forms.Label();
+            this.dateTimePickerModifDateFinEvent = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerModifDateDebutEvent = new System.Windows.Forms.DateTimePicker();
             this.labelNomDuClubModifEvent = new System.Windows.Forms.Label();
             this.labelNbParticpant = new System.Windows.Forms.Label();
             this.labelShownbParticipant = new System.Windows.Forms.Label();
@@ -116,11 +121,6 @@
             this.buttonAddParticipantToEvent = new System.Windows.Forms.Button();
             this.buttonModifEvent = new System.Windows.Forms.Button();
             this.buttonBackToListEvent = new System.Windows.Forms.Button();
-            this.dateTimePickerModifDateDebutEvent = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerModifDateFinEvent = new System.Windows.Forms.DateTimePicker();
-            this.labelIdEvent = new System.Windows.Forms.Label();
-            this.labelShowIdEvent = new System.Windows.Forms.Label();
-            this.labelIdClubEvent = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listClubs)).BeginInit();
             this.panel2.SuspendLayout();
@@ -797,6 +797,47 @@
             this.panelModifEvent.Size = new System.Drawing.Size(791, 556);
             this.panelModifEvent.TabIndex = 5;
             // 
+            // labelIdClubEvent
+            // 
+            this.labelIdClubEvent.AutoSize = true;
+            this.labelIdClubEvent.Location = new System.Drawing.Point(281, 28);
+            this.labelIdClubEvent.Name = "labelIdClubEvent";
+            this.labelIdClubEvent.Size = new System.Drawing.Size(35, 13);
+            this.labelIdClubEvent.TabIndex = 26;
+            this.labelIdClubEvent.Text = "label2";
+            // 
+            // labelShowIdEvent
+            // 
+            this.labelShowIdEvent.AutoSize = true;
+            this.labelShowIdEvent.Location = new System.Drawing.Point(133, 88);
+            this.labelShowIdEvent.Name = "labelShowIdEvent";
+            this.labelShowIdEvent.Size = new System.Drawing.Size(19, 13);
+            this.labelShowIdEvent.TabIndex = 25;
+            this.labelShowIdEvent.Text = "Id ";
+            // 
+            // labelIdEvent
+            // 
+            this.labelIdEvent.AutoSize = true;
+            this.labelIdEvent.Location = new System.Drawing.Point(15, 85);
+            this.labelIdEvent.Name = "labelIdEvent";
+            this.labelIdEvent.Size = new System.Drawing.Size(97, 13);
+            this.labelIdEvent.TabIndex = 24;
+            this.labelIdEvent.Text = "Id de l\'évènement :";
+            // 
+            // dateTimePickerModifDateFinEvent
+            // 
+            this.dateTimePickerModifDateFinEvent.Location = new System.Drawing.Point(560, 292);
+            this.dateTimePickerModifDateFinEvent.Name = "dateTimePickerModifDateFinEvent";
+            this.dateTimePickerModifDateFinEvent.Size = new System.Drawing.Size(180, 20);
+            this.dateTimePickerModifDateFinEvent.TabIndex = 23;
+            // 
+            // dateTimePickerModifDateDebutEvent
+            // 
+            this.dateTimePickerModifDateDebutEvent.Location = new System.Drawing.Point(560, 240);
+            this.dateTimePickerModifDateDebutEvent.Name = "dateTimePickerModifDateDebutEvent";
+            this.dateTimePickerModifDateDebutEvent.Size = new System.Drawing.Size(180, 20);
+            this.dateTimePickerModifDateDebutEvent.TabIndex = 22;
+            // 
             // labelNomDuClubModifEvent
             // 
             this.labelNomDuClubModifEvent.AutoSize = true;
@@ -946,6 +987,7 @@
             this.buttonAddParticipantToEvent.TabIndex = 2;
             this.buttonAddParticipantToEvent.Text = "Ajouter Participant";
             this.buttonAddParticipantToEvent.UseVisualStyleBackColor = true;
+            this.buttonAddParticipantToEvent.Click += new System.EventHandler(this.buttonAddParticipantToEvent_Click);
             // 
             // buttonModifEvent
             // 
@@ -966,47 +1008,6 @@
             this.buttonBackToListEvent.Text = "Retour";
             this.buttonBackToListEvent.UseVisualStyleBackColor = true;
             this.buttonBackToListEvent.Click += new System.EventHandler(this.buttonBackToListEvent_Click);
-            // 
-            // dateTimePickerModifDateDebutEvent
-            // 
-            this.dateTimePickerModifDateDebutEvent.Location = new System.Drawing.Point(560, 240);
-            this.dateTimePickerModifDateDebutEvent.Name = "dateTimePickerModifDateDebutEvent";
-            this.dateTimePickerModifDateDebutEvent.Size = new System.Drawing.Size(180, 20);
-            this.dateTimePickerModifDateDebutEvent.TabIndex = 22;
-            // 
-            // dateTimePickerModifDateFinEvent
-            // 
-            this.dateTimePickerModifDateFinEvent.Location = new System.Drawing.Point(560, 292);
-            this.dateTimePickerModifDateFinEvent.Name = "dateTimePickerModifDateFinEvent";
-            this.dateTimePickerModifDateFinEvent.Size = new System.Drawing.Size(180, 20);
-            this.dateTimePickerModifDateFinEvent.TabIndex = 23;
-            // 
-            // labelIdEvent
-            // 
-            this.labelIdEvent.AutoSize = true;
-            this.labelIdEvent.Location = new System.Drawing.Point(15, 85);
-            this.labelIdEvent.Name = "labelIdEvent";
-            this.labelIdEvent.Size = new System.Drawing.Size(97, 13);
-            this.labelIdEvent.TabIndex = 24;
-            this.labelIdEvent.Text = "Id de l\'évènement :";
-            // 
-            // labelShowIdEvent
-            // 
-            this.labelShowIdEvent.AutoSize = true;
-            this.labelShowIdEvent.Location = new System.Drawing.Point(133, 88);
-            this.labelShowIdEvent.Name = "labelShowIdEvent";
-            this.labelShowIdEvent.Size = new System.Drawing.Size(19, 13);
-            this.labelShowIdEvent.TabIndex = 25;
-            this.labelShowIdEvent.Text = "Id ";
-            // 
-            // labelIdClubEvent
-            // 
-            this.labelIdClubEvent.AutoSize = true;
-            this.labelIdClubEvent.Location = new System.Drawing.Point(281, 28);
-            this.labelIdClubEvent.Name = "labelIdClubEvent";
-            this.labelIdClubEvent.Size = new System.Drawing.Size(35, 13);
-            this.labelIdClubEvent.TabIndex = 26;
-            this.labelIdClubEvent.Text = "label2";
             // 
             // FormPrincipal
             // 

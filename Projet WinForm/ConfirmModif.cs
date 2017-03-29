@@ -12,10 +12,13 @@ namespace Projet_WinForm
 {
     public partial class ConfirmModif : Form
     {
+        
         public ConfirmModif()
         {
             InitializeComponent();
         }
+
+
 
         private void buttonCloseConfirmModif_Click(object sender, EventArgs e)
         {

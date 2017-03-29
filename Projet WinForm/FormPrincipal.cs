@@ -13,6 +13,7 @@ namespace Projet_WinForm
     public partial class FormPrincipal : Form
     {
 
+        private AjoutParticipants participantAjout;
         private Ajout modalAjout;
         private ConfirmModif confModif;
 
@@ -351,6 +352,13 @@ namespace Projet_WinForm
             ModifEvent1.UpdateEvent(LEvent);
             confModif = new ConfirmModif();
             confModif.ShowDialog();
+        }
+
+        private void buttonAddParticipantToEvent_Click(object sender, EventArgs e)
+        {
+            participantAjout = new AjoutParticipants("FromModifEvent",int.Parse(labelIdClubEvent.Text), int.Parse(labelIdClubEvent.Text));
+            participantAjout.FormClosed += ModalAjout_FormClosed;
+            participantAjout.ShowDialog();
         }
     }
 }
