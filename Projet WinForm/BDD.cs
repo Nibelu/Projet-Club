@@ -527,8 +527,84 @@ namespace Projet_WinForm
                 cmd.Parameters.AddWithValue("@dateDebut", ModifEvent.dateDebutEvent);
                 cmd.Parameters.AddWithValue("@dateFin", ModifEvent.dateFinEvent);
                 cmd.ExecuteReader();
-                //cmd.ExecuteNonQuery();
             }
         }
+        
+        /// <summary>
+        /// InsertParticipant crée une occurence dans la table participants et incrémente le nombre de participants dans la table évènement
+        /// </summary>
+        /// <param name="idAdh"></param>
+        /// <param name="idEvent"></param>
+        /// <param name="idNONAdh"></param>
+        public void InsertParticipant(int idAdh, int idEvent, int idNONAdh)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "INSERT INTO participants (id_adherent, id_evenement, id_NA) VALUES (@adherent, @event, @NA)";
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@adherent", idAdh);
+                cmd.Parameters.AddWithValue("@event", idEvent);
+                cmd.Parameters.AddWithValue("@NA", idNONAdh);
+                cmd.ExecuteNonQuery();
+
+                string query2 = "UPDATE evenement SET nbParticipants = nbParticipants + 1  WHERE  id = @event";
+
+                //Create Command
+                cmd = new MySqlCommand(query2, connection);
+                cmd.Parameters.AddWithValue("@event", idEvent);
+                cmd.ExecuteNonQuery();
+
+            }
+        }
+
+        public List<Adherent> SelectAllEventAdherent(int idEvent, int idClub)
+        {
+            Adherent LeAdherent = null;
+            List<Adherent> ListAdherent = new List<Adherent>();            
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM adherent Where id_club = @club AND id NOT IN (SELECT id_adherent FROM participants WHERE id_evenement = @event) ORDER BY id ASC";
+                                
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@club", idClub);
+                cmd.Parameters.AddWithValue("@event", idEvent);
+
+
+                //Create a data reader and Execute the command
+                using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                {     
+
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        LeAdherent = new Adherent(
+                            (int)dataReader["id"],
+                            (string)dataReader["nomAdh"],
+                            (string)dataReader["prenomAdh"],
+                            (DateTime)dataReader["naissance"],
+                            (string)dataReader["sexe"],
+                            (string)dataReader["numLicence"],
+                            (string)dataReader["adresseAdh"],
+                            (int)dataReader["CPAdh"],
+                            (string)dataReader["villeAdh"],
+                            (int)dataReader["cotisation"],
+                            (int)dataReader["id_club"]);
+                        ListAdherent.Add(LeAdherent);
+                    }
+                }
+            }
+
+            return ListAdherent;
+        }
+
+
+
     }
 }

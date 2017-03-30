@@ -52,8 +52,9 @@
             this.labelAddPartNomEvent = new System.Windows.Forms.Label();
             this.ButtonBackToModifEvent = new System.Windows.Forms.Button();
             this.panelChooseAdhToEvent = new System.Windows.Forms.Panel();
-            this.dataGridViewListAdhToEvent = new System.Windows.Forms.DataGridView();
             this.buttonBackToAddPartEvent = new System.Windows.Forms.Button();
+            this.dataGridViewListAdhToEvent = new System.Windows.Forms.DataGridView();
+            this.labelIdChooseEvent = new System.Windows.Forms.Label();
             this.panelAddParticipantFromModifEvent.SuspendLayout();
             this.panelChooseAdhToEvent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListAdhToEvent)).BeginInit();
@@ -61,6 +62,7 @@
             // 
             // panelAddParticipantFromModifEvent
             // 
+            this.panelAddParticipantFromModifEvent.Controls.Add(this.labelIdChooseEvent);
             this.panelAddParticipantFromModifEvent.Controls.Add(this.buttonAddNonAdhOnEvent);
             this.panelAddParticipantFromModifEvent.Controls.Add(this.buttonAddAdhOnEvent);
             this.panelAddParticipantFromModifEvent.Controls.Add(this.labelVilleEvenementAddPart);
@@ -298,15 +300,6 @@
             this.panelChooseAdhToEvent.Size = new System.Drawing.Size(755, 393);
             this.panelChooseAdhToEvent.TabIndex = 1;
             // 
-            // dataGridViewListAdhToEvent
-            // 
-            this.dataGridViewListAdhToEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListAdhToEvent.Location = new System.Drawing.Point(3, 49);
-            this.dataGridViewListAdhToEvent.Name = "dataGridViewListAdhToEvent";
-            this.dataGridViewListAdhToEvent.Size = new System.Drawing.Size(751, 243);
-            this.dataGridViewListAdhToEvent.TabIndex = 0;
-            this.dataGridViewListAdhToEvent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListAdhToEvent_CellDoubleClick);
-            // 
             // buttonBackToAddPartEvent
             // 
             this.buttonBackToAddPartEvent.Location = new System.Drawing.Point(5, 11);
@@ -317,13 +310,31 @@
             this.buttonBackToAddPartEvent.UseVisualStyleBackColor = true;
             this.buttonBackToAddPartEvent.Click += new System.EventHandler(this.buttonBackToAddPartEvent_Click);
             // 
+            // dataGridViewListAdhToEvent
+            // 
+            this.dataGridViewListAdhToEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListAdhToEvent.Location = new System.Drawing.Point(3, 49);
+            this.dataGridViewListAdhToEvent.Name = "dataGridViewListAdhToEvent";
+            this.dataGridViewListAdhToEvent.Size = new System.Drawing.Size(751, 243);
+            this.dataGridViewListAdhToEvent.TabIndex = 0;
+            this.dataGridViewListAdhToEvent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListAdhToEvent_CellDoubleClick);
+            // 
+            // labelIdChooseEvent
+            // 
+            this.labelIdChooseEvent.AutoSize = true;
+            this.labelIdChooseEvent.Location = new System.Drawing.Point(225, 23);
+            this.labelIdChooseEvent.Name = "labelIdChooseEvent";
+            this.labelIdChooseEvent.Size = new System.Drawing.Size(15, 13);
+            this.labelIdChooseEvent.TabIndex = 22;
+            this.labelIdChooseEvent.Text = "id";
+            // 
             // AjoutParticipants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 394);
-            this.Controls.Add(this.panelChooseAdhToEvent);
             this.Controls.Add(this.panelAddParticipantFromModifEvent);
+            this.Controls.Add(this.panelChooseAdhToEvent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AjoutParticipants";
             this.Text = " Ajout de participants";
@@ -363,5 +374,6 @@
         private System.Windows.Forms.Panel panelChooseAdhToEvent;
         private System.Windows.Forms.DataGridView dataGridViewListAdhToEvent;
         private System.Windows.Forms.Button buttonBackToAddPartEvent;
+        private System.Windows.Forms.Label labelIdChooseEvent;
     }
 }

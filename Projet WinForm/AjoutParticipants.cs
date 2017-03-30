@@ -35,8 +35,9 @@ namespace Projet_WinForm
             Club leClub = UnEvent.ReadClub(idClub);
             labelTypeEventAddPart.Text = ThisEvent.typeEvent;
 
-            labelNomClubEventAddPart.Text = leClub.nomClub;
+            labelIdChooseEvent.Text = ThisEvent.id.ToString();
 
+            labelNomClubEventAddPart.Text = leClub.nomClub;            
             labelDateDebutEventAddPart.Text = ThisEvent.dateDebutEvent.ToString();
             labelDateFinEventAddPart.Text = ThisEvent.dateFinEvent.ToString();
             labelAdresseEventAddPart.Text = ThisEvent.adresseEvent;
@@ -60,7 +61,7 @@ namespace Projet_WinForm
         
             dataGridViewListAdhToEvent.Rows.Clear();
             BDD listeAdherents = new BDD();
-            List<Adherent> ListeAdherent = listeAdherents.SelectAllAdherent(idClub);
+            List<Adherent> ListeAdherent = listeAdherents.SelectAllEventAdherent(idEvent, idClub);
             dataGridViewListAdhToEvent.ColumnCount = 11;
             dataGridViewListAdhToEvent.Columns[0].Name = "Id";
             dataGridViewListAdhToEvent.Columns[1].Name = "Nom Adhérent";
@@ -74,9 +75,10 @@ namespace Projet_WinForm
             dataGridViewListAdhToEvent.Columns[9].Name = "Cotisation";
             dataGridViewListAdhToEvent.Columns[10].Name = "Suppression";
 
+
             foreach (Adherent adherent in ListeAdherent)
-            {
-                dataGridViewListAdhToEvent.Rows.Add(adherent.id, adherent.nomAdh, adherent.prenomAdh, adherent.naissance, adherent.sexe, adherent.numLicence, adherent.adresseAdh, adherent.CPAdh, adherent.villeAdh, adherent.cotisation, "Supprimer");
+            {                
+                    dataGridViewListAdhToEvent.Rows.Add(adherent.id, adherent.nomAdh, adherent.prenomAdh, adherent.naissance, adherent.sexe, adherent.numLicence, adherent.adresseAdh, adherent.CPAdh, adherent.villeAdh, adherent.cotisation, "Supprimer");
             }
         
 

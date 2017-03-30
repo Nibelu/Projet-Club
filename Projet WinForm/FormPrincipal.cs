@@ -356,7 +356,7 @@ namespace Projet_WinForm
 
         private void buttonAddParticipantToEvent_Click(object sender, EventArgs e)
         {
-            participantAjout = new AjoutParticipants("FromModifEvent",int.Parse(labelIdClubEvent.Text), int.Parse(labelIdClubEvent.Text));
+            participantAjout = new AjoutParticipants("FromModifEvent",int.Parse(labelIdClubEvent.Text), int.Parse(labelShowIdEvent.Text));
             participantAjout.FormClosed += ModalAjout_FormClosed;
             participantAjout.ShowDialog();
         }

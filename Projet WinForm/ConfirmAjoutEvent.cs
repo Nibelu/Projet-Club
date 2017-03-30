@@ -44,6 +44,8 @@ namespace Projet_WinForm
         private void buttonConfirmAddPart_Click(object sender, EventArgs e)
         {
             BDD UnEvent = new BDD();
+            UnEvent.InsertParticipant(idAdh, idEvent, 0);
+            Close();
 
         }
     }
