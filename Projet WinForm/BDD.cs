@@ -604,7 +604,53 @@ namespace Projet_WinForm
             return ListAdherent;
         }
 
+        public void InsertNA(string nomNA, string prenomNA, string telNA, int idEvent)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "INSERT INTO non_adherents (nomNA, prenomNA, telephone, id_event) VALUES (@nom, @prenom, @tel, @idEvent)";
 
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
 
+                cmd.Parameters.AddWithValue("@nom", nomNA);
+                cmd.Parameters.AddWithValue("@prenom", prenomNA);
+                cmd.Parameters.AddWithValue("@tel", telNA);
+                cmd.Parameters.AddWithValue("@idEvent", idEvent);
+                cmd.ExecuteNonQuery();
+                             
+
+            }
+        }
+
+        public NonAdherent ReadNA(string telNA, int idEvent)
+        {
+            NonAdherent ThisNA = null;
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM non_adherents where telephone = @tel";
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@tel", telNA);
+                //Create a data reader and Execute the command
+                using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                {
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        ThisNA = new NonAdherent(
+                            (int)dataReader["id"],
+                            (string)dataReader["nomNA"],
+                            (string)dataReader["prenomNA"],
+                            (string)dataReader["telephone"],
+                            (int)dataReader["id_event"]);
+                    }
+                }
+            }
+            return ThisNA;
+        }
     }
 }

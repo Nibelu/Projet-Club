@@ -1023,7 +1023,7 @@
             this.Controls.Add(this.panelListAdherents);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormPrincipal";
-            this.Text = "Liste Clubs";
+            this.Text = "Gestion Clubs";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listClubs)).EndInit();
