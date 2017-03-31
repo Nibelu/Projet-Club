@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelAddParticipantFromModifEvent = new System.Windows.Forms.Panel();
+            this.labelIdChooseEvent = new System.Windows.Forms.Label();
             this.buttonAddNonAdhOnEvent = new System.Windows.Forms.Button();
             this.buttonAddAdhOnEvent = new System.Windows.Forms.Button();
             this.labelVilleEvenementAddPart = new System.Windows.Forms.Label();
@@ -54,10 +55,22 @@
             this.panelChooseAdhToEvent = new System.Windows.Forms.Panel();
             this.buttonBackToAddPartEvent = new System.Windows.Forms.Button();
             this.dataGridViewListAdhToEvent = new System.Windows.Forms.DataGridView();
-            this.labelIdChooseEvent = new System.Windows.Forms.Label();
+            this.panelAjoutNAToEvent = new System.Windows.Forms.Panel();
+            this.buttonAjoutNAToEvent = new System.Windows.Forms.Button();
+            this.textBoxNomNewNA = new System.Windows.Forms.TextBox();
+            this.textBoxPrenomNewNA = new System.Windows.Forms.TextBox();
+            this.textBoxTelNewNA = new System.Windows.Forms.TextBox();
+            this.labelNomEventNA = new System.Windows.Forms.Label();
+            this.labelNomEventOnNA = new System.Windows.Forms.Label();
+            this.labelIdEventOnNA = new System.Windows.Forms.Label();
+            this.buttonBackToModifEventFromAjoutNA = new System.Windows.Forms.Button();
+            this.labelNomNA = new System.Windows.Forms.Label();
+            this.labelPrenomNA = new System.Windows.Forms.Label();
+            this.labelTelNA = new System.Windows.Forms.Label();
             this.panelAddParticipantFromModifEvent.SuspendLayout();
             this.panelChooseAdhToEvent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListAdhToEvent)).BeginInit();
+            this.panelAjoutNAToEvent.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAddParticipantFromModifEvent
@@ -91,6 +104,15 @@
             this.panelAddParticipantFromModifEvent.TabIndex = 0;
             this.panelAddParticipantFromModifEvent.VisibleChanged += new System.EventHandler(this.panelAddParticipantFromModifEvent_VisibleChanged);
             // 
+            // labelIdChooseEvent
+            // 
+            this.labelIdChooseEvent.AutoSize = true;
+            this.labelIdChooseEvent.Location = new System.Drawing.Point(225, 23);
+            this.labelIdChooseEvent.Name = "labelIdChooseEvent";
+            this.labelIdChooseEvent.Size = new System.Drawing.Size(15, 13);
+            this.labelIdChooseEvent.TabIndex = 22;
+            this.labelIdChooseEvent.Text = "id";
+            // 
             // buttonAddNonAdhOnEvent
             // 
             this.buttonAddNonAdhOnEvent.Location = new System.Drawing.Point(422, 280);
@@ -99,6 +121,7 @@
             this.buttonAddNonAdhOnEvent.TabIndex = 21;
             this.buttonAddNonAdhOnEvent.Text = "Ajouter un Non-Adhérent";
             this.buttonAddNonAdhOnEvent.UseVisualStyleBackColor = true;
+            this.buttonAddNonAdhOnEvent.Click += new System.EventHandler(this.buttonAddNonAdhOnEvent_Click);
             // 
             // buttonAddAdhOnEvent
             // 
@@ -319,20 +342,125 @@
             this.dataGridViewListAdhToEvent.TabIndex = 0;
             this.dataGridViewListAdhToEvent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListAdhToEvent_CellDoubleClick);
             // 
-            // labelIdChooseEvent
+            // panelAjoutNAToEvent
             // 
-            this.labelIdChooseEvent.AutoSize = true;
-            this.labelIdChooseEvent.Location = new System.Drawing.Point(225, 23);
-            this.labelIdChooseEvent.Name = "labelIdChooseEvent";
-            this.labelIdChooseEvent.Size = new System.Drawing.Size(15, 13);
-            this.labelIdChooseEvent.TabIndex = 22;
-            this.labelIdChooseEvent.Text = "id";
+            this.panelAjoutNAToEvent.Controls.Add(this.labelTelNA);
+            this.panelAjoutNAToEvent.Controls.Add(this.labelPrenomNA);
+            this.panelAjoutNAToEvent.Controls.Add(this.labelNomNA);
+            this.panelAjoutNAToEvent.Controls.Add(this.buttonBackToModifEventFromAjoutNA);
+            this.panelAjoutNAToEvent.Controls.Add(this.labelIdEventOnNA);
+            this.panelAjoutNAToEvent.Controls.Add(this.labelNomEventOnNA);
+            this.panelAjoutNAToEvent.Controls.Add(this.labelNomEventNA);
+            this.panelAjoutNAToEvent.Controls.Add(this.textBoxTelNewNA);
+            this.panelAjoutNAToEvent.Controls.Add(this.textBoxPrenomNewNA);
+            this.panelAjoutNAToEvent.Controls.Add(this.textBoxNomNewNA);
+            this.panelAjoutNAToEvent.Controls.Add(this.buttonAjoutNAToEvent);
+            this.panelAjoutNAToEvent.Location = new System.Drawing.Point(1, 0);
+            this.panelAjoutNAToEvent.Name = "panelAjoutNAToEvent";
+            this.panelAjoutNAToEvent.Size = new System.Drawing.Size(754, 393);
+            this.panelAjoutNAToEvent.TabIndex = 2;
+            // 
+            // buttonAjoutNAToEvent
+            // 
+            this.buttonAjoutNAToEvent.Location = new System.Drawing.Point(282, 335);
+            this.buttonAjoutNAToEvent.Name = "buttonAjoutNAToEvent";
+            this.buttonAjoutNAToEvent.Size = new System.Drawing.Size(173, 30);
+            this.buttonAjoutNAToEvent.TabIndex = 0;
+            this.buttonAjoutNAToEvent.Text = "Ajouter";
+            this.buttonAjoutNAToEvent.UseVisualStyleBackColor = true;
+            this.buttonAjoutNAToEvent.Click += new System.EventHandler(this.buttonAjoutNAToEvent_Click);
+            // 
+            // textBoxNomNewNA
+            // 
+            this.textBoxNomNewNA.Location = new System.Drawing.Point(151, 127);
+            this.textBoxNomNewNA.Name = "textBoxNomNewNA";
+            this.textBoxNomNewNA.Size = new System.Drawing.Size(185, 20);
+            this.textBoxNomNewNA.TabIndex = 1;
+            // 
+            // textBoxPrenomNewNA
+            // 
+            this.textBoxPrenomNewNA.Location = new System.Drawing.Point(151, 214);
+            this.textBoxPrenomNewNA.Name = "textBoxPrenomNewNA";
+            this.textBoxPrenomNewNA.Size = new System.Drawing.Size(185, 20);
+            this.textBoxPrenomNewNA.TabIndex = 2;
+            // 
+            // textBoxTelNewNA
+            // 
+            this.textBoxTelNewNA.Location = new System.Drawing.Point(542, 217);
+            this.textBoxTelNewNA.Name = "textBoxTelNewNA";
+            this.textBoxTelNewNA.Size = new System.Drawing.Size(185, 20);
+            this.textBoxTelNewNA.TabIndex = 3;
+            // 
+            // labelNomEventNA
+            // 
+            this.labelNomEventNA.AutoSize = true;
+            this.labelNomEventNA.Location = new System.Drawing.Point(358, 34);
+            this.labelNomEventNA.Name = "labelNomEventNA";
+            this.labelNomEventNA.Size = new System.Drawing.Size(110, 13);
+            this.labelNomEventNA.TabIndex = 4;
+            this.labelNomEventNA.Text = "Nom de l\'évènement :";
+            // 
+            // labelNomEventOnNA
+            // 
+            this.labelNomEventOnNA.AutoSize = true;
+            this.labelNomEventOnNA.Location = new System.Drawing.Point(611, 34);
+            this.labelNomEventOnNA.Name = "labelNomEventOnNA";
+            this.labelNomEventOnNA.Size = new System.Drawing.Size(35, 13);
+            this.labelNomEventOnNA.TabIndex = 5;
+            this.labelNomEventOnNA.Text = "label2";
+            // 
+            // labelIdEventOnNA
+            // 
+            this.labelIdEventOnNA.AutoSize = true;
+            this.labelIdEventOnNA.Location = new System.Drawing.Point(505, 34);
+            this.labelIdEventOnNA.Name = "labelIdEventOnNA";
+            this.labelIdEventOnNA.Size = new System.Drawing.Size(35, 13);
+            this.labelIdEventOnNA.TabIndex = 6;
+            this.labelIdEventOnNA.Text = "label3";
+            // 
+            // buttonBackToModifEventFromAjoutNA
+            // 
+            this.buttonBackToModifEventFromAjoutNA.Location = new System.Drawing.Point(27, 24);
+            this.buttonBackToModifEventFromAjoutNA.Name = "buttonBackToModifEventFromAjoutNA";
+            this.buttonBackToModifEventFromAjoutNA.Size = new System.Drawing.Size(173, 30);
+            this.buttonBackToModifEventFromAjoutNA.TabIndex = 7;
+            this.buttonBackToModifEventFromAjoutNA.Text = "Retour";
+            this.buttonBackToModifEventFromAjoutNA.UseVisualStyleBackColor = true;
+            this.buttonBackToModifEventFromAjoutNA.Click += new System.EventHandler(this.buttonBackToModifEventFromAjoutNA_Click);
+            // 
+            // labelNomNA
+            // 
+            this.labelNomNA.AutoSize = true;
+            this.labelNomNA.Location = new System.Drawing.Point(41, 134);
+            this.labelNomNA.Name = "labelNomNA";
+            this.labelNomNA.Size = new System.Drawing.Size(35, 13);
+            this.labelNomNA.TabIndex = 8;
+            this.labelNomNA.Text = "Nom :";
+            // 
+            // labelPrenomNA
+            // 
+            this.labelPrenomNA.AutoSize = true;
+            this.labelPrenomNA.Location = new System.Drawing.Point(41, 221);
+            this.labelPrenomNA.Name = "labelPrenomNA";
+            this.labelPrenomNA.Size = new System.Drawing.Size(49, 13);
+            this.labelPrenomNA.TabIndex = 9;
+            this.labelPrenomNA.Text = "Prénom :";
+            // 
+            // labelTelNA
+            // 
+            this.labelTelNA.AutoSize = true;
+            this.labelTelNA.Location = new System.Drawing.Point(433, 224);
+            this.labelTelNA.Name = "labelTelNA";
+            this.labelTelNA.Size = new System.Drawing.Size(64, 13);
+            this.labelTelNA.TabIndex = 10;
+            this.labelTelNA.Text = "Téléphone :";
             // 
             // AjoutParticipants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 394);
+            this.Controls.Add(this.panelAjoutNAToEvent);
             this.Controls.Add(this.panelAddParticipantFromModifEvent);
             this.Controls.Add(this.panelChooseAdhToEvent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -342,6 +470,8 @@
             this.panelAddParticipantFromModifEvent.PerformLayout();
             this.panelChooseAdhToEvent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListAdhToEvent)).EndInit();
+            this.panelAjoutNAToEvent.ResumeLayout(false);
+            this.panelAjoutNAToEvent.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -375,5 +505,17 @@
         private System.Windows.Forms.DataGridView dataGridViewListAdhToEvent;
         private System.Windows.Forms.Button buttonBackToAddPartEvent;
         private System.Windows.Forms.Label labelIdChooseEvent;
+        private System.Windows.Forms.Panel panelAjoutNAToEvent;
+        private System.Windows.Forms.Button buttonAjoutNAToEvent;
+        private System.Windows.Forms.Button buttonBackToModifEventFromAjoutNA;
+        private System.Windows.Forms.Label labelIdEventOnNA;
+        private System.Windows.Forms.Label labelNomEventOnNA;
+        private System.Windows.Forms.Label labelNomEventNA;
+        private System.Windows.Forms.TextBox textBoxTelNewNA;
+        private System.Windows.Forms.TextBox textBoxPrenomNewNA;
+        private System.Windows.Forms.TextBox textBoxNomNewNA;
+        private System.Windows.Forms.Label labelTelNA;
+        private System.Windows.Forms.Label labelPrenomNA;
+        private System.Windows.Forms.Label labelNomNA;
     }
 }

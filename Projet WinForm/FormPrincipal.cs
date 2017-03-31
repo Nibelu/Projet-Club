@@ -16,6 +16,7 @@ namespace Projet_WinForm
         private AjoutParticipants participantAjout;
         private Ajout modalAjout;
         private ConfirmModif confModif;
+        private afficheVille lesVilles;
 
         public FormPrincipal()
         {
@@ -359,6 +360,13 @@ namespace Projet_WinForm
             participantAjout = new AjoutParticipants("FromModifEvent",int.Parse(labelIdClubEvent.Text), int.Parse(labelShowIdEvent.Text));
             participantAjout.FormClosed += ModalAjout_FormClosed;
             participantAjout.ShowDialog();
+        }
+
+        private void buttonAfficheAdhVille_Click(object sender, EventArgs e)
+        {
+            lesVilles = new afficheVille(int.Parse(idClub.Text));
+            lesVilles.FormClosed += ModalAjout_FormClosed;
+            lesVilles.ShowDialog();
         }
     }
 }

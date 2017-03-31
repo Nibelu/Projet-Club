@@ -13,6 +13,42 @@ namespace Projet_WinForm
         public int idAdh { set; get; }
         public int idNA { set; get; }
 
+        internal Evenement Evenement
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        internal Adherent Adherent
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        internal NonAdherent NonAdherent
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public Participant(int id, int idEvent, int idAdh, int idNA)
         {
             this.id = id;

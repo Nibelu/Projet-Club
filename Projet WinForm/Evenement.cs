@@ -20,6 +20,18 @@ namespace Projet_WinForm
         public int nbParticipants { set; get; }
         public int id_club { set; get; }
 
+        internal Club Club
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         //ici le contructeur evenement
         public Evenement (int id, string typeEvent, string nomEvent, string adresseEvent, int CPEvent, string villeEvent, string siteEvent, DateTime dateDebutEvent, DateTime dateFinEvent, int nbParticipants, int id_club)
         {

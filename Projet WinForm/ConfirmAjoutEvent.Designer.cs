@@ -38,13 +38,25 @@
             this.labelDateFinConfirm = new System.Windows.Forms.Label();
             this.buttonConfirmAddPart = new System.Windows.Forms.Button();
             this.buttonRefuseAddPart = new System.Windows.Forms.Button();
+            this.panelConfirmAjoutAdh = new System.Windows.Forms.Panel();
+            this.panelConfirmAjoutNA = new System.Windows.Forms.Panel();
+            this.labelPrenomNAEvent = new System.Windows.Forms.Label();
+            this.labelTelNAEvent = new System.Windows.Forms.Label();
+            this.labelNomNAEvent = new System.Windows.Forms.Label();
+            this.labelNomEventNA = new System.Windows.Forms.Label();
+            this.labelIdEventNA = new System.Windows.Forms.Label();
+            this.buttonConfirmAjoutNA = new System.Windows.Forms.Button();
+            this.labelConfirmAjoutNA = new System.Windows.Forms.Label();
+            this.buttonBackToNewNA = new System.Windows.Forms.Button();
+            this.panelConfirmAjoutAdh.SuspendLayout();
+            this.panelConfirmAjoutNA.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelConfirmAjoutPart
             // 
             this.labelConfirmAjoutPart.AutoSize = true;
             this.labelConfirmAjoutPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConfirmAjoutPart.Location = new System.Drawing.Point(11, 21);
+            this.labelConfirmAjoutPart.Location = new System.Drawing.Point(6, 21);
             this.labelConfirmAjoutPart.Name = "labelConfirmAjoutPart";
             this.labelConfirmAjoutPart.Size = new System.Drawing.Size(218, 29);
             this.labelConfirmAjoutPart.TabIndex = 0;
@@ -53,7 +65,7 @@
             // labelInfoEvent
             // 
             this.labelInfoEvent.AutoSize = true;
-            this.labelInfoEvent.Location = new System.Drawing.Point(14, 82);
+            this.labelInfoEvent.Location = new System.Drawing.Point(9, 82);
             this.labelInfoEvent.Name = "labelInfoEvent";
             this.labelInfoEvent.Size = new System.Drawing.Size(66, 13);
             this.labelInfoEvent.TabIndex = 1;
@@ -62,7 +74,7 @@
             // labelInfoAdhOnEvent
             // 
             this.labelInfoAdhOnEvent.AutoSize = true;
-            this.labelInfoAdhOnEvent.Location = new System.Drawing.Point(14, 153);
+            this.labelInfoAdhOnEvent.Location = new System.Drawing.Point(9, 153);
             this.labelInfoAdhOnEvent.Name = "labelInfoAdhOnEvent";
             this.labelInfoAdhOnEvent.Size = new System.Drawing.Size(56, 13);
             this.labelInfoAdhOnEvent.TabIndex = 2;
@@ -71,7 +83,7 @@
             // labelNomEventConfirm
             // 
             this.labelNomEventConfirm.AutoSize = true;
-            this.labelNomEventConfirm.Location = new System.Drawing.Point(134, 82);
+            this.labelNomEventConfirm.Location = new System.Drawing.Point(129, 82);
             this.labelNomEventConfirm.Name = "labelNomEventConfirm";
             this.labelNomEventConfirm.Size = new System.Drawing.Size(55, 13);
             this.labelNomEventConfirm.TabIndex = 3;
@@ -80,7 +92,7 @@
             // labelNomAdhConfirm
             // 
             this.labelNomAdhConfirm.AutoSize = true;
-            this.labelNomAdhConfirm.Location = new System.Drawing.Point(134, 153);
+            this.labelNomAdhConfirm.Location = new System.Drawing.Point(129, 153);
             this.labelNomAdhConfirm.Name = "labelNomAdhConfirm";
             this.labelNomAdhConfirm.Size = new System.Drawing.Size(48, 13);
             this.labelNomAdhConfirm.TabIndex = 4;
@@ -89,7 +101,7 @@
             // labelLicenceConfirm
             // 
             this.labelLicenceConfirm.AutoSize = true;
-            this.labelLicenceConfirm.Location = new System.Drawing.Point(290, 153);
+            this.labelLicenceConfirm.Location = new System.Drawing.Point(285, 153);
             this.labelLicenceConfirm.Name = "labelLicenceConfirm";
             this.labelLicenceConfirm.Size = new System.Drawing.Size(41, 13);
             this.labelLicenceConfirm.TabIndex = 5;
@@ -98,7 +110,7 @@
             // labelDateDebutEventConfirm
             // 
             this.labelDateDebutEventConfirm.AutoSize = true;
-            this.labelDateDebutEventConfirm.Location = new System.Drawing.Point(290, 82);
+            this.labelDateDebutEventConfirm.Location = new System.Drawing.Point(285, 82);
             this.labelDateDebutEventConfirm.Name = "labelDateDebutEventConfirm";
             this.labelDateDebutEventConfirm.Size = new System.Drawing.Size(57, 13);
             this.labelDateDebutEventConfirm.TabIndex = 6;
@@ -107,7 +119,7 @@
             // labelDateFinConfirm
             // 
             this.labelDateFinConfirm.AutoSize = true;
-            this.labelDateFinConfirm.Location = new System.Drawing.Point(468, 82);
+            this.labelDateFinConfirm.Location = new System.Drawing.Point(463, 82);
             this.labelDateFinConfirm.Name = "labelDateFinConfirm";
             this.labelDateFinConfirm.Size = new System.Drawing.Size(42, 13);
             this.labelDateFinConfirm.TabIndex = 7;
@@ -115,7 +127,7 @@
             // 
             // buttonConfirmAddPart
             // 
-            this.buttonConfirmAddPart.Location = new System.Drawing.Point(152, 204);
+            this.buttonConfirmAddPart.Location = new System.Drawing.Point(147, 204);
             this.buttonConfirmAddPart.Name = "buttonConfirmAddPart";
             this.buttonConfirmAddPart.Size = new System.Drawing.Size(77, 25);
             this.buttonConfirmAddPart.TabIndex = 8;
@@ -125,7 +137,7 @@
             // 
             // buttonRefuseAddPart
             // 
-            this.buttonRefuseAddPart.Location = new System.Drawing.Point(270, 204);
+            this.buttonRefuseAddPart.Location = new System.Drawing.Point(265, 204);
             this.buttonRefuseAddPart.Name = "buttonRefuseAddPart";
             this.buttonRefuseAddPart.Size = new System.Drawing.Size(77, 25);
             this.buttonRefuseAddPart.TabIndex = 9;
@@ -133,27 +145,129 @@
             this.buttonRefuseAddPart.UseVisualStyleBackColor = true;
             this.buttonRefuseAddPart.Click += new System.EventHandler(this.buttonRefuseAddPart_Click);
             // 
+            // panelConfirmAjoutAdh
+            // 
+            this.panelConfirmAjoutAdh.Controls.Add(this.buttonRefuseAddPart);
+            this.panelConfirmAjoutAdh.Controls.Add(this.buttonConfirmAddPart);
+            this.panelConfirmAjoutAdh.Controls.Add(this.labelDateFinConfirm);
+            this.panelConfirmAjoutAdh.Controls.Add(this.labelDateDebutEventConfirm);
+            this.panelConfirmAjoutAdh.Controls.Add(this.labelLicenceConfirm);
+            this.panelConfirmAjoutAdh.Controls.Add(this.labelNomAdhConfirm);
+            this.panelConfirmAjoutAdh.Controls.Add(this.labelNomEventConfirm);
+            this.panelConfirmAjoutAdh.Controls.Add(this.labelInfoAdhOnEvent);
+            this.panelConfirmAjoutAdh.Controls.Add(this.labelInfoEvent);
+            this.panelConfirmAjoutAdh.Controls.Add(this.labelConfirmAjoutPart);
+            this.panelConfirmAjoutAdh.Location = new System.Drawing.Point(0, 0);
+            this.panelConfirmAjoutAdh.Name = "panelConfirmAjoutAdh";
+            this.panelConfirmAjoutAdh.Size = new System.Drawing.Size(552, 257);
+            this.panelConfirmAjoutAdh.TabIndex = 10;
+            // 
+            // panelConfirmAjoutNA
+            // 
+            this.panelConfirmAjoutNA.Controls.Add(this.buttonBackToNewNA);
+            this.panelConfirmAjoutNA.Controls.Add(this.labelPrenomNAEvent);
+            this.panelConfirmAjoutNA.Controls.Add(this.labelTelNAEvent);
+            this.panelConfirmAjoutNA.Controls.Add(this.labelNomNAEvent);
+            this.panelConfirmAjoutNA.Controls.Add(this.labelNomEventNA);
+            this.panelConfirmAjoutNA.Controls.Add(this.labelIdEventNA);
+            this.panelConfirmAjoutNA.Controls.Add(this.buttonConfirmAjoutNA);
+            this.panelConfirmAjoutNA.Controls.Add(this.labelConfirmAjoutNA);
+            this.panelConfirmAjoutNA.Location = new System.Drawing.Point(0, 0);
+            this.panelConfirmAjoutNA.Name = "panelConfirmAjoutNA";
+            this.panelConfirmAjoutNA.Size = new System.Drawing.Size(551, 254);
+            this.panelConfirmAjoutNA.TabIndex = 11;
+            // 
+            // labelPrenomNAEvent
+            // 
+            this.labelPrenomNAEvent.AutoSize = true;
+            this.labelPrenomNAEvent.Location = new System.Drawing.Point(205, 138);
+            this.labelPrenomNAEvent.Name = "labelPrenomNAEvent";
+            this.labelPrenomNAEvent.Size = new System.Drawing.Size(35, 13);
+            this.labelPrenomNAEvent.TabIndex = 7;
+            this.labelPrenomNAEvent.Text = "label6";
+            // 
+            // labelTelNAEvent
+            // 
+            this.labelTelNAEvent.AutoSize = true;
+            this.labelTelNAEvent.Location = new System.Drawing.Point(419, 138);
+            this.labelTelNAEvent.Name = "labelTelNAEvent";
+            this.labelTelNAEvent.Size = new System.Drawing.Size(35, 13);
+            this.labelTelNAEvent.TabIndex = 6;
+            this.labelTelNAEvent.Text = "label5";
+            // 
+            // labelNomNAEvent
+            // 
+            this.labelNomNAEvent.AutoSize = true;
+            this.labelNomNAEvent.Location = new System.Drawing.Point(65, 138);
+            this.labelNomNAEvent.Name = "labelNomNAEvent";
+            this.labelNomNAEvent.Size = new System.Drawing.Size(35, 13);
+            this.labelNomNAEvent.TabIndex = 5;
+            this.labelNomNAEvent.Text = "label4";
+            // 
+            // labelNomEventNA
+            // 
+            this.labelNomEventNA.AutoSize = true;
+            this.labelNomEventNA.Location = new System.Drawing.Point(244, 82);
+            this.labelNomEventNA.Name = "labelNomEventNA";
+            this.labelNomEventNA.Size = new System.Drawing.Size(35, 13);
+            this.labelNomEventNA.TabIndex = 3;
+            this.labelNomEventNA.Text = "label2";
+            // 
+            // labelIdEventNA
+            // 
+            this.labelIdEventNA.AutoSize = true;
+            this.labelIdEventNA.Location = new System.Drawing.Point(177, 82);
+            this.labelIdEventNA.Name = "labelIdEventNA";
+            this.labelIdEventNA.Size = new System.Drawing.Size(35, 13);
+            this.labelIdEventNA.TabIndex = 2;
+            this.labelIdEventNA.Text = "label1";
+            // 
+            // buttonConfirmAjoutNA
+            // 
+            this.buttonConfirmAjoutNA.Location = new System.Drawing.Point(147, 204);
+            this.buttonConfirmAjoutNA.Name = "buttonConfirmAjoutNA";
+            this.buttonConfirmAjoutNA.Size = new System.Drawing.Size(102, 23);
+            this.buttonConfirmAjoutNA.TabIndex = 1;
+            this.buttonConfirmAjoutNA.Text = "Confirmer";
+            this.buttonConfirmAjoutNA.UseVisualStyleBackColor = true;
+            this.buttonConfirmAjoutNA.Click += new System.EventHandler(this.buttonConfirmAjoutNA_Click);
+            // 
+            // labelConfirmAjoutNA
+            // 
+            this.labelConfirmAjoutNA.AutoSize = true;
+            this.labelConfirmAjoutNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelConfirmAjoutNA.Location = new System.Drawing.Point(127, 30);
+            this.labelConfirmAjoutNA.Name = "labelConfirmAjoutNA";
+            this.labelConfirmAjoutNA.Size = new System.Drawing.Size(272, 29);
+            this.labelConfirmAjoutNA.TabIndex = 0;
+            this.labelConfirmAjoutNA.Text = "Ajouter Non-Adhérent ";
+            // 
+            // buttonBackToNewNA
+            // 
+            this.buttonBackToNewNA.Location = new System.Drawing.Point(288, 204);
+            this.buttonBackToNewNA.Name = "buttonBackToNewNA";
+            this.buttonBackToNewNA.Size = new System.Drawing.Size(102, 23);
+            this.buttonBackToNewNA.TabIndex = 8;
+            this.buttonBackToNewNA.Text = "Retour";
+            this.buttonBackToNewNA.UseVisualStyleBackColor = true;
+            this.buttonBackToNewNA.Click += new System.EventHandler(this.buttonBackToNewNA_Click);
+            // 
             // ConfirmAjoutEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 255);
-            this.Controls.Add(this.buttonRefuseAddPart);
-            this.Controls.Add(this.buttonConfirmAddPart);
-            this.Controls.Add(this.labelDateFinConfirm);
-            this.Controls.Add(this.labelDateDebutEventConfirm);
-            this.Controls.Add(this.labelLicenceConfirm);
-            this.Controls.Add(this.labelNomAdhConfirm);
-            this.Controls.Add(this.labelNomEventConfirm);
-            this.Controls.Add(this.labelInfoAdhOnEvent);
-            this.Controls.Add(this.labelInfoEvent);
-            this.Controls.Add(this.labelConfirmAjoutPart);
+            this.Controls.Add(this.panelConfirmAjoutNA);
+            this.Controls.Add(this.panelConfirmAjoutAdh);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ConfirmAjoutEvent";
             this.Text = "ConfirmAjoutEvent";
             this.VisibleChanged += new System.EventHandler(this.ConfirmAjoutEvent_VisibleChanged);
+            this.panelConfirmAjoutAdh.ResumeLayout(false);
+            this.panelConfirmAjoutAdh.PerformLayout();
+            this.panelConfirmAjoutNA.ResumeLayout(false);
+            this.panelConfirmAjoutNA.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -169,5 +283,15 @@
         private System.Windows.Forms.Label labelDateFinConfirm;
         private System.Windows.Forms.Button buttonConfirmAddPart;
         private System.Windows.Forms.Button buttonRefuseAddPart;
+        private System.Windows.Forms.Panel panelConfirmAjoutAdh;
+        private System.Windows.Forms.Panel panelConfirmAjoutNA;
+        private System.Windows.Forms.Button buttonConfirmAjoutNA;
+        private System.Windows.Forms.Label labelConfirmAjoutNA;
+        private System.Windows.Forms.Label labelPrenomNAEvent;
+        private System.Windows.Forms.Label labelTelNAEvent;
+        private System.Windows.Forms.Label labelNomNAEvent;
+        private System.Windows.Forms.Label labelNomEventNA;
+        private System.Windows.Forms.Label labelIdEventNA;
+        private System.Windows.Forms.Button buttonBackToNewNA;
     }
 }

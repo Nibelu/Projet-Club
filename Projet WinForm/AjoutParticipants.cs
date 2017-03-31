@@ -30,6 +30,7 @@ namespace Projet_WinForm
         private void panelAddParticipantFromModifEvent_VisibleChanged(object sender, EventArgs e)
         {
             panelChooseAdhToEvent.Visible = false;
+            panelAjoutNAToEvent.Visible = false;
             BDD UnEvent = new BDD();
             Evenement ThisEvent = UnEvent.ReadEvent(idEvent);
             Club leClub = UnEvent.ReadClub(idClub);
@@ -93,8 +94,35 @@ namespace Projet_WinForm
         private void dataGridViewListAdhToEvent_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var Adh = dataGridViewListAdhToEvent.Rows[e.RowIndex].Cells[0].Value.ToString();
-            ConfirmAjoutEvent confirmation = new ConfirmAjoutEvent(idEvent, int.Parse(Adh));
+            ConfirmAjoutEvent confirmation = new ConfirmAjoutEvent(idEvent, int.Parse(Adh), "", "", "");
+            confirmation.FormClosed += ConfirmAjout_FormClosed;
             confirmation.ShowDialog();
+        }
+
+        private void buttonBackToModifEventFromAjoutNA_Click(object sender, EventArgs e)
+        {
+            panelAjoutNAToEvent.Visible = false;
+            panelAddParticipantFromModifEvent.Visible = true;
+        }
+
+        private void buttonAddNonAdhOnEvent_Click(object sender, EventArgs e)
+        {
+            panelAddParticipantFromModifEvent.Visible = false;
+            panelAjoutNAToEvent.Visible = true;
+            labelIdEventOnNA.Text = idEvent.ToString();
+            labelNomEventOnNA.Text = labelAddPartNomEvent.Text;
+        }
+
+        private void buttonAjoutNAToEvent_Click(object sender, EventArgs e)
+        {
+            ConfirmAjoutEvent confirmation = new ConfirmAjoutEvent(idEvent, 0, textBoxNomNewNA.Text, textBoxPrenomNewNA.Text, textBoxTelNewNA.Text);
+            confirmation.FormClosed += ConfirmAjout_FormClosed;
+            confirmation.ShowDialog();
+        }
+
+        private void ConfirmAjout_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Close();
         }
     }
 }

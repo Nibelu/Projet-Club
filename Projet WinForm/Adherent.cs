@@ -20,6 +20,18 @@ namespace Projet_WinForm
         public int cotisation { set; get; }
         public int id_club { set; get; }
 
+        internal Club Club
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public Adherent(int id, string nomAdh, string prenomAdh, DateTime naissance, string sexe, string numLicence, string adresseAdh, int CPAdh, string villeAdh, int cotisation, int id_club)
         {
             this.id = id;

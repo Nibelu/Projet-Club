@@ -51,6 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adherent.cs" />
+    <Compile Include="afficheVille.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="afficheVille.Designer.cs">
+      <DependentUpon>afficheVille.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ajout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,9 +96,14 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="NonAdherent.cs" />
     <Compile Include="Participant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="villeAdh.cs" />
+    <EmbeddedResource Include="afficheVille.resx">
+      <DependentUpon>afficheVille.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ajout.resx">
       <DependentUpon>Ajout.cs</DependentUpon>
     </EmbeddedResource>

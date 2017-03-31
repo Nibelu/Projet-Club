@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Projet_WinForm.Adherent">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAACAAIQQAIAAAACAAAAAAAAQBAAAAAAAAAACABgA=</HashCode>
+      <FileName>Adherent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Club" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Projet_WinForm.Club">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgABAAAEAAIAAQAAAAAAAAAAAAAAAAAAAAAAAACAAgE=</HashCode>
+      <FileName>Club.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_WinForm.Evenement">
+    <Position X="3.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQEAABIAABAAAAAAAgAAAEAAAAAAAAAAGACABgA=</HashCode>
+      <FileName>Evenement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Club" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Projet_WinForm.NonAdherent">
+    <Position X="8.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>NonAdherent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projet_WinForm.Participant">
+    <Position X="6" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAJAAAAAAAAEAAAAgAAAAAAgAAAAAAAAAAAgA=</HashCode>
+      <FileName>Participant.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Evenement" />
+      <Property Name="Adherent" />
+      <Property Name="NonAdherent" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
