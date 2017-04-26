@@ -16,6 +16,7 @@ namespace Projet_WinForm
         private AjoutParticipants participantAjout;
         private Ajout modalAjout;
         private ConfirmModif confModif;
+        private FormSuppression suppression;
 
         public FormPrincipal()
         {
@@ -137,7 +138,7 @@ namespace Projet_WinForm
         }
 
         private void ModalAjout_FormClosed(object sender, FormClosedEventArgs e)
-        {
+        {           
             listClubs.Rows.Clear();
             dataGridViewListAdherents.Rows.Clear();
             dataGridViewListEvent.Rows.Clear();
@@ -369,6 +370,26 @@ namespace Projet_WinForm
             participantAjout = new AjoutParticipants("ListeParticipants", int.Parse(labelIdClubEvent.Text), int.Parse(labelShowIdEvent.Text));
             participantAjout.FormClosed += ModalAjout_FormClosed;
             participantAjout.ShowDialog();
+        }
+
+        private void buttonSupprimerEvent_Click(object sender, EventArgs e)
+        {
+            
+            Evenement LEvent = new Evenement(int.Parse(labelShowIdEvent.Text), textBoxModifTypeEvent.Text, textBoxModifNomEvent.Text,
+                textBoxModifAdresseEvent.Text, int.Parse(textBoxModifCPEvent.Text), textBoxModifVilleEvent.Text,
+                textBoxModifSiteEvent.Text, dateTimePickerModifDateDebutEvent.Value, dateTimePickerModifDateFinEvent.Value, int.Parse(labelNbParticpant.Text), int.Parse(labelIdClubEvent.Text));
+            suppression = new FormSuppression(LEvent);
+            suppression.FormClosed += FormSuppr_FormClosed;
+            suppression.ShowDialog();
+
+        }
+
+        private void FormSuppr_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(FormSuppression.deleted)
+            {
+
+            }
         }
     }
 }

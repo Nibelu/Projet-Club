@@ -83,7 +83,6 @@ namespace Projet_WinForm
                 connection.Open();
                 string query = "INSERT INTO club (nomClub, adresseClub, CPClub, villeClub, telephone, mail, siteClub) VALUES (@nom, @adresse, @cp, @ville, @telephone, @mail, @site)";
 
-
                 //Create Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
@@ -741,6 +740,78 @@ namespace Projet_WinForm
             return ListNonAdherent;
         }
 
+        
+        public void DeleteEvent(int idEvent)
+        {            
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM evenement where id = @id";
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", idEvent);
+
+                string query2 = "DELETE FROM participants where id_evenement = @id";
+                //Create Command
+                cmd = new MySqlCommand(query2, connection);
+                cmd.Parameters.AddWithValue("@id", idEvent);
+
+                string query3 = "DELETE FROM non_adherents where id_event = @id";
+                //Create Command
+                cmd = new MySqlCommand(query3, connection);
+                cmd.Parameters.AddWithValue("@id", idEvent);
+
+            }            
+        }
+
+        public void DeleteAdherent(int idAdh)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM adherent where id = @id";
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", idAdh);               
+
+                string query2 = "DELETE FROM participants where id_adherent = @id";
+                //Create Command
+                cmd = new MySqlCommand(query2, connection);
+                cmd.Parameters.AddWithValue("@id", idAdh);
+
+            }
+        }
+
+        public void DeleteClub(int idClub)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM adherent where id_club = @id";
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", idClub);
+
+                string query2 = "SELECT id FROM evenement Where id_club = @club ";
+                //Create Command
+                cmd = new MySqlCommand(query2, connection);
+                cmd.Parameters.AddWithValue("@club", idClub);
+
+                using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                {
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        DeleteEvent((int)dataReader["id"]);
+                    }
+                }
+
+                string query3 = "DELETE FROM club where id = @id";
+                //Create Command
+                cmd = new MySqlCommand(query3, connection);
+                cmd.Parameters.AddWithValue("@id", idClub);
+            }
+        }
 
 
 
