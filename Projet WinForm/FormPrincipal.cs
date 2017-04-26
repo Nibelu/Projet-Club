@@ -16,7 +16,6 @@ namespace Projet_WinForm
         private AjoutParticipants participantAjout;
         private Ajout modalAjout;
         private ConfirmModif confModif;
-        private afficheVille lesVilles;
 
         public FormPrincipal()
         {
@@ -27,8 +26,8 @@ namespace Projet_WinForm
         {
             listClubs.Rows.Clear();
             BDD liste1 = new BDD();
-            List<Club> ListClub = liste1.SelectAllClub();
-            listClubs.ColumnCount = 9;
+            List<Club> ListClub = liste1.SelectAllClub();            
+            listClubs.ColumnCount = 8;
             listClubs.Columns[0].Name = "Id";
             listClubs.Columns[1].Name = "Nom du Club";
             listClubs.Columns[2].Name = "Adresse";
@@ -37,12 +36,14 @@ namespace Projet_WinForm
             listClubs.Columns[5].Name = "Telephone";
             listClubs.Columns[6].Name = "Contact";
             listClubs.Columns[7].Name = "Liens";
-            listClubs.Columns[8].Name = "Suppression";
             
             foreach (Club list in ListClub)
             {
-                listClubs.Rows.Add(list.id, list.nomClub, list.adresseClub, list.CPClub, list.villeClub, list.telephone, list.mail, list.siteClub, "Supprimer");
+                listClubs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                listClubs.Rows.Add(list.id, list.nomClub, list.adresseClub, list.CPClub, list.villeClub, list.telephone, list.mail, list.siteClub);
+                
             }
+            
         }
 
         public void AfficheListAdherent(int leClub)
@@ -50,7 +51,7 @@ namespace Projet_WinForm
             dataGridViewListAdherents.Rows.Clear();
             BDD listeAdherents = new BDD();
             List<Adherent> ListeAdherent = listeAdherents.SelectAllAdherent(leClub);
-            dataGridViewListAdherents.ColumnCount = 11;
+            dataGridViewListAdherents.ColumnCount = 10;
             dataGridViewListAdherents.Columns[0].Name = "Id";
             dataGridViewListAdherents.Columns[1].Name = "Nom Adhérent";
             dataGridViewListAdherents.Columns[2].Name = "Prénom Adhérent";
@@ -61,11 +62,11 @@ namespace Projet_WinForm
             dataGridViewListAdherents.Columns[7].Name = "Code postal";
             dataGridViewListAdherents.Columns[8].Name = "ville";
             dataGridViewListAdherents.Columns[9].Name = "Cotisation";
-            dataGridViewListAdherents.Columns[10].Name = "Suppression";
            
             foreach (Adherent adherent in ListeAdherent)
             {
-                dataGridViewListAdherents.Rows.Add(adherent.id, adherent.nomAdh, adherent.prenomAdh, adherent.naissance, adherent.sexe, adherent.numLicence, adherent.adresseAdh, adherent.CPAdh, adherent.villeAdh, adherent.cotisation, "Supprimer");
+                dataGridViewListAdherents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                dataGridViewListAdherents.Rows.Add(adherent.id, adherent.nomAdh, adherent.prenomAdh, adherent.naissance, adherent.sexe, adherent.numLicence, adherent.adresseAdh, adherent.CPAdh, adherent.villeAdh, adherent.cotisation);
             }
         }
 
@@ -74,7 +75,7 @@ namespace Projet_WinForm
             dataGridViewListEvent.Rows.Clear();
             BDD listeEvents = new BDD();
             List<Evenement> listeEvenement = listeEvents.SelectAllEvent(leClub);
-            dataGridViewListEvent.ColumnCount = 11;
+            dataGridViewListEvent.ColumnCount = 10;
             dataGridViewListEvent.Columns[0].Name = "Id";
             dataGridViewListEvent.Columns[1].Name = "Type d'évènement";
             dataGridViewListEvent.Columns[2].Name = "Nom évènement";
@@ -85,11 +86,11 @@ namespace Projet_WinForm
             dataGridViewListEvent.Columns[7].Name = "Début";
             dataGridViewListEvent.Columns[8].Name = "Fin";
             dataGridViewListEvent.Columns[9].Name = "Participants";
-            dataGridViewListEvent.Columns[10].Name = "Suppression";
             
             foreach (Evenement Event in listeEvenement)
             {
-                dataGridViewListEvent.Rows.Add(Event.id, Event.typeEvent, Event.nomEvent, Event.adresseEvent, Event.CPEvent, Event.villeEvent, Event.siteEvent, Event.dateDebutEvent, Event.dateFinEvent, Event.nbParticipants, "Supprimer");
+                dataGridViewListEvent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                dataGridViewListEvent.Rows.Add(Event.id, Event.typeEvent, Event.nomEvent, Event.adresseEvent, Event.CPEvent, Event.villeEvent, Event.siteEvent, Event.dateDebutEvent, Event.dateFinEvent, Event.nbParticipants);
             }
 
         }
@@ -151,7 +152,7 @@ namespace Projet_WinForm
             listClubs.Rows.Clear();
             BDD liste1 = new BDD();
             List<Club> ListClub = liste1.SearchClub(textBoxRecherche.Text);
-            listClubs.ColumnCount = 9;
+            listClubs.ColumnCount = 8;
             listClubs.Columns[0].Name = "Id";
             listClubs.Columns[1].Name = "Nom du Club";
             listClubs.Columns[2].Name = "Adresse";
@@ -160,10 +161,11 @@ namespace Projet_WinForm
             listClubs.Columns[5].Name = "Telephone";
             listClubs.Columns[6].Name = "Contact";
             listClubs.Columns[7].Name = "Liens";
-            listClubs.Columns[8].Name = "Suppression";            
+
             foreach (Club list in ListClub)
             {
-                listClubs.Rows.Add(list.id, list.nomClub, list.adresseClub, list.CPClub, list.villeClub, list.telephone, list.mail, list.siteClub, "Supprimer");
+                listClubs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                listClubs.Rows.Add(list.id, list.nomClub, list.adresseClub, list.CPClub, list.villeClub, list.telephone, list.mail, list.siteClub);
             }
         }
 
@@ -206,7 +208,7 @@ namespace Projet_WinForm
             dataGridViewListAdherents.Rows.Clear();
             BDD listeAdherents = new BDD();
             List<Adherent> ListeAdherent = listeAdherents.SearchAdherent(textBoxRechercheAdherent.Text, int.Parse(idClub.Text));
-            dataGridViewListAdherents.ColumnCount = 11;
+            dataGridViewListAdherents.ColumnCount = 10;
             dataGridViewListAdherents.Columns[0].Name = "Id";
             dataGridViewListAdherents.Columns[1].Name = "Nom Adhérent";
             dataGridViewListAdherents.Columns[2].Name = "Prénom Adhérent";
@@ -217,11 +219,11 @@ namespace Projet_WinForm
             dataGridViewListAdherents.Columns[7].Name = "Code postal";
             dataGridViewListAdherents.Columns[8].Name = "ville";
             dataGridViewListAdherents.Columns[9].Name = "Cotisation";
-            dataGridViewListAdherents.Columns[10].Name = "Suppression";
 
             foreach (Adherent adherent in ListeAdherent)
             {
-                dataGridViewListAdherents.Rows.Add(adherent.id, adherent.nomAdh, adherent.prenomAdh, adherent.naissance, adherent.sexe, adherent.numLicence, adherent.adresseAdh, adherent.CPAdh, adherent.villeAdh, adherent.cotisation, "Supprimer");
+                dataGridViewListAdherents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                dataGridViewListAdherents.Rows.Add(adherent.id, adherent.nomAdh, adherent.prenomAdh, adherent.naissance, adherent.sexe, adherent.numLicence, adherent.adresseAdh, adherent.CPAdh, adherent.villeAdh, adherent.cotisation);
             }
         }
 
@@ -290,7 +292,7 @@ namespace Projet_WinForm
             dataGridViewListEvent.Rows.Clear();
             BDD listeEvents = new BDD();
             List<Evenement> listeEvenement = listeEvents.SearchEvent(textBoxSearchEvent.Text, int.Parse(idClub.Text));
-            dataGridViewListEvent.ColumnCount = 11;
+            dataGridViewListEvent.ColumnCount = 10;
             dataGridViewListEvent.Columns[0].Name = "Id";
             dataGridViewListEvent.Columns[1].Name = "Type d'évènement";
             dataGridViewListEvent.Columns[2].Name = "Nom évènement";
@@ -301,11 +303,11 @@ namespace Projet_WinForm
             dataGridViewListEvent.Columns[7].Name = "Début";
             dataGridViewListEvent.Columns[8].Name = "Fin";
             dataGridViewListEvent.Columns[9].Name = "Participants";
-            dataGridViewListEvent.Columns[10].Name = "Suppression";
 
             foreach (Evenement Event in listeEvenement)
             {
-                dataGridViewListEvent.Rows.Add(Event.id, Event.typeEvent, Event.nomEvent, Event.adresseEvent, Event.CPEvent, Event.villeEvent, Event.siteEvent, Event.dateDebutEvent, Event.dateFinEvent, Event.nbParticipants, "Supprimer");
+                dataGridViewListEvent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                dataGridViewListEvent.Rows.Add(Event.id, Event.typeEvent, Event.nomEvent, Event.adresseEvent, Event.CPEvent, Event.villeEvent, Event.siteEvent, Event.dateDebutEvent, Event.dateFinEvent, Event.nbParticipants);
             }
         }
 
@@ -362,11 +364,11 @@ namespace Projet_WinForm
             participantAjout.ShowDialog();
         }
 
-        private void buttonAfficheAdhVille_Click(object sender, EventArgs e)
+        private void buttonAfficheListeParticipants_Click(object sender, EventArgs e)
         {
-            lesVilles = new afficheVille(int.Parse(idClub.Text));
-            lesVilles.FormClosed += ModalAjout_FormClosed;
-            lesVilles.ShowDialog();
+            participantAjout = new AjoutParticipants("ListeParticipants", int.Parse(labelIdClubEvent.Text), int.Parse(labelShowIdEvent.Text));
+            participantAjout.FormClosed += ModalAjout_FormClosed;
+            participantAjout.ShowDialog();
         }
     }
 }

@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxRecherche = new System.Windows.Forms.TextBox();
             this.ajoutClub = new System.Windows.Forms.Button();
@@ -121,7 +122,7 @@
             this.buttonAddParticipantToEvent = new System.Windows.Forms.Button();
             this.buttonModifEvent = new System.Windows.Forms.Button();
             this.buttonBackToListEvent = new System.Windows.Forms.Button();
-            this.buttonAfficheAdhVille = new System.Windows.Forms.Button();
+            this.buttonAfficheListeParticipants = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listClubs)).BeginInit();
             this.panel2.SuspendLayout();
@@ -155,7 +156,7 @@
             // 
             // ajoutClub
             // 
-            this.ajoutClub.Location = new System.Drawing.Point(214, 468);
+            this.ajoutClub.Location = new System.Drawing.Point(257, 468);
             this.ajoutClub.Name = "ajoutClub";
             this.ajoutClub.Size = new System.Drawing.Size(251, 37);
             this.ajoutClub.TabIndex = 3;
@@ -176,26 +177,34 @@
             // 
             this.listClubs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.listClubs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listClubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listClubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.listClubs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listClubs.DefaultCellStyle = dataGridViewCellStyle8;
-            this.listClubs.Location = new System.Drawing.Point(0, 85);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listClubs.DefaultCellStyle = dataGridViewCellStyle5;
+            this.listClubs.Location = new System.Drawing.Point(3, 85);
             this.listClubs.Name = "listClubs";
-            this.listClubs.Size = new System.Drawing.Size(788, 359);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listClubs.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.listClubs.Size = new System.Drawing.Size(785, 359);
             this.listClubs.TabIndex = 2;
             this.listClubs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listClubs_CellDoubleClick);
             this.listClubs.VisibleChanged += new System.EventHandler(this.listClubs_VisibleChanged);
@@ -410,7 +419,6 @@
             // 
             // panelListAdherents
             // 
-            this.panelListAdherents.Controls.Add(this.buttonAfficheAdhVille);
             this.panelListAdherents.Controls.Add(this.textBoxRechercheAdherent);
             this.panelListAdherents.Controls.Add(this.labelNomDuClub);
             this.panelListAdherents.Controls.Add(this.buttonAjoutAdherent);
@@ -769,6 +777,7 @@
             // 
             // panelModifEvent
             // 
+            this.panelModifEvent.Controls.Add(this.buttonAfficheListeParticipants);
             this.panelModifEvent.Controls.Add(this.labelIdClubEvent);
             this.panelModifEvent.Controls.Add(this.labelShowIdEvent);
             this.panelModifEvent.Controls.Add(this.labelIdEvent);
@@ -1011,15 +1020,15 @@
             this.buttonBackToListEvent.UseVisualStyleBackColor = true;
             this.buttonBackToListEvent.Click += new System.EventHandler(this.buttonBackToListEvent_Click);
             // 
-            // buttonAfficheAdhVille
+            // buttonAfficheListeParticipants
             // 
-            this.buttonAfficheAdhVille.Location = new System.Drawing.Point(32, 483);
-            this.buttonAfficheAdhVille.Name = "buttonAfficheAdhVille";
-            this.buttonAfficheAdhVille.Size = new System.Drawing.Size(93, 43);
-            this.buttonAfficheAdhVille.TabIndex = 5;
-            this.buttonAfficheAdhVille.Text = "Adhérents par ville";
-            this.buttonAfficheAdhVille.UseVisualStyleBackColor = true;
-            this.buttonAfficheAdhVille.Click += new System.EventHandler(this.buttonAfficheAdhVille_Click);
+            this.buttonAfficheListeParticipants.Location = new System.Drawing.Point(566, 352);
+            this.buttonAfficheListeParticipants.Name = "buttonAfficheListeParticipants";
+            this.buttonAfficheListeParticipants.Size = new System.Drawing.Size(173, 29);
+            this.buttonAfficheListeParticipants.TabIndex = 27;
+            this.buttonAfficheListeParticipants.Text = "Afficher la liste";
+            this.buttonAfficheListeParticipants.UseVisualStyleBackColor = true;
+            this.buttonAfficheListeParticipants.Click += new System.EventHandler(this.buttonAfficheListeParticipants_Click);
             // 
             // FormPrincipal
             // 
@@ -1027,12 +1036,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(789, 555);
+            this.Controls.Add(this.panelModifEvent);
+            this.Controls.Add(this.panelConsultEvent);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelModifAdherent);
             this.Controls.Add(this.panelListAdherents);
-            this.Controls.Add(this.panelModifEvent);
-            this.Controls.Add(this.panelConsultEvent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormPrincipal";
             this.Text = "Gestion Clubs";
@@ -1149,7 +1158,7 @@
         private System.Windows.Forms.Label labelShowIdEvent;
         private System.Windows.Forms.Label labelIdEvent;
         private System.Windows.Forms.Label labelIdClubEvent;
-        private System.Windows.Forms.Button buttonAfficheAdhVille;
+        private System.Windows.Forms.Button buttonAfficheListeParticipants;
     }
 }
 
