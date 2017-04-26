@@ -746,20 +746,24 @@ namespace Projet_WinForm
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "DELETE FROM evenement where id = @id";
-                //Create Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id", idEvent);
+                
 
                 string query2 = "DELETE FROM participants where id_evenement = @id";
                 //Create Command
-                cmd = new MySqlCommand(query2, connection);
+                MySqlCommand cmd = new MySqlCommand(query2, connection);
                 cmd.Parameters.AddWithValue("@id", idEvent);
+                cmd.ExecuteNonQuery();
 
                 string query3 = "DELETE FROM non_adherents where id_event = @id";
                 //Create Command
                 cmd = new MySqlCommand(query3, connection);
                 cmd.Parameters.AddWithValue("@id", idEvent);
+                cmd.ExecuteNonQuery();
+                string query = "DELETE FROM evenement where id = @id";
+                //Create Command
+                cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", idEvent);
+                cmd.ExecuteNonQuery();
 
             }            
         }
@@ -772,12 +776,14 @@ namespace Projet_WinForm
                 string query = "DELETE FROM adherent where id = @id";
                 //Create Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id", idAdh);               
+                cmd.Parameters.AddWithValue("@id", idAdh);
+                cmd.ExecuteNonQuery();
 
                 string query2 = "DELETE FROM participants where id_adherent = @id";
                 //Create Command
                 cmd = new MySqlCommand(query2, connection);
                 cmd.Parameters.AddWithValue("@id", idAdh);
+                cmd.ExecuteNonQuery();
 
             }
         }
@@ -791,6 +797,7 @@ namespace Projet_WinForm
                 //Create Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@id", idClub);
+                cmd.ExecuteNonQuery();
 
                 string query2 = "SELECT id FROM evenement Where id_club = @club ";
                 //Create Command
@@ -810,6 +817,7 @@ namespace Projet_WinForm
                 //Create Command
                 cmd = new MySqlCommand(query3, connection);
                 cmd.Parameters.AddWithValue("@id", idClub);
+                cmd.ExecuteNonQuery();
             }
         }
 

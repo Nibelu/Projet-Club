@@ -28,9 +28,12 @@ namespace Projet_WinForm
         }
 
         private void panelAddParticipantFromModifEvent_VisibleChanged(object sender, EventArgs e)
-        {
+        {/*
+                       
+            panelListeParticipants.Visible = false;
             panelChooseAdhToEvent.Visible = false;
             panelAjoutNAToEvent.Visible = false;
+            panelAddParticipantFromModifEvent.Visible = true;
             BDD UnEvent = new BDD();
             Evenement ThisEvent = UnEvent.ReadEvent(idEvent);
             Club leClub = UnEvent.ReadClub(idClub);
@@ -47,6 +50,7 @@ namespace Projet_WinForm
             labelURLEventAddPart.Text = ThisEvent.siteEvent;
             labelAddPartNomEvent.Text = ThisEvent.nomEvent;
             labelNbPartEventAddPart.Text = ThisEvent.nbParticipants.ToString();
+            */
         }
 
         private void ButtonBackToModifEvent_Click(object sender, EventArgs e)
@@ -133,7 +137,7 @@ namespace Projet_WinForm
 
         private void dataGridViewListeParticipants_VisibleChanged(object sender, EventArgs e)
         {
-            panelAddParticipantFromModifEvent.Visible = false;
+            /*panelAddParticipantFromModifEvent.Visible = false;
             panelChooseAdhToEvent.Visible = false;
             panelListeParticipants.Visible = true;
             dataGridViewListeParticipants.Rows.Clear();
@@ -155,6 +159,60 @@ namespace Projet_WinForm
                 dataGridViewListeParticipants.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                 dataGridViewListeParticipants.Rows.Add(nb, unInscrit.nom, unInscrit.prenom);
                 nb++;
+            }*/
+        }
+
+        private void AjoutParticipants_Load(object sender, EventArgs e)
+        {
+            if (FromWhere == "FromModifEvent")
+            {
+                panelListeParticipants.Visible = false;
+                panelChooseAdhToEvent.Visible = false;
+                panelAjoutNAToEvent.Visible = false;
+                panelAddParticipantFromModifEvent.Visible = true;
+                BDD UnEvent = new BDD();
+                Evenement ThisEvent = UnEvent.ReadEvent(idEvent);
+                Club leClub = UnEvent.ReadClub(idClub);
+                labelTypeEventAddPart.Text = ThisEvent.typeEvent;
+
+                labelIdChooseEvent.Text = ThisEvent.id.ToString();
+
+                labelNomClubEventAddPart.Text = leClub.nomClub;
+                labelDateDebutEventAddPart.Text = ThisEvent.dateDebutEvent.ToString();
+                labelDateFinEventAddPart.Text = ThisEvent.dateFinEvent.ToString();
+                labelAdresseEventAddPart.Text = ThisEvent.adresseEvent;
+                labelCPEventAddPart.Text = ThisEvent.CPEvent.ToString();
+                labelVilleEventAddPart.Text = ThisEvent.villeEvent;
+                labelURLEventAddPart.Text = ThisEvent.siteEvent;
+                labelAddPartNomEvent.Text = ThisEvent.nomEvent;
+                labelNbPartEventAddPart.Text = ThisEvent.nbParticipants.ToString();
+
+            }
+            else if (FromWhere == "ListeParticipants")
+            {
+                panelAddParticipantFromModifEvent.Visible = false;
+                panelChooseAdhToEvent.Visible = false;
+                panelListeParticipants.Visible = true;
+                dataGridViewListeParticipants.Rows.Clear();
+                BDD liste = new BDD();
+                Inscrit lInscrit = new Inscrit("", "");
+                int nb = 1;
+                List<Adherent> ListeAdherent = liste.SelectAllEventAdherent(idEvent, idClub);
+                List<NonAdherent> ListeNonAdherent = liste.SelectAllEventNonAdherent(idEvent);
+                List<Inscrit> lesInscrits = lInscrit.genererListe(ListeAdherent, ListeNonAdherent);
+
+                dataGridViewListeParticipants.ColumnCount = 3;
+                dataGridViewListeParticipants.Columns[0].Name = "inscrit n°";
+                dataGridViewListeParticipants.Columns[1].Name = "Nom";
+                dataGridViewListeParticipants.Columns[2].Name = "Prénom";
+
+
+                foreach (Inscrit unInscrit in lesInscrits)
+                {
+                    dataGridViewListeParticipants.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                    dataGridViewListeParticipants.Rows.Add(nb, unInscrit.nom, unInscrit.prenom);
+                    nb++;
+                }
             }
         }
     }

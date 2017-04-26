@@ -384,12 +384,48 @@ namespace Projet_WinForm
 
         }
 
+        private void buttonSupprClub_Click(object sender, EventArgs e)
+        {
+            Club leClub = new Club(int.Parse(idClub.Text), textBoxModifNameClub.Text, textBoxModifAdresseClub.Text, int.Parse(textBoxModifCPClub.Text), textBoxModifVilleClub.Text, textBoxModifTelClub.Text, textBoxModifMailClub.Text, textBoxModifURLClub.Text);
+            suppression = new FormSuppression(leClub);
+            suppression.FormClosed += FormSuppr_FormClosed;
+            suppression.ShowDialog();
+        }
+
+        private void buttonSupprAdh_Click(object sender, EventArgs e)
+        {
+            Adherent LAdherent = new Adherent(int.Parse(labelIdAdhModif.Text), textBoxNomAdhModif.Text, textBoxPrenomAdhModif.Text, dateTimePickerNaissanceAdhModif.Value, textBoxSexeAdhModif.Text, textBoxLicenceAdhModif.Text, textBoxAdresseAdhModif.Text, int.Parse(textBoxCPAdhModif.Text), textBoxVilleAdhModif.Text, int.Parse(textBoxCotisationAdhModif.Text), int.Parse(labelIdClubAdh.Text));
+            suppression = new FormSuppression(LAdherent);
+            suppression.FormClosed += FormSuppr_FormClosed;
+            suppression.ShowDialog();
+        }
+
         private void FormSuppr_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(FormSuppression.deleted)
+            if(FormSuppression.deleted && FormSuppression.typedeleted == "event")
             {
+                dataGridViewListEvent.Rows.Clear();  
+                AfficheListEvent(int.Parse(idClub.Text));                
+                panelModifEvent.Visible = false;
+                panelConsultEvent.Visible = true;
 
             }
+            else if (FormSuppression.deleted && FormSuppression.typedeleted == "club")
+            {
+                listClubs.Rows.Clear();               
+                AfficheList();
+                panel2.Visible = false;
+                panel1.Visible = true;
+            }
+            else if (FormSuppression.deleted && FormSuppression.typedeleted == "adh")
+            {                
+                dataGridViewListAdherents.Rows.Clear();
+                AfficheListAdherent(int.Parse(idClub.Text));
+                PanelModifAdherent.Visible = false;
+                panelListAdherents.Visible = true; 
+            }
         }
+
+        
     }
 }

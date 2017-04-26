@@ -14,6 +14,7 @@ namespace Projet_WinForm
     {
         private Object leObjet { get; set; }
         public static bool deleted;
+        public static string typedeleted;
     
         public FormSuppression( Object leObjet = null)
         {
@@ -29,14 +30,17 @@ namespace Projet_WinForm
             if (leObjet.GetType() == typeof(Evenement))
             {
                 Delete.DeleteEvent(((Evenement)leObjet).id);
+                typedeleted = "event";
             }
             else if (leObjet.GetType() == typeof(Club))
             {
                 Delete.DeleteClub(((Club)leObjet).id);
+                typedeleted = "club";
             }
             else if (leObjet.GetType() == typeof(Adherent))
             {
                 Delete.DeleteAdherent(((Adherent)leObjet).id);
+                typedeleted = "adh";
             }
             deleted = true;
             Close();

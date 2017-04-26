@@ -68,8 +68,8 @@
             this.textBoxNomNewNA = new System.Windows.Forms.TextBox();
             this.buttonAjoutNAToEvent = new System.Windows.Forms.Button();
             this.panelListeParticipants = new System.Windows.Forms.Panel();
-            this.dataGridViewListeParticipants = new System.Windows.Forms.DataGridView();
             this.buttonCloseListeParticipants = new System.Windows.Forms.Button();
+            this.dataGridViewListeParticipants = new System.Windows.Forms.DataGridView();
             this.panelAddParticipantFromModifEvent.SuspendLayout();
             this.panelChooseAdhToEvent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListAdhToEvent)).BeginInit();
@@ -469,6 +469,16 @@
             this.panelListeParticipants.Size = new System.Drawing.Size(752, 390);
             this.panelListeParticipants.TabIndex = 3;
             // 
+            // buttonCloseListeParticipants
+            // 
+            this.buttonCloseListeParticipants.Location = new System.Drawing.Point(27, 17);
+            this.buttonCloseListeParticipants.Name = "buttonCloseListeParticipants";
+            this.buttonCloseListeParticipants.Size = new System.Drawing.Size(178, 37);
+            this.buttonCloseListeParticipants.TabIndex = 1;
+            this.buttonCloseListeParticipants.Text = "Retour";
+            this.buttonCloseListeParticipants.UseVisualStyleBackColor = true;
+            this.buttonCloseListeParticipants.Click += new System.EventHandler(this.buttonCloseListeParticipants_Click);
+            // 
             // dataGridViewListeParticipants
             // 
             this.dataGridViewListeParticipants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -477,16 +487,6 @@
             this.dataGridViewListeParticipants.Size = new System.Drawing.Size(747, 320);
             this.dataGridViewListeParticipants.TabIndex = 0;
             this.dataGridViewListeParticipants.VisibleChanged += new System.EventHandler(this.dataGridViewListeParticipants_VisibleChanged);
-            // 
-            // buttonCloseListeParticipants
-            // 
-            this.buttonCloseListeParticipants.Location = new System.Drawing.Point(11, 16);
-            this.buttonCloseListeParticipants.Name = "buttonCloseListeParticipants";
-            this.buttonCloseListeParticipants.Size = new System.Drawing.Size(178, 37);
-            this.buttonCloseListeParticipants.TabIndex = 1;
-            this.buttonCloseListeParticipants.Text = "Retour";
-            this.buttonCloseListeParticipants.UseVisualStyleBackColor = true;
-            this.buttonCloseListeParticipants.Click += new System.EventHandler(this.buttonCloseListeParticipants_Click);
             // 
             // AjoutParticipants
             // 
@@ -500,6 +500,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AjoutParticipants";
             this.Text = " Ajout de participants";
+            this.Load += new System.EventHandler(this.AjoutParticipants_Load);
             this.panelAddParticipantFromModifEvent.ResumeLayout(false);
             this.panelAddParticipantFromModifEvent.PerformLayout();
             this.panelChooseAdhToEvent.ResumeLayout(false);
