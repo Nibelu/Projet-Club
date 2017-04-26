@@ -90,6 +90,7 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inscrit.cs" />
     <Compile Include="NonAdherent.cs" />
     <Compile Include="Participant.cs" />
     <Compile Include="Program.cs" />

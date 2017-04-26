@@ -538,6 +538,7 @@ namespace Projet_WinForm
         /// <param name="idNONAdh"></param>
         public void InsertParticipant(int idAdh, int idEvent, int idNONAdh)
         {
+            Int64 nb = 0;
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
@@ -551,17 +552,25 @@ namespace Projet_WinForm
                 cmd.Parameters.AddWithValue("@NA", idNONAdh);
                 cmd.ExecuteNonQuery();
 
-                string query2 = "UPDATE evenement SET nbParticipants = nbParticipants + 1  WHERE  id = @event";
+                string query2 = "SELECT count(*) as nbPart FROM participants WHERE  id_evenement = @event";
 
                 //Create Command
                 cmd = new MySqlCommand(query2, connection);
                 cmd.Parameters.AddWithValue("@event", idEvent);
-                cmd.ExecuteNonQuery();
 
+                nb = (Int64)cmd.ExecuteScalar();             
+
+                string query3 = "UPDATE evenement SET nbParticipants = @nb  WHERE  id = @event";
+
+                //Create Command
+                cmd = new MySqlCommand(query3, connection);
+                cmd.Parameters.AddWithValue("@event", idEvent);
+                cmd.Parameters.AddWithValue("@nb", nb);
+                cmd.ExecuteNonQuery();
             }
         }
 
-        public List<Adherent> SelectAllEventAdherent(int idEvent, int idClub)
+        public List<Adherent> SelectAllEventNotAdherent(int idEvent, int idClub)
         {
             Adherent LeAdherent = null;
             List<Adherent> ListAdherent = new List<Adherent>();            
@@ -652,5 +661,88 @@ namespace Projet_WinForm
             }
             return ThisNA;
         }
+
+        public List<Adherent> SelectAllEventAdherent(int idEvent, int idClub)
+        {
+            Adherent LeAdherent = null;
+            List<Adherent> ListAdherent = new List<Adherent>();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM adherent Where id_club = @club AND id IN (SELECT id_adherent FROM participants WHERE id_evenement = @event) ORDER BY id ASC";
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@club", idClub);
+                cmd.Parameters.AddWithValue("@event", idEvent);
+
+
+                //Create a data reader and Execute the command
+                using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                {
+
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        LeAdherent = new Adherent(
+                            (int)dataReader["id"],
+                            (string)dataReader["nomAdh"],
+                            (string)dataReader["prenomAdh"],
+                            (DateTime)dataReader["naissance"],
+                            (string)dataReader["sexe"],
+                            (string)dataReader["numLicence"],
+                            (string)dataReader["adresseAdh"],
+                            (int)dataReader["CPAdh"],
+                            (string)dataReader["villeAdh"],
+                            (int)dataReader["cotisation"],
+                            (int)dataReader["id_club"]);
+                        ListAdherent.Add(LeAdherent);
+                    }
+                }
+            }
+
+            return ListAdherent;
+        }
+
+        public List<NonAdherent> SelectAllEventNonAdherent(int idEvent)
+        {
+            NonAdherent LeNonAdherent = null;
+            List<NonAdherent> ListNonAdherent = new List<NonAdherent>();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM non_adherents Where id_event = @event  ORDER BY id ASC";
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@event", idEvent);
+
+
+                //Create a data reader and Execute the command
+                using (MySqlDataReader dataReader = cmd.ExecuteReader())
+                {
+
+                    //Read the data and store them in the list
+                    while (dataReader.Read())
+                    {
+                        LeNonAdherent = new NonAdherent(
+                            (int)dataReader["id"],
+                            (string)dataReader["nomNA"],
+                            (string)dataReader["prenomNA"],
+                            (string)dataReader["telephone"],
+                            (int)dataReader["id_event"]);
+                        ListNonAdherent.Add(LeNonAdherent);
+                    }
+                }
+            }
+
+            return ListNonAdherent;
+        }
+
+
+
+
     }
 }

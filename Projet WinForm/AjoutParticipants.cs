@@ -16,7 +16,7 @@ namespace Projet_WinForm
         private int idClub;
         private int idEvent;
         private string FromWhere;
-        private ConfirmAjoutEvent confirmation;
+        
 
 
         public AjoutParticipants(string FromWhere, int idClub, int idEvent)
@@ -58,12 +58,11 @@ namespace Projet_WinForm
         {
             
             panelAddParticipantFromModifEvent.Visible = false;
-            panelChooseAdhToEvent.Visible = true;            
-        
+            panelChooseAdhToEvent.Visible = true;
             dataGridViewListAdhToEvent.Rows.Clear();
             BDD listeAdherents = new BDD();
-            List<Adherent> ListeAdherent = listeAdherents.SelectAllEventAdherent(idEvent, idClub);
-            dataGridViewListAdhToEvent.ColumnCount = 11;
+            List<Adherent> ListeAdherent = listeAdherents.SelectAllEventNotAdherent(idEvent, idClub);
+            dataGridViewListAdhToEvent.ColumnCount = 10;
             dataGridViewListAdhToEvent.Columns[0].Name = "Id";
             dataGridViewListAdhToEvent.Columns[1].Name = "Nom Adhérent";
             dataGridViewListAdhToEvent.Columns[2].Name = "Prénom Adhérent";
@@ -74,13 +73,15 @@ namespace Projet_WinForm
             dataGridViewListAdhToEvent.Columns[7].Name = "Code postal";
             dataGridViewListAdhToEvent.Columns[8].Name = "ville";
             dataGridViewListAdhToEvent.Columns[9].Name = "Cotisation";
-            dataGridViewListAdhToEvent.Columns[10].Name = "Suppression";
 
 
             foreach (Adherent adherent in ListeAdherent)
-            {                
-                    dataGridViewListAdhToEvent.Rows.Add(adherent.id, adherent.nomAdh, adherent.prenomAdh, adherent.naissance, adherent.sexe, adherent.numLicence, adherent.adresseAdh, adherent.CPAdh, adherent.villeAdh, adherent.cotisation, "Supprimer");
+            {
+                dataGridViewListAdhToEvent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                dataGridViewListAdhToEvent.Rows.Add(adherent.id, adherent.nomAdh, adherent.prenomAdh, adherent.naissance, adherent.sexe, adherent.numLicence, adherent.adresseAdh, adherent.CPAdh, adherent.villeAdh, adherent.cotisation);
             }
+
+            
         
 
     }
@@ -95,6 +96,7 @@ namespace Projet_WinForm
         {
             var Adh = dataGridViewListAdhToEvent.Rows[e.RowIndex].Cells[0].Value.ToString();
             ConfirmAjoutEvent confirmation = new ConfirmAjoutEvent(idEvent, int.Parse(Adh), "", "", "");
+            confirmation.FormClosed += ConfirmAjout_FormClosed;
             confirmation.ShowDialog();
         }
 
@@ -115,7 +117,45 @@ namespace Projet_WinForm
         private void buttonAjoutNAToEvent_Click(object sender, EventArgs e)
         {
             ConfirmAjoutEvent confirmation = new ConfirmAjoutEvent(idEvent, 0, textBoxNomNewNA.Text, textBoxPrenomNewNA.Text, textBoxTelNewNA.Text);
+            confirmation.FormClosed += ConfirmAjout_FormClosed;
             confirmation.ShowDialog();
+        }
+
+        private void ConfirmAjout_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Close();
+        }
+
+        private void buttonCloseListeParticipants_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void dataGridViewListeParticipants_VisibleChanged(object sender, EventArgs e)
+        {
+            panelAddParticipantFromModifEvent.Visible = false;
+            panelChooseAdhToEvent.Visible = false;
+            panelListeParticipants.Visible = true;
+            dataGridViewListeParticipants.Rows.Clear();
+            BDD liste = new BDD();
+            Inscrit lInscrit = new Inscrit("","");
+            int nb = 1;
+            List<Adherent> ListeAdherent = liste.SelectAllEventAdherent(idEvent, idClub);
+            List<NonAdherent> ListeNonAdherent = liste.SelectAllEventNonAdherent(idEvent);
+            List<Inscrit> lesInscrits = lInscrit.genererListe(ListeAdherent, ListeNonAdherent);
+
+            dataGridViewListeParticipants.ColumnCount = 3;
+            dataGridViewListeParticipants.Columns[0].Name = "inscrit n°";
+            dataGridViewListeParticipants.Columns[1].Name = "Nom";
+            dataGridViewListeParticipants.Columns[2].Name = "Prénom";
+
+
+            foreach (Inscrit unInscrit in lesInscrits)
+            {
+                dataGridViewListeParticipants.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                dataGridViewListeParticipants.Rows.Add(nb, unInscrit.nom, unInscrit.prenom);
+                nb++;
+            }
         }
     }
 }
